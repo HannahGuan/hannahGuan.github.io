@@ -1,6 +1,6 @@
 
 
-[![HannahGuan](https://img.shields.io/badge/senli1073-github-blue?logo=github)](https://github.com/senli1073)
+[![HannahGuan](https://img.shields.io/badge/senli1073-github-blue?logo=github)](https://github.com/hannahguan)
 
 She is currently a Master student in Symbolic Systems at Stanford University.
 
