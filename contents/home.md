@@ -1,6 +1,6 @@
 
 
-[![HannahGuan](https://img.shields.io/badge/senli1073-github-blue?logo=github)](https://github.com/hannahguan)
+[![HannahGuan](https://img.shields.io/badge/hannahguan-github-blue?logo=github)](https://github.com/hannahguan)
 
 She is currently a Master student in Symbolic Systems at Stanford University.
 
@@ -9,8 +9,8 @@ She is currently a Master student in Symbolic Systems at Stanford University.
 Email: rjguan[at]stanford.edu
 
 #### Education
-M.E., Computer Science and Technology, China University of Mining and Technology, 2022—2025.\
-B.E., Data Science and Big Data Technology, China University of Mining and Technology, 2018—2022.
+M.S., Symbolic Systems, Stanford\
+B.S., Computer Science & Cognitive Science, University of Michigan
 
 #### Research Interests
 Human-Computer Interaction; Social Computing; Cognitive Psychology; Collective Intelligence; Human-Centered AI; Mixed Reality.
