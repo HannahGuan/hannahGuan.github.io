@@ -104,7 +104,7 @@ section .main-body{
 }
 
 #avatar img {
-    height: max(130px,min(200px,calc(100vw/6)));
+    height: max(180px,min(280px,calc(100vw/5)));
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.2);
 }
 
