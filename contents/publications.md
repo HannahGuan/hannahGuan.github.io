@@ -1,6 +1,6 @@
 #### Submitted
 
-- <strong>,Guan, R.</strong>. U-M Cog Sci Honor Thesis: Structuring Strategic and Proactive AI Agents for Collective Deliberation. [[Paper]](https://drive.google.com/file/d/1h_-uoLbIEwEZUvYw5NGvj1Jmq6J71Y66/view?usp=share_link)
+- <strong>Guan, R. U-M Cog Sci Honor Thesis:</strong> Structuring Strategic and Proactive AI Agents for Collective Deliberation. [[Paper]](https://drive.google.com/file/d/1h_-uoLbIEwEZUvYw5NGvj1Jmq6J71Y66/view?usp=share_link)
 
 - Yu, Z., Liu, Y., <strong>,Guan, R.</strong>,, & Vermillion, C. <em>Large Language Model-driven Mixed Strategy Framework for Social Navigation</em>. Submitted to 2025 International Conference on Intelligent Robots and Systems (IROS) <strong>Rej :)</strong> [[Code]](https://github.com/HannahGuan/ROB498_Navigation)
 
