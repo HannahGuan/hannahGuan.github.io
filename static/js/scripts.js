@@ -2,7 +2,7 @@
 
 const content_dir = 'contents/'
 const config_file = 'config.yml'
-const section_names = ['home', 'publications', 'awards']
+const section_names = ['home', 'publications', 'projects', 'awards']
 
 
 window.addEventListener('DOMContentLoaded', event => {
@@ -50,6 +50,9 @@ window.addEventListener('DOMContentLoaded', event => {
     // Marked
     marked.use({ mangle: false, headerIds: false })
     section_names.forEach((name, idx) => {
+        // Skip projects as it's now in HTML
+        if (name === 'projects') return;
+
         fetch(content_dir + name + '.md')
             .then(response => response.text())
             .then(markdown => {
@@ -61,5 +64,8 @@ window.addEventListener('DOMContentLoaded', event => {
             })
             .catch(error => console.log(error));
     })
+
+    // Still run MathJax for the entire page
+    MathJax.typeset();
 
 }); 
