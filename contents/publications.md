@@ -1,17 +1,12 @@
-#### Submitted
+- Ashkinaze, J., <strong>Guan, R</strong>, Adar, E., Budak, C., & Gilbert, E (2026). <em>Seeing like an AI: How LLMs apply (and misapply) Wikipedia neutrality norms</em>. <strong>International AAAI Conference on Web and Social Media (ICWSM 2026)</strong> [[Paper]](https://arxiv.org/abs/2407.04183)
+
+- Zhao, M., Yong, Z., <strong>Guan, R.</strong>, Chang, K.-W., Haimovich, A., Ouchi, K., Bickmore, T., Zhang, Z., Yao, B., Wang, D., & Desai, S. (2026). <em>Balancing Efficiency and Empathy: Healthcare Providers' Perspectives on AI-Supported Workflows for Serious Illness Conversations in the Emergency Department</em>. <strong>ACM CHI Conference on Human Factors in Computing Systems (CHI 2026)</strong> [[Paper]](https://dl.acm.org/doi/abs/10.1145/3772318.3791301)
 
 - <strong>Guan, R. U-M Cog Sci Honor Thesis:</strong> Structuring Strategic and Proactive AI Agents for Collective Deliberation. [[Paper]](https://drive.google.com/file/d/1h_-uoLbIEwEZUvYw5NGvj1Jmq6J71Y66/view?usp=share_link)
 
-- Yu, Z., Liu, Y., <strong>,Guan, R.</strong>,, & Vermillion, C. <em>Large Language Model-driven Mixed Strategy Framework for Social Navigation</em>. Submitted to 2025 International Conference on Intelligent Robots and Systems (IROS) <strong>Rej :(</strong> [[Code]](https://github.com/HannahGuan/ROB498_Navigation)
-
-
-#### Published
-
-- Ashkinaze, J., <strong>Guan, R</strong>, Adar, E., Budak, C., & Gilbert, E (2026). <em>Seeing like an AI: How LLMs apply (and misapply) Wikipedia neutrality norms</em>. <strong>International AAAI Conference on Web and Social Media (ICWSM 2026)</strong> [[Paper]](https://arxiv.org/abs/2407.04183)
-
 - Johnson, J., Peralta, M., Kaur, M., Huang, R. S., Sheng, Z., <strong>Guan, R</strong>, Rajaram, S., & Nebeling, M (2025). <em>Exploring MR-enhanced collaborative AI: Eliciting team perceptions and design considerations for the future of work</em>. <strong>ACM SIGCHI Conference on Computer-Supported Cooperative Work & Social Computing (CSCW 2025)</strong> [[Paper]](https://arxiv.org/abs/2504.14779)
 
-- Esterwood, C., <strong>Guan, R</strong>, Ye, X., & Robert, L. P (2025). <em>Virtually the same or realistically different: Do real-world robots differ from their virtual representations?</em> <strong>ACM/IEEE International Conference on Human-Robot Interaction (HRI 2025)</strong>. [[Paper]](https://ieeexplore.ieee.org/abstract/document/10974086)
+- Esterwood, C., <strong>Guan, R</strong>, Ye, X., & Robert, L. P (2025). <em>Virtually the Same or Realistically Different?: A Meta-analysis of Real vs.‘Not So Real’Robots</em> <strong>ACM/IEEE International Conference on Human-Robot Interaction (HRI 2025)</strong>. [[Paper]](https://ieeexplore.ieee.org/abstract/document/10974086)
 
 - <strong>Guan, R</strong>, Lee-Robbins, E., Wang, X., & Adar, E (2025). <em>VisQuestions: Constructing Evaluations for Communicative Visualizations</em>. <strong>ACM Conference on Human Factors in Computing Systems, Extended Abstracts (CHI EA 2025)</strong> [[Paper]](https://dl.acm.org/doi/abs/10.1145/3706599.3719832)
 
