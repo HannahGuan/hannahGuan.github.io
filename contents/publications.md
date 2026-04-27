@@ -10,4 +10,4 @@
 
 - <strong>Guan, R</strong>, Lee-Robbins, E., Wang, X., & Adar, E (2025). <em>VisQuestions: Constructing Evaluations for Communicative Visualizations</em>. <strong>ACM Conference on Human Factors in Computing Systems, Extended Abstracts (CHI EA 2025)</strong> [[Paper]](https://dl.acm.org/doi/abs/10.1145/3706599.3719832)
 
-- Huffman, D., & <strong>Guan, R</strong> (2024). <em>Computational models suggest that human memory judgments exhibit interference due to the use of overlapping representations</em>. <strong>Psychological Review</strong>. [[Paper]](https://doi.org/10.1037/rev0000517)
+- Huffman, D., & <strong>Guan, R</strong> (2025). <em>Computational models suggest that human memory judgments exhibit interference due to the use of overlapping representations</em>. <strong>Psychological Review</strong>. [[Paper]](https://doi.org/10.1037/rev0000517)
