@@ -68,4 +68,38 @@ window.addEventListener('DOMContentLoaded', event => {
     // Still run MathJax for the entire page
     MathJax.typeset();
 
-}); 
+});
+
+// Image Carousel Functions
+let currentImageIndex = 1;
+
+function showImage(index) {
+    const images = document.getElementsByClassName('carousel-image');
+    const dots = document.getElementsByClassName('dot');
+
+    if (index > images.length) {
+        currentImageIndex = 1;
+    }
+    if (index < 1) {
+        currentImageIndex = images.length;
+    }
+
+    for (let i = 0; i < images.length; i++) {
+        images[i].classList.remove('active');
+        dots[i].classList.remove('active');
+    }
+
+    images[currentImageIndex - 1].classList.add('active');
+    dots[currentImageIndex - 1].classList.add('active');
+}
+
+function changeImage(direction) {
+    currentImageIndex += direction;
+    showImage(currentImageIndex);
+}
+
+function currentImage(index) {
+    currentImageIndex = index;
+    showImage(currentImageIndex);
+}
+

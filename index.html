@@ -123,7 +123,26 @@
     <!-- Photo -->
     <div class="container px-5">
         <div id="avatar">
-            <img class="shadow" src="static/assets/img/photo.png">
+            <div class="image-carousel">
+                <img class="shadow carousel-image active" src="static/assets/img/img1.png" alt="Photo 1">
+                <img class="shadow carousel-image" src="static/assets/img/img2.png" alt="Photo 2">
+                <img class="shadow carousel-image" src="static/assets/img/img3.png" alt="Photo 3">
+                <img class="shadow carousel-image" src="static/assets/img/img4.png" alt="Photo 4">
+                <img class="shadow carousel-image" src="static/assets/img/img5.png" alt="Photo 5">
+
+                <!-- Navigation buttons -->
+                <button class="carousel-btn prev-btn" onclick="changeImage(-1)">&#10094;</button>
+                <button class="carousel-btn next-btn" onclick="changeImage(1)">&#10095;</button>
+
+                <!-- Dots indicators -->
+                <div class="carousel-dots">
+                    <span class="dot active" onclick="currentImage(1)"></span>
+                    <span class="dot" onclick="currentImage(2)"></span>
+                    <span class="dot" onclick="currentImage(3)"></span>
+                    <span class="dot" onclick="currentImage(4)"></span>
+                    <span class="dot" onclick="currentImage(5)"></span>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Photo -->
