@@ -1,6 +1,6 @@
 - - Fang, K., <strong>Guan, R.</strong>, & Hawkins, R. (2026). <em>Selective Truths: How Speakers Mislead and Listeners Miss It?</em>. <strong>Annual Meeting of the Cognitive Science Society (CogSci 2026)</strong>. [In Press].
 
-- Esterwood, C., Ye, X., <strong>Guan, R.</strong>, & Robert, L. P. (2026). <em>Embodied or Virtually Represented: Navigating the Embodiment Debate in Human-Robot Interaction</em>. <strong>Science Robotics</strong> [In Press].
+- Esterwood, C., Ye, X., <strong>Guan, R.</strong>, & Robert, L. P. (2026). <em>Embodied or Virtually Represented: Navigating the Embodiment Debate in Human-Robot Interaction</em>. <strong>Science Robotics</strong>. [In Press].
 
 - Ashkinaze, J., <strong>Guan, R</strong>, Adar, E., Budak, C., & Gilbert, E (2026). <em>Seeing like an AI: How LLMs apply (and misapply) Wikipedia neutrality norms</em>. <strong>International AAAI Conference on Web and Social Media (ICWSM 2026)</strong> [[Paper]](https://arxiv.org/abs/2407.04183)
 
