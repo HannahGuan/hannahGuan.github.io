@@ -1,3 +1,5 @@
+- Esterwood, C., Ye, X., <strong>Guan, R.</strong>, & Robert, L. P. (2025). <em>Embodied or Virtually Represented: Navigating the Embodiment Debate in Human-Robot Interaction</em>. <strong>Science Robotics</strong> [In Press].
+
 - Ashkinaze, J., <strong>Guan, R</strong>, Adar, E., Budak, C., & Gilbert, E (2026). <em>Seeing like an AI: How LLMs apply (and misapply) Wikipedia neutrality norms</em>. <strong>International AAAI Conference on Web and Social Media (ICWSM 2026)</strong> [[Paper]](https://arxiv.org/abs/2407.04183)
 
 - Zhao, M., Yong, Z., <strong>Guan, R.</strong>, Chang, K.-W., Haimovich, A., Ouchi, K., Bickmore, T., Zhang, Z., Yao, B., Wang, D., & Desai, S. (2026). <em>Balancing Efficiency and Empathy: Healthcare Providers' Perspectives on AI-Supported Workflows for Serious Illness Conversations in the Emergency Department</em>. <strong>ACM CHI Conference on Human Factors in Computing Systems (CHI 2026)</strong> [[Paper]](https://dl.acm.org/doi/abs/10.1145/3772318.3791301)
