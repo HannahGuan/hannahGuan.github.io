@@ -1,4 +1,4 @@
-- - Fang, K., <strong>Guan, R.</strong>, & Hawkins, R. (2026). <em>Selective Truths: How Speakers Mislead and Listeners Miss It?</em>. <strong>Annual Meeting of the Cognitive Science Society (CogSci 2026)</strong>. [In Press].
+- Fang, K., <strong>Guan, R.</strong>, & Hawkins, R. (2026). <em>Selective Truths: How Speakers Mislead and Listeners Miss It?</em>. <strong>Annual Meeting of the Cognitive Science Society (CogSci 2026)</strong>. [In Press].
 
 - Esterwood, C., Ye, X., <strong>Guan, R.</strong>, & Robert, L. P. (2026). <em>Embodied or Virtually Represented: Navigating the Embodiment Debate in Human-Robot Interaction</em>. <strong>Science Robotics</strong>. [In Press].
 
