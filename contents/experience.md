@@ -1,4 +1,3 @@
-
 ### Research
 
 **Research Assistant** | Sep. 2023 – Apr. 2025 | University of Michigan | Ann Arbor, MI (Remote)

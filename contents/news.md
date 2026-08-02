@@ -1,4 +1,3 @@
-
 - **[Jul, 2026]** Our paper on selective truths in communication has been accepted to CogSci 2026!
 
 - **[Jun, 2026]** Completed my M.S. in Symbolic Systems at Stanford University!
