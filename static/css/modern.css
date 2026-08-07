@@ -143,7 +143,7 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     background: url('../assets/img/background.jpeg') center center / cover no-repeat;
     position: relative;
 }
@@ -169,13 +169,13 @@ body {
 }
 
 .profile-img {
-    width: 150px;
-    height: 150px;
+    width: 135px;
+    height: 135px;
     border-radius: 50%;
     object-fit: cover;
     border: 4px solid white;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .hero h1 {
@@ -201,7 +201,7 @@ body {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 .social-links a {
@@ -226,12 +226,12 @@ body {
 
 @media (min-width: 768px) {
     .hero {
-        padding: 2.5rem 0;
+        padding: 1.75rem 0;
     }
 
     .profile-img {
-        width: 180px;
-        height: 180px;
+        width: 150px;
+        height: 150px;
     }
 
     .hero h1 {
