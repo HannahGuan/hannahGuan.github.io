@@ -2,7 +2,7 @@
 
 [![HannahGuan](https://img.shields.io/badge/hannahguan-github-blue?logo=github)](https://github.com/hannahguan) [![LinkedIn](https://img.shields.io/badge/ruijia--guan--hannah-linkedin-0077B5?logo=linkedin)](https://linkedin.com/in/ruijia-guan-hannah) [![Google Scholar](https://img.shields.io/badge/google--scholar-4285F4?logo=googlescholar)](https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=jJCoj4YAAAAJ)
 
-I am a first-year MS student in Symbolic Systems at Stanford University. I'm interested in studying how agents (human and artificial) establish, validate, and switch between one another's mental models to coordinate a shared understanding under conditions of uncertainty and information asymmetry. Before graduate school, I studied computer science and cognitive science at UMich, where I worked with Professors Eytan Adar, Michael Nebeling, and Lionel Robert. I also used to intern as an AI Product Manager.
+I am a first-year MS student in Symbolic Systems at Stanford University. I'm interested in studying how agents (human and artificial) establish, validate, and switch between one another's mental models to coordinate a shared understanding under conditions of uncertainty and information asymmetry. At Stanford, I have had the privilege of working on projects with [Dr. Jiaxin Pei](https://jiaxin-pei.github.io/) and [Prof. Robert Hawkins](https://rdhawkins.com/). I also contributed to a project on ontology led by [Dr. Tanya Luhrmann](https://www.tanyaluhrmann.com/) by supporting its field study in China. Before graduate school, I studied computer science and cognitive science at UMich, where I worked with Professors Eytan Adar, Michael Nebeling, and Lionel Robert. I also used to intern as an AI Product Manager.
 
 Outside of research, I love indoor climbing, pickleball, anime, meditation, matcha, and spending time with my two cats 🐱🐱. 
 
@@ -13,6 +13,5 @@ Email: rjguan@stanford.edu
 #### Education
 M.S., Symbolic Systems, Stanford University\
 B.S., Computer Science & Cognitive Science, University of Michigan
-
 
 
