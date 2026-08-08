@@ -168,14 +168,38 @@ body {
     text-align: center;
 }
 
-.profile-img {
+.profile-img-wrapper {
+    position: relative;
     width: 135px;
     height: 135px;
+    margin: 0 auto 1rem;
     border-radius: 50%;
-    object-fit: cover;
+    overflow: hidden;
     border: 4px solid white;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    margin-bottom: 1rem;
+}
+
+.profile-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.3s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.profile-img-hover {
+    opacity: 0;
+}
+
+@media (hover: hover) {
+    .profile-img-wrapper:hover .profile-img-default {
+        opacity: 0;
+    }
+
+    .profile-img-wrapper:hover .profile-img-hover {
+        opacity: 1;
+    }
 }
 
 .hero h1 {
@@ -229,7 +253,7 @@ body {
         padding: 1.75rem 0;
     }
 
-    .profile-img {
+    .profile-img-wrapper {
         width: 150px;
         height: 150px;
     }
