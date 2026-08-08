@@ -170,8 +170,8 @@ body {
 
 .profile-img-wrapper {
     position: relative;
-    width: 135px;
-    height: 135px;
+    width: 150px;
+    height: 150px;
     margin: 0 auto 1rem;
     border-radius: 50%;
     overflow: hidden;
@@ -203,7 +203,7 @@ body {
 }
 
 .hero h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: var(--primary-color);
     margin-bottom: 0.5rem;
@@ -254,12 +254,12 @@ body {
     }
 
     .profile-img-wrapper {
-        width: 150px;
-        height: 150px;
+        width: 180px;
+        height: 180px;
     }
 
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 
     .subtitle {
