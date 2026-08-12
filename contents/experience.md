@@ -9,4 +9,6 @@
 
 ### Industry
 
+**Product Strategy Intern** | Jan. 2026 - Mar. 2026 | Verra Mobility | Remote / Phoenix, AZ
+
 **AI Product Manager Intern** | May 2025 - Aug. 2025 | Meituan | Beijing, China
