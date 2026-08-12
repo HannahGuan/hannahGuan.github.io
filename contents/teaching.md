@@ -1,6 +1,6 @@
 **Stanford University** | SYMSYS200: Minds & Machines | Teaching Assistant | Summer 2026
 
-**University of Michigan** | Cognitive Science Department | Peer Facilitator | Fall 2023 - Spring 2024
+**University of Michigan** | Weinberg Institute for Cognitive Science | Peer Advisor | Fall 2023 - Spring 2024
 
 **University of Michigan** | EECS203: Discrete Math | Grader | Spring 2023
 
