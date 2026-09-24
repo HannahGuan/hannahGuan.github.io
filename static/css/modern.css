@@ -465,3 +465,93 @@ img {
 a, button {
     transition: var(--transition);
 }
+
+/* Cat easter egg */
+.cat-invitation {
+    margin-top: 1.25rem;
+    line-height: 1.8;
+}
+
+.cat-link {
+    position: relative;
+    border: 0;
+    padding: 0;
+    background: none;
+    color: #2176ae;
+    font: inherit;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    cursor: pointer;
+    transition: color 150ms ease;
+}
+
+.cat-link::after {
+    content: '';
+    position: absolute;
+    inset: -8px -4px;
+    min-height: 40px;
+}
+
+.cat-link:hover { color: var(--primary-color); }
+.cat-link:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 5px;
+}
+
+.cat-layer {
+    position: fixed;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1001;
+}
+
+.cat-visitor {
+    position: absolute;
+    top: 0;
+    left: var(--lane);
+    width: var(--size);
+    height: auto;
+    object-fit: contain;
+    animation: cat-tumble var(--duration) cubic-bezier(0.32, 0, 0.67, 0.65) var(--delay) both;
+}
+
+@keyframes cat-tumble {
+    from { transform: translate(-50%, -260px) rotate(var(--tilt)); }
+    to { transform: translate(calc(-50% + var(--drift)), calc(100dvh + 260px)) rotate(var(--spin)); }
+}
+
+.cat-layer[hidden] { display: none; }
+
+.cat-layer-still {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 8px;
+    padding: 20px;
+}
+
+.cat-layer-still .cat-visitor {
+    position: static;
+    width: min(24vw, 140px);
+    max-height: 150px;
+    animation: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+    border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cat-visitor { animation: none; }
+}

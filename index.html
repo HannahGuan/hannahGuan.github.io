@@ -74,6 +74,8 @@
         <div class="container">
             <h2 class="section-title">About</h2>
             <div class="content" id="about-content"></div>
+            <p class="cat-invitation">If you just wanna see my cats, <button type="button" id="show-cats" class="cat-link" aria-controls="cat-layer">press here</button>:) ❤️❤️❤️</p>
+            <p id="cat-status" class="visually-hidden" role="status"></p>
         </div>
     </section>
 
@@ -177,7 +179,10 @@
         </div>
     </footer>
 
+    <div id="cat-layer" class="cat-layer" aria-hidden="true" hidden></div>
+
     <!-- Scripts -->
     <script src="static/js/modern.js"></script>
+    <script src="static/js/cats.js"></script>
 </body>
 </html>
