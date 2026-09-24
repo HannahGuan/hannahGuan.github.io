@@ -72,7 +72,7 @@
             cat.className = 'cat-visitor';
             // Closely spaced bunches fill the width, with varied sizes and spins.
             const delay = Math.floor(i / bunchSize) * 0.16 + Math.random() * 0.12;
-            const duration = 1.35 + Math.random() * 0.85;
+            const duration = 2.7 + Math.random() * 1.7;
             latestFinish = Math.max(latestFinish, delay + duration);
             cat.style.setProperty('--lane', `${Math.random() * 100}%`);
             cat.style.setProperty('--size', `${(mobile ? 65 : 95) + Math.random() * (mobile ? 55 : 85)}px`);
