@@ -4,7 +4,7 @@ At Stanford, I have had the privilege of working on projects with [Prof. Jiaxin 
 
 Before graduate school, I studied computer science and cognitive science at University of Michigan, where I was fortunate to work with Professors [Eytan Adar](https://www.cond.org/), [Michael Nebeling](https://www.michael-nebeling.de/), and [Lionel Robert](https://sites.google.com/umich.edu/lionelrobert/home).
 
-Outside of research, I love indoor climbing, pickleball, anime, meditation, matcha, and spending time with my two cats.
+Outside of research, I love photography, pickleball, anime, meditation, matcha, and spending time with my two cats!
 
 #### Contact
 Email: rjguan[at]stanford.edu
