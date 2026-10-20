@@ -4,27 +4,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!grid) return;
 
     const images = [
-        { src: 'static/assets/img/cats/424bed755e9d4ab85d882303d3c4d284.png', category: 'cats' },
-        { src: 'static/assets/img/cats/52b689fa9735ba4da89253cf983b77fa.png', category: 'cats' },
-        { src: 'static/assets/img/cats/598c46521145877d6a1ddbeff082af65.jpg', category: 'cats' },
-        { src: 'static/assets/img/cats/60ac46e8070db897c319fe4e58c5bd22.jpg', category: 'cats' },
-        { src: 'static/assets/img/cats/98c6fc117a7542f8cb677aea5d406569.jpg', category: 'cats' },
-        { src: 'static/assets/img/cats/cat-fluffy-lounging.png', category: 'cats' },
-        { src: 'static/assets/img/cats/cat-fluffy-sitting.png', category: 'cats' },
-        { src: 'static/assets/img/cats/cat-fluffy.png', category: 'cats' },
-        { src: 'static/assets/img/cats/cat-spotted-curled.png', category: 'cats' },
-        { src: 'static/assets/img/cats/cat-spotted-sitting.png', category: 'cats' },
-        { src: 'static/assets/img/cats/cat-spotted.png', category: 'cats' },
-        { src: 'static/assets/img/cats/cat-window.png', category: 'cats' },
-        { src: 'static/assets/img/cats/e1ee6b37d3868ff82f76044d31958a62.jpg', category: 'cats' },
-        { src: 'static/assets/img/cats/f831e81bcdbb37c914f6c41f4ca98c3d.jpg', category: 'cats' },
-        { src: 'static/assets/img/photography/157982f48c218b19a557ea7a2fa42b85.jpg', category: 'photography' },
-        { src: 'static/assets/img/photography/5553cea2bd5663c3d5fe9853f62eb624.jpg', category: 'photography' },
-        { src: 'static/assets/img/photography/a5395c491dc02258738e4b1a33850019.jpg', category: 'photography' },
-        { src: 'static/assets/img/photography/b13977919f1f5178db686b4d9a21e6bb.jpg', category: 'photography' },
-        { src: 'static/assets/img/photography/cb61da187f049dc8ef914d7d750ac462.jpg', category: 'photography' },
-        { src: 'static/assets/img/photography/d2731aed0a70af2858b9d57fe0de4d7e.jpg', category: 'photography' },
-        { src: 'static/assets/img/photography/d74e6f02748dd1f3a02ce75fd84c53fd.jpg', category: 'photography' },
+        { src: 'static/assets/img/cats/424bed755e9d4ab85d882303d3c4d284.png', category: 'cats', size: 'tall' },
+        { src: 'static/assets/img/cats/52b689fa9735ba4da89253cf983b77fa.png', category: 'cats', size: 'tall' },
+        { src: 'static/assets/img/cats/598c46521145877d6a1ddbeff082af65.jpg', category: 'cats', size: 'wide' },
+        { src: 'static/assets/img/cats/60ac46e8070db897c319fe4e58c5bd22.jpg', category: 'cats', size: 'wide' },
+        { src: 'static/assets/img/cats/98c6fc117a7542f8cb677aea5d406569.jpg', category: 'cats', size: 'wide' },
+        { src: 'static/assets/img/cats/e1ee6b37d3868ff82f76044d31958a62.jpg', category: 'cats', size: 'wide' },
+        { src: 'static/assets/img/cats/f831e81bcdbb37c914f6c41f4ca98c3d.jpg', category: 'cats', size: 'tall' },
+        { src: 'static/assets/img/photography/157982f48c218b19a557ea7a2fa42b85.jpg', category: 'photography', size: 'wide' },
+        { src: 'static/assets/img/photography/5553cea2bd5663c3d5fe9853f62eb624.jpg', category: 'photography', size: 'tall' },
+        { src: 'static/assets/img/photography/a5395c491dc02258738e4b1a33850019.jpg', category: 'photography', size: 'tall' },
+        { src: 'static/assets/img/photography/b13977919f1f5178db686b4d9a21e6bb.jpg', category: 'photography', size: 'tall' },
+        { src: 'static/assets/img/photography/cb61da187f049dc8ef914d7d750ac462.jpg', category: 'photography', size: 'wide' },
+        { src: 'static/assets/img/photography/d2731aed0a70af2858b9d57fe0de4d7e.jpg', category: 'photography', size: 'tall' },
+        { src: 'static/assets/img/photography/d74e6f02748dd1f3a02ce75fd84c53fd.jpg', category: 'photography', size: 'tall' },
     ];
 
     const labels = { cats: 'Cat', photography: 'Photograph' };
@@ -39,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         grid.innerHTML = visible.map((img, i) => `
-            <button class="gallery-item" data-index="${i}" aria-label="Open ${labels[img.category]} ${i + 1}">
+            <button class="gallery-item gallery-item--${img.size}" data-index="${i}" aria-label="Open ${labels[img.category]} ${i + 1}">
                 <img src="${img.src}" alt="${labels[img.category]} ${i + 1}" loading="lazy">
             </button>
         `).join('');
