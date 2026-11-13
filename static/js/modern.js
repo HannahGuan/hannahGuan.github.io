@@ -61,14 +61,25 @@ document.addEventListener('DOMContentLoaded', function() {
     // Smooth scroll offset for fixed navbar
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
+            if (e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+            const hash = this.getAttribute('href');
+            let id;
+            try {
+                id = decodeURIComponent(hash.slice(1));
+            } catch {
+                return;
+            }
+            const target = document.getElementById(id);
             if (target) {
-                const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                e.preventDefault();
+                if (window.location.hash !== hash) {
+                    history.pushState(null, '', hash);
+                }
+                const navbarHeight = document.querySelector('.navbar')?.offsetHeight || 0;
                 const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
                 window.scrollTo({
                     top: targetPosition,
-                    behavior: 'smooth'
+                    behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'
                 });
             }
         });
