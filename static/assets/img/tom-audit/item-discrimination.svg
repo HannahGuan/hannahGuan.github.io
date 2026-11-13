@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="728.39952pt" height="267.59952pt" viewBox="0 0 728.39952 267.59952" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2026-11-13T15:30:30.667043</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.9.4, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 267.59952 
+L 728.39952 267.59952 
+L 728.39952 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 72.576406 225.107645 
+L 705.475536 225.107645 
+L 705.475536 35.229938 
+L 72.576406 35.229938 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="patch_3">
+    <path d="M 72.576406 43.860742 
+L 492.591283 43.860742 
+L 492.591283 78.383962 
+L 72.576406 78.383962 
+z
+" clip-path="url(#pb8311b824b)" style="fill: #587c92"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 72.576406 112.907181 
+L 532.632318 112.907181 
+L 532.632318 147.430401 
+L 72.576406 147.430401 
+z
+" clip-path="url(#pb8311b824b)" style="fill: #587c92"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 72.576406 181.953621 
+L 534.630687 181.953621 
+L 534.630687 216.47684 
+L 72.576406 216.47684 
+z
+" clip-path="url(#pb8311b824b)" style="fill: #587c92"/>
+   </g>
+   <g id="patch_6">
+    <path d="M 492.591283 43.860742 
+L 705.475536 43.860742 
+L 705.475536 78.383962 
+L 492.591283 78.383962 
+z
+" clip-path="url(#pb8311b824b)" style="fill: #e7e9eb"/>
+   </g>
+   <g id="patch_7">
+    <path d="M 532.632318 112.907181 
+L 705.475536 112.907181 
+L 705.475536 147.430401 
+L 532.632318 147.430401 
+z
+" clip-path="url(#pb8311b824b)" style="fill: #e7e9eb"/>
+   </g>
+   <g id="patch_8">
+    <path d="M 534.630687 181.953621 
+L 705.475536 181.953621 
+L 705.475536 216.47684 
+L 534.630687 216.47684 
+z
+" clip-path="url(#pb8311b824b)" style="fill: #e7e9eb"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1"/>
+     <g id="text_1">
+      <text style="font: 11px 'DejaVu Sans'; text-anchor: middle" x="72.576406" y="243.465926" transform="rotate(-0 72.576406 243.465926)">0%</text>
+     </g>
+    </g>
+    <g id="xtick_2">
+     <g id="line2d_2"/>
+     <g id="text_2">
+      <text style="font: 11px 'DejaVu Sans'; text-anchor: middle" x="230.801189" y="243.465926" transform="rotate(-0 230.801189 243.465926)">25%</text>
+     </g>
+    </g>
+    <g id="xtick_3">
+     <g id="line2d_3"/>
+     <g id="text_3">
+      <text style="font: 11px 'DejaVu Sans'; text-anchor: middle" x="389.025971" y="243.465926" transform="rotate(-0 389.025971 243.465926)">50%</text>
+     </g>
+    </g>
+    <g id="xtick_4">
+     <g id="line2d_4"/>
+     <g id="text_4">
+      <text style="font: 11px 'DejaVu Sans'; text-anchor: middle" x="547.250753" y="243.465926" transform="rotate(-0 547.250753 243.465926)">75%</text>
+     </g>
+    </g>
+    <g id="xtick_5">
+     <g id="line2d_5"/>
+     <g id="text_5">
+      <text style="font: 11px 'DejaVu Sans'; text-anchor: middle" x="705.475536" y="243.465926" transform="rotate(-0 705.475536 243.465926)">100%</text>
+     </g>
+    </g>
+    <g id="text_6">
+     <text style="font: 11px 'DejaVu Sans'; text-anchor: middle" x="389.025971" y="258.111864" transform="rotate(-0 389.025971 258.111864)">Percentage of full benchmark item set</text>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_6"/>
+     <g id="text_7">
+      <text style="font: 11px 'DejaVu Sans'; text-anchor: end" x="62.576406" y="65.301493" transform="rotate(-0 62.576406 65.301493)">ToMBench</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_7"/>
+     <g id="text_8">
+      <text style="font: 11px 'DejaVu Sans'; text-anchor: end" x="62.576406" y="134.347932" transform="rotate(-0 62.576406 134.347932)">ToMATO</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_8"/>
+     <g id="text_9">
+      <text style="font: 11px 'DejaVu Sans'; text-anchor: end" x="62.576406" y="203.394371" transform="rotate(-0 62.576406 203.394371)">CogToM</text>
+     </g>
+    </g>
+   </g>
+   <g id="text_10">
+    <text style="fill: #ffffff; font: 700 11px 'DejaVu Sans'" transform="translate(235.337126 57.998868)">66.4% retained</text>
+    <text style="fill: #ffffff; font: 700 11px 'DejaVu Sans'" transform="translate(241.952595 70.316462)">1,898 / 2,860</text>
+   </g>
+   <g id="text_11">
+    <text style="fill: #39444e; font: 11px 'DejaVu Sans'" transform="translate(581.561456 57.998868)">33.6%</text>
+    <text style="fill: #39444e; font: 11px 'DejaVu Sans'" transform="translate(574.658097 70.316462)">removed</text>
+   </g>
+   <g id="text_12">
+    <text style="fill: #ffffff; font: 700 11px 'DejaVu Sans'" transform="translate(255.357644 127.045307)">72.7% retained</text>
+    <text style="fill: #ffffff; font: 700 11px 'DejaVu Sans'" transform="translate(261.973112 139.362901)">3,926 / 5,401</text>
+   </g>
+   <g id="text_13">
+    <text style="fill: #39444e; font: 11px 'DejaVu Sans'" transform="translate(601.581974 127.045307)">27.3%</text>
+    <text style="fill: #39444e; font: 11px 'DejaVu Sans'" transform="translate(594.678615 139.362901)">removed</text>
+   </g>
+   <g id="text_14">
+    <text style="fill: #ffffff; font: 700 11px 'DejaVu Sans'" transform="translate(256.356828 196.091746)">73.0% retained</text>
+    <text style="fill: #ffffff; font: 700 11px 'DejaVu Sans'" transform="translate(262.972296 208.40934)">6,215 / 8,513</text>
+   </g>
+   <g id="text_15">
+    <text style="fill: #39444e; font: 11px 'DejaVu Sans'" transform="translate(602.581158 196.091746)">27.0%</text>
+    <text style="fill: #39444e; font: 11px 'DejaVu Sans'" transform="translate(595.677799 208.40934)">removed</text>
+   </g>
+   <g id="text_16">
+    <text style="font: 700 13.2px 'DejaVu Sans'; text-anchor: start" x="72.576406" y="17.229938" transform="rotate(-0 72.576406 17.229938)">Item retention after the discrimination filter (27 models)</text>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="pb8311b824b">
+   <rect x="72.576406" y="35.229938" width="632.899129" height="189.877707"/>
+  </clipPath>
+ </defs>
+</svg>
