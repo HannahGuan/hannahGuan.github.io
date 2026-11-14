@@ -402,8 +402,7 @@ statistics</a></li><li><a href="#references">References</a></li></ol></nav><h2 i
 <p>Theory of Mind (ToM), the capacity to attribute <em>beliefs, desires,
 intentions, and emotions</em> to others, is foundational to human social
 cognition <span class="citation" data-cites="beaudoin2020atoms">(<a href="#ref-beaudoin2020atoms" role="doc-biblioref">Beaudoin et al.
-2020</a>)</span> and is important for capable LLM deployment in agentic
-and social settings. The practical stakes are concrete: when LLMs are
+2020</a>)</span> and matters for deploying LLMs in agentic and social settings. The practical stakes are concrete: when LLMs are
 equipped with explicit ToM representations linking percepts, beliefs,
 desires, and actions, embodied agents achieve
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mo>×</mo></mrow><annotation encoding="application/x-tex">3\times</annotation></semantics></math>
@@ -420,9 +419,7 @@ certain models possess social intelligence, are safe for human-facing
 roles, or have crossed a threshold of genuine mental-state reasoning
 <span class="citation" data-cites="kosinski2024evaluating chen2024tombench">(<a href="#ref-kosinski2024evaluating" role="doc-biblioref">Kosinski
 2024</a>; <a href="#ref-chen2024tombench" role="doc-biblioref">Chen et
-al. 2024</a>)</span>. These are consequential claims: they influence
-which models are advanced in safety-critical evaluations and trusted in
-autonomous social applications. Yet they rest on an assumption that has
+al. 2024</a>)</span>. These claims rest on an assumption that has
 gone largely unexamined: that ToM, as operationalized in LLM benchmarks,
 is a <em>psychometrically coherent construct</em> that different
 measurement instruments will assess consistently, and whose published
@@ -442,8 +439,7 @@ loosely related surface tasks unified by name rather than by
 measurement? A structural critique sharpens the concern: <span class="citation" data-cites="riemer2024position">Riemer et al. (<a href="#ref-riemer2024position" role="doc-biblioref">2024</a>)</span>
 argue that the dominant paradigm of LLM ToM evaluation is broken at the
 design level, because benchmarks developed for human subjects implicitly
-assume <em>self-consistent reasoning</em> across questions — an
-assumption known not to hold for current LLMs. They distinguish
+assume <em>self-consistent reasoning</em> across questions, an assumption known not to hold for current LLMs. They distinguish
 <em>literal</em> ToM (predicting the behavior of others from static
 context, what virtually all existing benchmarks test) from
 <em>functional</em> ToM (adapting to a partner in-context following a
@@ -453,8 +449,7 @@ performance, nor vice versa. More recent empirical work compounds the
 concern: <span class="citation" data-cites="jones2024comparing">Jones,
 Trott, and Bergen (<a href="#ref-jones2024comparing" role="doc-biblioref">2024</a>)</span> found uneven LLM performance
 across a six-experiment ToM battery, and <span class="citation" data-cites="tong2026cogtom">Tong et al. (<a href="#ref-tong2026cogtom" role="doc-biblioref">2026</a>)</span> reported substantial heterogeneity
-across 22 models and 46 paradigms — both consistent with ToM not
-functioning as a unified capacity in LLMs — but neither study applied
+across 22 models and 46 paradigms. Both results are consistent with ToM not functioning as a unified capacity in LLMs, but neither study applied
 formal psychometric analysis to their task sets. <span class="citation" data-cites="bean2026measuring">Bean et al. (<a href="#ref-bean2026measuring" role="doc-biblioref">2026</a>)</span>
 showed, in a systematic review of 445 LLM benchmarks, that leaderboard
 scores are routinely treated as evidence of coherent underlying
@@ -465,8 +460,7 @@ exception.</p>
 Meehl 1955</a>; <a href="#ref-salaudeen2025measurement" role="doc-biblioref">Salaudeen et al. 2025</a>)</span> asks whether an
 instrument measures what it claims; a benchmark may produce stable,
 reproducible scores that consistently measure the wrong thing.
-<em>Convergent validity</em> — the degree to which two instruments
-claiming to measure the same construct agree in their assessments — is
+<em>Convergent validity</em>, the degree to which two instruments claiming to measure the same construct agree in their assessments, is
 its canonical operationalization for cross-instrument comparison <span class="citation" data-cites="perlitz2024benchbench">(<a href="#ref-perlitz2024benchbench" role="doc-biblioref">Perlitz et al.
 2024</a>)</span>. <em>Classical test theory</em> (CTT) item
 discrimination <span class="citation" data-cites="furr2014psychometrics edelen2007applying">(<a href="#ref-furr2014psychometrics" role="doc-biblioref">Furr and
@@ -482,7 +476,7 @@ these tools allow us to distinguish two explanations for benchmark
 divergence: <em>measurement noise</em> (low-discrimination items pulling
 rankings in opposite directions) versus <em>genuine construct
 fragmentation</em> (the benchmarks operationalizing fundamentally
-incompatible notions of ToM). <span class="citation" data-cites="lalor2016building">Lalor, Wu, and Yu (<a href="#ref-lalor2016building" role="doc-biblioref">2016</a>)</span>
+incompatible notions of ToM). We refer to the first as <em>Scenario A</em> and the second as <em>Scenario B</em>. <span class="citation" data-cites="lalor2016building">Lalor, Wu, and Yu (<a href="#ref-lalor2016building" role="doc-biblioref">2016</a>)</span>
 established IRT as a principled framework for NLP benchmark item
 analysis; <span class="citation" data-cites="burnell2023revealing">Burnell et al. (<a href="#ref-burnell2023revealing" role="doc-biblioref">2023</a>)</span>
 argued for Kendall’s
@@ -492,22 +486,14 @@ counts.</p>
 <h5 id="this-paper.">This paper.</h5>
 <p>We apply this psychometric framework to ToMBench <span class="citation" data-cites="chen2024tombench">(<a href="#ref-chen2024tombench" role="doc-biblioref">Chen et al.
 2024</a>)</span>, ToMATO <span class="citation" data-cites="shinoda2025tomato">(<a href="#ref-shinoda2025tomato" role="doc-biblioref">Shinoda et al. 2025</a>)</span>, and CogToM <span class="citation" data-cites="tong2026cogtom">(<a href="#ref-tong2026cogtom" role="doc-biblioref">Tong et al.
-2026</a>)</span> — three Theory-of-Mind benchmarks sharing the AToMS
+2026</a>)</span>, three Theory-of-Mind benchmarks sharing the AToMS
 five-category taxonomy <span class="citation" data-cites="beaudoin2020atoms">(<a href="#ref-beaudoin2020atoms" role="doc-biblioref">Beaudoin et al. 2020</a>)</span> but embodying
 sharply opposed designs (hand-authored vignettes, multi-turn role-played
-conversations, and cognition-inspired task paradigms). Through a
-three-stage pipeline on an expanded
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>27</mn></mrow><annotation encoding="application/x-tex">M{=}27</annotation></semantics></math>
-panel spanning 1.0B–72.7B parameters, we establish: (1) cross-benchmark
-convergent validity across all three pairwise comparisons, (2) CTT
-item-discrimination filtering, and (3) a repeated cross-fit re-test, run
-independently on each benchmark pair, to avoid selection bias. We find
+conversations, and cognition-inspired task paradigms). We run a three-stage pipeline on a panel of <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>27</mn></mrow><annotation encoding="application/x-tex">M{=}27</annotation></semantics></math> models spanning 1.0B–72.7B parameters: (1) a cross-benchmark convergent-validity test across all three pairwise comparisons, (2) CTT item-discrimination filtering, and (3) a repeated cross-fit re-test, run independently on each benchmark pair to avoid selection bias. We find
 that all five mental state categories achieve strong convergent validity
 pre-filter in every pairwise comparison, with item filtering yielding a
 positive improvement in agreement for 14 of the 15 pairwise-category
-tests — the sole exception being Belief on the
-ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>CogToM
-pair, which is directionally null. An exploratory factor analysis
+tests. The sole exception is Belief on the ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>CogToM pair, where filtering produces no significant change. An exploratory factor analysis
 reveals a single common factor rather than five separable subconstructs,
 with a large unexplained residual. These findings support the
 interpretation that ToM benchmarks measure a shared construct once
@@ -522,7 +508,7 @@ fine-grained abilities); ToMATO <span class="citation" data-cites="shinoda2025to
 items directly organized into the five AToMS categories); and CogToM
 <span class="citation" data-cites="tong2026cogtom">(<a href="#ref-tong2026cogtom" role="doc-biblioref">Tong et al.
 2026</a>)</span> (8<span>,</span>513 items spanning 46 cognitive-science
-paradigms, organized into seven categories — the five AToMS categories
+paradigms, organized into seven categories: the five AToMS categories
 plus Percept and Non-Literal). Item prompts are formed using each
 benchmark’s published template. For the cross-benchmark
 convergent-validity analyses, ToMBench items are restricted to the five
@@ -553,7 +539,7 @@ user question). The full
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>×</mo><mtext mathvariant="normal">items</mtext></mrow><annotation encoding="application/x-tex">M \times \text{items}</annotation></semantics></math>
 binary response matrix is materialized in three parquet files (one per
 ToM benchmark). Parse failures are coded as 0 (incorrect) in all
-accuracy calculations; post-fix parse-failure rates are below 3% for all
+accuracy calculations; parse-failure rates are below 3% for all
 models on all three ToM benchmarks (max 2.55% for Yi-1.5-34B on CogToM),
 with models exceeding 2% noted in Table <a data-reference="tab:panel" data-reference-type="ref" href="#tab:panel">1</a>
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>†</mi><annotation encoding="application/x-tex">\dagger</annotation></semantics></math>).</p>
@@ -580,10 +566,7 @@ pair’s aggregate
 is the unweighted mean of its five per-category values; the overall
 aggregate reported is the unweighted mean across all three pairs.</p>
 <h3 id="sec:methods-stage2">2.2 Stage 2: CTT item-discrimination filter</h3>
-<p>The CTT failure modes imply that items with near-zero variance across
-the panel or that fail to correlate with overall model performance
-contribute primarily measurement noise rather than discriminative
-signal. We apply a fixed item-filtering rule symmetrically. Item
+<p>Under CTT, items with near-zero variance across the panel, or items that fail to correlate with overall model performance, contribute mostly measurement noise rather than discriminative signal. We apply a fixed item-filtering rule symmetrically. Item
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>i</mi><annotation encoding="application/x-tex">i</annotation></semantics></math>
 is dropped if (a)
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mrow><mi>var</mi><mo>⁡</mo></mrow><mo form="prefix" stretchy="false">(</mo><msub><mi>𝐱</mi><mi>i</mi></msub><mo form="postfix" stretchy="false">)</mo><mo>=</mo><mn>0</mn></mrow><annotation encoding="application/x-tex">\operatorname{var}(\mathbf{x}_i)=0</annotation></semantics></math>
@@ -604,10 +587,7 @@ point-biserial rather than 2PL IRT discrimination because even at
 the hierarchical Bayesian 2PL would require larger sample sizes for
 stable parameter estimation <span class="citation" data-cites="konig2020optimized fujimoto2020bayesian">(<a href="#ref-konig2020optimized" role="doc-biblioref">König, Spoden, and
 Frey 2020</a>; <a href="#ref-fujimoto2020bayesian" role="doc-biblioref">Fujimoto and Neugebauer 2020</a>)</span>; CTT
-discrimination remains consistent and interpretable at this scale. A
-robustness threshold of
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>d</mi><mi>i</mi></msub><mo>≥</mo><mn>0.10</mn></mrow><annotation encoding="application/x-tex">d_i\ge 0.10</annotation></semantics></math>
-is also reported.</p>
+discrimination remains consistent and interpretable at this scale.</p>
 <h3 id="sec:methods-stage3">2.3 Stage 3: repeated cross-fit re-test on
 filtered benchmarks</h3>
 <p>To address potential selection bias where items are selected for
@@ -671,24 +651,17 @@ two benchmarks serve as each other’s baseline within shared AToMS
 categories (no single benchmark, including CogToM, is privileged as
 ground truth). No external single-model baseline is used; the validity
 claim is purely cross-instrument.</p>
-<p>The final
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>27</mn></mrow><annotation encoding="application/x-tex">M=27</annotation></semantics></math>
-panel spans 1.0B–72.7B parameters and ten architecture families
-(Table <a data-reference="tab:panel" data-reference-type="ref" href="#tab:panel">1</a>). Mean overall accuracies of 0.607
-(ToMBench), 0.619 (ToMATO), and 0.660 (CogToM) confirm that all panel
-models are well above guessing (25% / 25% / 25%) on all three benchmarks
-but well below ceiling, providing operating range for both
+<p>Mean overall accuracies of 0.607
+(ToMBench), 0.619 (ToMATO), and 0.660 (CogToM) place the panel well above chance (25% on each benchmark) and well below ceiling, providing operating range for both
 convergent-validity and item-discrimination analyses. CogToM’s higher
 mean accuracy is broadly consistent across models rather than driven by
-a few outliers. Parse failures are coded as incorrect; all post-fix
-parse-failure rates on the three ToM benchmarks are
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≤</mo><mn>2.55</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">\le 2.55\%</annotation></semantics></math>.</p>
+a few outliers.</p>
 <h2 id="sec:results">3. Results</h2>
 <h3 id="sec:results-stage1">3.1 Stage 1: all five categories achieve
 convergent validity</h3>
 <p>Per-pair, per-category Kendall
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mi>b</mi></msub><annotation encoding="application/x-tex">\tau_b</annotation></semantics></math>
-statistics with paired item-bootstrap 95% CIs are reported in Table <a data-reference="tab:tau_b1" data-reference-type="ref" href="#tab:tau_b1">2</a> (Appendix <a data-reference="app:core-tables" data-reference-type="ref" href="#app:core-tables">B</a>), and
+statistics are reported in Table <a data-reference="tab:tau_b1" data-reference-type="ref" href="#tab:tau_b1">2</a> (Appendix <a data-reference="app:core-tables" data-reference-type="ref" href="#app:core-tables">B</a>), and
 shown as pairwise estimates in the left panel in Figure <a data-reference="fig:f1" data-reference-type="ref" href="#fig:f1">1</a>.
 All 15
 pair<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>×</mi><annotation encoding="application/x-tex">\times</annotation></semantics></math>category
@@ -705,7 +678,7 @@ ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><seman
 and every cell exceeds both the
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>b</mi></msub><mo>&gt;</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\tau_b&gt;0.5</annotation></semantics></math>
 threshold and the
-LCB<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&gt;</mo><mn>0.3</mn></mrow><annotation encoding="application/x-tex">&gt;0.3</annotation></semantics></math>
+lower CI bound <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&gt;</mo><mn>0.3</mn></mrow><annotation encoding="application/x-tex">&gt;0.3</annotation></semantics></math>
 criterion. Each pair’s own aggregate is similar in magnitude:
 ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>ToMATO
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>b</mi></msub><mo>=</mo><mn>0.697</mn></mrow><annotation encoding="application/x-tex">\tau_b=0.697</annotation></semantics></math>,
@@ -717,12 +690,7 @@ Emotion is the most convergent category in all three pairs
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>b</mi></msub><mo>&gt;</mo><mn>0.78</mn></mrow><annotation encoding="application/x-tex">\tau_b&gt;0.78</annotation></semantics></math>
 throughout); Belief is the least convergent in all three
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>b</mi></msub><mo>=</mo><mn>0.58</mn></mrow><annotation encoding="application/x-tex">\tau_b=0.58</annotation></semantics></math>–<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mn>0.66</mn><annotation encoding="application/x-tex">0.66</annotation></semantics></math>).
-Averaging across all three pairs, the overall aggregate is
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>b</mi></msub><mo>=</mo><mn>0.702</mn></mrow><annotation encoding="application/x-tex">\tau_b=0.702</annotation></semantics></math>
-— essentially unchanged from, and marginally higher than, the original
-two-benchmark estimate, indicating that adding a third,
-independently-constructed instrument does not weaken the
-convergent-validity signal.</p>
+Averaging across all three pairs, the overall aggregate is <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>b</mi></msub><mo>=</mo><mn>0.702</mn></mrow><annotation encoding="application/x-tex">\tau_b=0.702</annotation></semantics></math>.</p>
 <figure id="fig:f1">
 <img alt="Pairwise full-sample Kendall correlations and separately reported cross-fit changes for five mental-state categories" loading="lazy" src="../static/assets/img/tom-audit/convergent-validity.svg"/>
 <figcaption>Figure 1. Panel: 27 models across three Theory-of-Mind benchmarks. Left: full-sample Kendall τᵦ for each benchmark pair and mental-state category (Table 2). Right: mean within-cross-fit change Δτᵦ after filtering (Table 3). These are distinct analyses; the changes are not added to the full-sample estimates. * indicates Holm significance within each pair; Belief for ToMBench / CogToM is not significant (p = 0.088). Point estimates are shown; uncertainty is reported in the tables and accompanying text.</figcaption>
@@ -734,24 +702,18 @@ discrimination filter</h3>
 across the panel; within the five shared AToMS categories used for
 cross-benchmark analysis, 67.7% survive
 (1<span>,</span>429/2<span>,</span>112). ToMATO: 72.7% survive
-(3<span>,</span>926/5<span>,</span>401), of which 4.6% have zero
-variance; ToMATO has no items outside the five shared categories, so its
+(3<span>,</span>926/5<span>,</span>401), and 4.6% have zero variance; ToMATO has no items outside the five shared categories, so its
 full-benchmark and five-category retention coincide. CogToM: 73.0%
-survive (6<span>,</span>215/8<span>,</span>513), of which 7.0% have zero
-variance; within its five AToMS-compatible categories (Section <a data-reference="sec:methods" data-reference-type="ref" href="#sec:methods">2</a>), 75.9% survive
+survive (6<span>,</span>215/8<span>,</span>513), and 7.0% have zero variance; within its five AToMS-compatible categories (Section <a data-reference="sec:methods" data-reference-type="ref" href="#sec:methods">2</a>), 75.9% survive
 (4<span>,</span>362/5<span>,</span>747). On all three benchmarks the
 median
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>d</mi><mi>i</mi></msub><annotation encoding="application/x-tex">d_i</annotation></semantics></math>
-exceeds the threshold, indicating that the majority of items do
-discriminate; yet a consistent 27–34% of items fall below threshold or
-exhibit zero variance and contribute no discriminative signal,
-explaining why the median and mean can sit comfortably above 0.15 while
-a substantial minority of items are uninformative. The published item
+exceeds the threshold, so most items do discriminate, yet 27–34% of items fall below threshold or have zero variance and contribute no discriminative signal. The published item
 counts overstate effective measurement capacity by roughly a quarter to
 a third (34% ToMBench, 27% ToMATO, 27% CogToM).</p>
 <figure id="fig:f2">
 <img alt="Full-benchmark item retention: ToMBench 66.4 percent, ToMATO 72.7 percent, CogToM 73.0 percent" loading="lazy" src="../static/assets/img/tom-audit/item-discrimination.svg"/>
-<figcaption>Figure 2. Discrimination estimated across 27 models. Full-benchmark item retention after excluding zero-variance items and items with leave-one-out point-biserial discrimination below 0.15. Counts are 1,898 / 2,860 (ToMBench), 3,926 / 5,401 (ToMATO), and 6,215 / 8,513 (CogToM). This redraw uses reported retention counts; it does not display unreported mean or median discrimination estimates.</figcaption>
+<figcaption>Figure 2. Discrimination estimated across 27 models. Full-benchmark item retention after excluding zero-variance items and items with leave-one-out point-biserial discrimination below 0.15. Counts are 1,898 / 2,860 (ToMBench), 3,926 / 5,401 (ToMATO), and 6,215 / 8,513 (CogToM).</figcaption>
 </figure>
 <h3 id="sec:results-stage3">3.3 Stage 3: an item-level cross-fit, run
 independently on each pair</h3>
@@ -773,36 +735,8 @@ ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><seman
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>p</mi><mo>=</mo><mn>0.088</mn></mrow><annotation encoding="application/x-tex">p=0.088</annotation></semantics></math>,
 CI
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="false">[</mo><mi>−</mi><mn>0.015</mn><mo>,</mo><mi>+</mi><mn>0.001</mn><mo form="postfix" stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[-0.015,+0.001]</annotation></semantics></math>),
-which is directionally null rather than reversed. As a validation check,
-the
-ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>ToMATO
-pair alone reproduces the original two-benchmark cross-fit almost
-exactly (Belief
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0.025</mn></mrow><annotation encoding="application/x-tex">+0.025</annotation></semantics></math>,
-Intention
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0.034</mn></mrow><annotation encoding="application/x-tex">+0.034</annotation></semantics></math>,
-Desire
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0.103</mn></mrow><annotation encoding="application/x-tex">+0.103</annotation></semantics></math>,
-Emotion
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0.056</mn></mrow><annotation encoding="application/x-tex">+0.056</annotation></semantics></math>,
-Knowledge
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0.113</mn></mrow><annotation encoding="application/x-tex">+0.113</annotation></semantics></math>),
-confirming the extended pipeline is consistent with the prior result
-rather than a methodological artifact.</p>
-<p>Averaged across the three pairs, the gains are again largest for the
-categories that carried the most measurement noise — Knowledge
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mo>=</mo><mi>+</mi><mn>0.082</mn></mrow><annotation encoding="application/x-tex">\Delta{=}{+}0.082</annotation></semantics></math>)
-and Desire
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mo>=</mo><mi>+</mi><mn>0.079</mn></mrow><annotation encoding="application/x-tex">\Delta{=}{+}0.079</annotation></semantics></math>)
-— moderate for Emotion
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0.059</mn></mrow><annotation encoding="application/x-tex">+0.059</annotation></semantics></math>)
-and Intention
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0.030</mn></mrow><annotation encoding="application/x-tex">+0.030</annotation></semantics></math>),
-and smallest and least robust for Belief
-(<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0.009</mn></mrow><annotation encoding="application/x-tex">+0.009</annotation></semantics></math>),
-which is the only category where one of the three pairs
-(ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>CogToM)
-does not show a positive rescue. The aggregate improvement is
+which is indistinguishable from zero rather than a significant reversal.</p>
+<p>Averaged across the three pairs, the gains are largest for Knowledge (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mo>=</mo><mi>+</mi><mn>0.082</mn></mrow><annotation encoding="application/x-tex">\Delta{=}{+}0.082</annotation></semantics></math>) and Desire (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mo>=</mo><mi>+</mi><mn>0.079</mn></mrow><annotation encoding="application/x-tex">\Delta{=}{+}0.079</annotation></semantics></math>), moderate for Emotion (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0.059</mn></mrow><annotation encoding="application/x-tex">+0.059</annotation></semantics></math>) and Intention (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0.030</mn></mrow><annotation encoding="application/x-tex">+0.030</annotation></semantics></math>), and smallest and least robust for Belief (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>+</mi><mn>0.009</mn></mrow><annotation encoding="application/x-tex">+0.009</annotation></semantics></math>), the only category where one of the three pairs (ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>CogToM) shows no gain. The aggregate improvement is
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi mathvariant="normal">Δ</mi><mo>=</mo><mi>+</mi><mn>0.052</mn></mrow><annotation encoding="application/x-tex">\Delta{=}{+}0.052</annotation></semantics></math>
 with a conservative 95% interval of
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="false">[</mo><mi>−</mi><mn>0.01</mn><mo>,</mo><mi>+</mi><mn>0.13</mn><mo form="postfix" stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[-0.01,+0.13]</annotation></semantics></math>
@@ -814,20 +748,14 @@ evidence of a null aggregate effect. This is achieved while discarding
 27.3% of held-out items on average across all pairs and categories
 (22.1% for Desire to 31.2% for Emotion; per-pair, per-category loss in
 Appendix <a data-reference="app:sampleloss" data-reference-type="ref" href="#app:sampleloss">F</a>, Table <a data-reference="tab:sampleloss" data-reference-type="ref" href="#tab:sampleloss">6</a>), with
-no fold excluded for insufficient sample size — the rescued convergence
-comes from removing low-signal items. This supports <em>Scenario A</em>
+no fold excluded for insufficient sample size; the gain in convergence comes from removing low-signal items. This supports <em>Scenario A</em>
 for four of the five categories: apparent benchmark divergence partially
 reflects measurement noise rather than fundamental incompatibility.
-Belief is the one category where the evidence is mixed — robustly
-rescued between ToMBench and ToMATO, but not between ToMBench and CogToM
-— suggesting its cross-instrument fragility may be specific to how
+Belief is the one category where the evidence is mixed: convergence improves robustly between ToMBench and ToMATO but not between ToMBench and CogToM, suggesting its cross-instrument fragility may be specific to how
 CogToM operationalizes belief-tracking items rather than a general
 property of the category.</p>
 <h3 id="sec:disc-pca">3.4 Factor structure: one dominant factor</h3>
-<p>With
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>27</mn></mrow><annotation encoding="application/x-tex">M=27</annotation></semantics></math>
-crossing the minimum threshold for exploratory factor analysis, we ran
-EFA (principal-axis factoring, varimax rotation, factor count set by
+<p>We ran EFA (principal-axis factoring, varimax rotation, factor count set by
 parallel analysis) and standardized PCA on each benchmark individually
 and on the pooled three-benchmark item set (ToMBench, ToMATO, and CogToM
 combined), to test whether the data resolve into five AToMS
@@ -845,9 +773,7 @@ rank-deficient, so KMO/Bartlett return a degenerate rather than
 meaningful result there, and we instead rely on EFA convergence and
 variance explained as evidence of factorability. Results are summarized
 in Table <a data-reference="tab:factor_analysis" data-reference-type="ref" href="#tab:factor_analysis">4</a> (Appendix <a data-reference="app:core-tables" data-reference-type="ref" href="#app:core-tables">B</a>).</p>
-<p>Parallel-analysis EFA retains a <em>single</em> common factor on
-every matrix — ToMBench, ToMATO, CogToM, and the pooled three-benchmark
-set — not five, accounting for 19.5–24.6% of total variance (38.5% of
+<p>Parallel-analysis EFA retains a <em>single</em> common factor on every matrix (ToMBench, ToMATO, CogToM, and the pooled three-benchmark set), not five, accounting for 19.5–24.6% of total variance (38.5% of
 common variance on ToMBench), positive evidence for a unified ToM
 construct over five separable mental-state subconstructs. CogToM’s
 single factor explains 24.6%, somewhat higher than ToMBench (19.5%) and
@@ -874,8 +800,7 @@ eigenvalue<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><sem
 rule over-extracts at
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>27</mn></mrow><annotation encoding="application/x-tex">M=27</annotation></semantics></math>,
 retaining 26 components, so we rely on parallel analysis and the scree
-elbow instead. We hypothesize, but do not claim to establish, that this
-secondary axis reflects a partial separation between belief-tracking and
+elbow instead. We hypothesize, but do not claim to establish, that the second component reflects a partial separation between belief-tracking and
 intention/social-reasoning items. The leading component captures only
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>20–25%
 of total variance on every matrix, leaving
@@ -899,16 +824,7 @@ against each general benchmark, mean
 and the within-general correlation
 (HellaSwag<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>MMLU-Pro,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>b</mi></msub><mo>=</mo><mn>0.738</mn></mrow><annotation encoding="application/x-tex">\tau_b=0.738</annotation></semantics></math>;
-Table <a data-reference="tab:within_cross" data-reference-type="ref" href="#tab:within_cross">7</a>). With a third,
-independently-constructed ToM instrument included, the discriminant
-signal is cleaner than the original two-benchmark comparison suggested:
-the within-ToM/cross-construct gap widens from
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>0.05
-(ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>ToMATO
-alone vs. the four-pair cross-construct mean) to
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>∼</mo><annotation encoding="application/x-tex">\sim</annotation></semantics></math>0.074,
-and within-ToM convergence now visibly exceeds within-general
-convergence rather than merely matching it.</p>
+Table <a data-reference="tab:within_cross" data-reference-type="ref" href="#tab:within_cross">7</a>). The within-ToM/cross-construct gap is about 0.074, and within-ToM convergence also exceeds within-general convergence.</p>
 <p><strong>Partial correlation analysis.</strong> To isolate the unique
 ToM component, we computed partial Kendall
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mi>b</mi></msub><annotation encoding="application/x-tex">\tau_b</annotation></semantics></math>
@@ -917,15 +833,11 @@ jointly (Table <a data-reference="tab:partial_corr" data-reference-type="ref" h
 remain significant despite shrinkage. Averaged across the three pairs,
 controlling for both general benchmarks leaves
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>b</mi></msub><mo>=</mo><mn>0.525</mn></mrow><annotation encoding="application/x-tex">\tau_b=0.525</annotation></semantics></math>
-(33% shrinkage) — smaller than the 41% shrinkage observed for
-ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>ToMATO
-alone, the only pair available in the original two-benchmark analysis.
-The pattern is uneven:
+(33% shrinkage). The pattern is uneven:
 ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>CogToM
 is the least confounded (18.8% shrinkage) and
 ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>ToMATO
-the most (41.1%), so the original two-benchmark estimate of the
-ToM-specific residual was, if anything, conservative. HellaSwag
+the most (41.1%). HellaSwag
 (commonsense continuation) absorbs more of the ToM convergence than
 MMLU-Pro (academic knowledge) in every pair, consistent with ToM
 benchmarks loading more on everyday social/commonsense reasoning than on
@@ -938,17 +850,14 @@ MMLU-Pro accuracy); the regression
 gives the share of variance attributable to general ability. ToMATO is
 the most general-dependent (85.4% general, 14.6% unexplained), CogToM is
 intermediate (74.7%/25.3%), and ToMBench retains the largest unexplained
-component (69.7%/30.3%) — consistent with the partial correlations
-above, since the two highest-shrinkage pairs both involve ToMATO while
+component (69.7%/30.3%). This is consistent with the partial correlations above, since the two highest-shrinkage pairs both involve ToMATO while
 the one pair excluding it
 (ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>CogToM)
 has the lowest shrinkage.</p>
 <p><strong>Interpretation.</strong> A coherent ToM construct does exist
 and is not <em>entirely</em> reducible to general language ability, even
 as it remains partly confounded with it (some of which may reflect
-shared MCQ formatting rather than pure construct overlap). The
-three-pair pattern strengthens, rather than overturns, the original
-two-benchmark conclusion.</p>
+shared MCQ formatting rather than pure construct overlap).</p>
 <h2 id="sec:discussion">4. Discussion</h2>
 <p>Across five analyses a consistent picture emerges. ToMBench, ToMATO,
 and CogToM show substantially concordant model orderings within every
@@ -965,19 +874,13 @@ tests: the gain survives held-out evaluation, so where it appears it
 reflects genuine measurement-noise reduction rather than overfitting to
 the panel. The one exception is Belief on the
 ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>CogToM
-pair, where filtering produces a small, non-significant change rather
-than a positive rescue — a localized, category-specific caveat rather
-than a general failure of the filtering approach.</p>
+pair, where filtering produces a small, non-significant change rather than a gain. This is a localized, category-specific caveat, not a general failure of the filtering approach.</p>
 <p>Three further cautions temper this otherwise positive reading. First,
 roughly a quarter to a third of published items carry no discriminative
 signal, so leaderboard item counts overstate effective measurement.
 Second, the construct these benchmarks measure remains confounded with
-general language ability, though less so than a two-benchmark comparison
-alone would suggest: averaged across all three within-ToM pairs,
-controlling for HellaSwag and MMLU-Pro shrinks convergence by 33%
-(vs. 41% for
-ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>ToMATO
-alone), with the two CogToM-involving pairs retaining more of their raw
+general language ability: averaged across all three within-ToM pairs,
+controlling for HellaSwag and MMLU-Pro shrinks convergence by 33%, with the two pairs involving CogToM retaining more of their raw
 convergence. Third, the three-pair aggregate’s conservative confidence
 interval is wide and should not be over-interpreted in isolation from
 the underlying pairwise significance pattern. ToM scores on current
@@ -992,8 +895,7 @@ in-context adaptation rather than to noise, the literal item pools it
 builds on must already be known to carry signal. Treating static
 benchmarks as already-solved infrastructure, rather than auditing them
 with the same rigor demanded of adaptive or strategic evaluation
-settings, risks inheriting — rather than diagnosing — measurement
-problems once interaction, optimization pressure, or temporal drift are
+settings, risks inheriting, rather than diagnosing, measurement problems once interaction, optimization pressure, or temporal drift are
 layered on top.</p>
 <h3 id="sec:limitations">4.1 Limitations</h3>
 <p>With
@@ -1025,17 +927,10 @@ pooled three-benchmark EFA’s correlation matrix is rank-deficient
 items
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>≫</mo><mi>M</mi><mo>=</mo><mn>27</mn></mrow><annotation encoding="application/x-tex">\gg M=27</annotation></semantics></math>
 models), so KMO and Bartlett’s test are not reported for that analysis
-(Section <a data-reference="sec:disc-pca" data-reference-type="ref" href="#sec:disc-pca">3.4</a>); we rely instead on EFA
-convergence and the magnitude of variance explained. The
-discriminant-validity analysis against HellaSwag and MMLU-Pro
-(Section <a data-reference="sec:disc-discriminant" data-reference-type="ref" href="#sec:disc-discriminant">3.5</a>) now covers all three
-within-ToM pairs, with full 95% CIs and bootstrap
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>p</mi><annotation encoding="application/x-tex">p</annotation></semantics></math>-values
-for every partial correlation.</p>
+(Section <a data-reference="sec:disc-pca" data-reference-type="ref" href="#sec:disc-pca">3.4</a>); we rely instead on EFA convergence and the magnitude of variance explained. Finally, the two discriminant-validity controls are noisier than the ToM benchmarks: parse-failure rates exceed 2% for 20 of 27 models on MMLU-Pro and 14 of 27 on HellaSwag (Table <a href="#tab:panel">1</a>). Because parse failures are scored as incorrect, the control scores mix ability with output-format compliance, and the partial correlations in Section 3.5 should be read with that in mind.</p>
 <h2 id="sec:conclusion">5. Conclusion</h2>
-<p>We conducted a convergent-validity-and-reliability audit of LLM
-Theory-of-Mind benchmarks, evaluating three instruments — ToMBench,
-ToMATO, and CogToM — that share the AToMS mental-state taxonomy under
+<p>We conducted a convergent-validity and reliability audit of LLM
+Theory-of-Mind benchmarks, evaluating three instruments (ToMBench, ToMATO, and CogToM) that share the AToMS mental-state taxonomy under
 sharply different operationalizations. Five findings stand out. (1)
 <strong>Convergent validity is strong</strong> across all categories and
 all three benchmark pairs (Section <a data-reference="sec:results-stage1" data-reference-type="ref" href="#sec:results-stage1">3.1</a>).
@@ -1052,13 +947,10 @@ is more robust across operationalizations than raw benchmarks suggest
 analysis detects one dominant factor, not five</strong>, with a large
 unexplained residual unaligned with any AToMS category (Section <a data-reference="sec:disc-pca" data-reference-type="ref" href="#sec:disc-pca">3.4</a>). (5) <strong>Discriminant
 validity is partial but real</strong>: ToM performance correlates with
-general language ability but is not reducible to it, and this separation
-is clearer with three benchmarks than the original two-benchmark
-comparison suggested (Section <a data-reference="sec:disc-discriminant" data-reference-type="ref" href="#sec:disc-discriminant">3.5</a>). Together, these results
+general language ability but is not reducible to it (Section <a data-reference="sec:disc-discriminant" data-reference-type="ref" href="#sec:disc-discriminant">3.5</a>). Together, these results
 indicate that current LLM ToM benchmarks measure a coherent, largely
 unidimensional construct whose published item counts overstate the
-precision they deliver, and whose scores remain partly — but not
-entirely — confounded with general language ability.</p>
+precision they deliver, and whose scores remain partly, but not entirely, confounded with general language ability.</p>
 <h5 id="future-work.">Future work.</h5>
 <p>Two directions follow naturally from these findings. <em>(a)</em>
 <strong>Larger and more diverse model panels.</strong> Item-level factor
@@ -1076,9 +968,7 @@ interactive ToM evaluation.</strong> All three audited benchmarks are
 infrastructure established here sets a baseline for auditing
 <em>functional</em> ToM tasks <span class="citation" data-cites="riemer2024position">(<a href="#ref-riemer2024position" role="doc-biblioref">Riemer et al. 2024</a>)</span>, where a model must
 adapt to a partner in-context, and for testing whether the single-factor
-structure and language confound persist once interaction is required.
-Code, response matrices, and analysis scripts will be released upon
-acceptance.</p>
+structure and language confound persist once interaction is required.</p>
 <h2 id="app:panel">A. Model panel and per-benchmark accuracies</h2>
 <div id="tab:panel">
 <div aria-label="Table 1" class="table-wrap" role="region" tabindex="0"><table class="data">
@@ -1087,7 +977,7 @@ acceptance.</p>
 panel and per-benchmark overall accuracies across 1.0B–72.7B parameter
 scales.
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>†</mi><annotation encoding="application/x-tex">\dagger</annotation></semantics></math>
-indicates post-fix parse-failure rate
+indicates parse-failure rate
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&gt;</mo><mn>2</mn><mi>%</mi></mrow><annotation encoding="application/x-tex">&gt;2\%</annotation></semantics></math>;
 failures are coded as incorrect in all accuracy calculations.</caption>
 <thead>
@@ -1375,8 +1265,8 @@ failures are coded as incorrect in all accuracy calculations.</caption>
 </tr>
 <tr>
 <td style="text-align: left;">Mean</td>
-<td style="text-align: left;">—</td>
-<td style="text-align: right;">—</td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
 <td style="text-align: center;">0.607</td>
 <td style="text-align: center;">0.619</td>
 <td style="text-align: center;">0.660</td>
@@ -1402,8 +1292,8 @@ Holm-significant within their pair
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>α</mi><mo>=</mo><mn>0.05</mn></mrow><annotation encoding="application/x-tex">\alpha=0.05</annotation></semantics></math>
 across the five categories,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><msub><mi>τ</mi><mi>b</mi></msub><mo>&gt;</mo><mn>0.5</mn></mrow><annotation encoding="application/x-tex">\tau_b&gt;0.5</annotation></semantics></math>,
-LCB<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&gt;</mo><mn>0.3</mn></mrow><annotation encoding="application/x-tex">&gt;0.3</annotation></semantics></math>);
-per-category 95% CIs and item counts are below.</caption>
+lower CI bound <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo>&gt;</mo><mn>0.3</mn></mrow><annotation encoding="application/x-tex">&gt;0.3</annotation></semantics></math>);
+per-category 95% CIs and item counts are in <a href="#app:atoms-map">Appendix C</a>.</caption>
 <thead>
 <tr>
 <th style="text-align: left;">Category</th>
@@ -1612,8 +1502,7 @@ cross-benchmark analyses (Stages 1 and 3) are restricted to these five
 categories. CogToM’s own seven-category taxonomy (Section <a data-reference="sec:methods" data-reference-type="ref" href="#sec:methods">2</a>) already includes the five AToMS
 categories by name, so for CogToM the mapping is the identity on those
 five categories and simply excludes its Percept and Non-Literal
-categories. The full ToMBench mapping is committed to the project
-repository as <code>src/tom_audit/benchmarks/_construct_map.py</code>.
+categories.
 Per-category item counts after mapping (ToMBench / ToMATO / CogToM) are:
 Belief 882 / 1<span>,</span>109 / 1<span>,</span>748; Intention 340 /
 1<span>,</span>110 / 903; Desire 180 / 1<span>,</span>025 / 944; Emotion
@@ -1622,12 +1511,7 @@ Belief 882 / 1<span>,</span>109 / 1<span>,</span>748; Intention 340 /
 (ToMATO), and 5<span>,</span>747 (CogToM, out of 8<span>,</span>513
 total items; the remaining 2<span>,</span>766 items are
 Percept/Non-Literal and are excluded from cross-benchmark analyses)
-analyzable items. Table <a data-reference="tab:tau_b1" data-reference-type="ref" href="#tab:tau_b1">2</a> reports 95% paired item-bootstrap CIs
-for each of the 15
-pair<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>×</mi><annotation encoding="application/x-tex">\times</annotation></semantics></math>category
-Stage-1
-<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mi>b</mi></msub><annotation encoding="application/x-tex">\tau_b</annotation></semantics></math>
-values; per category these are: Belief
+analyzable items. Table <a data-reference="tab:tau_b1" data-reference-type="ref" href="#tab:tau_b1">2</a> gives the point estimates; the 95% paired item-bootstrap CIs for the 15 pair<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>×</mi><annotation encoding="application/x-tex">\times</annotation></semantics></math>category Stage-1 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mi>b</mi></msub><annotation encoding="application/x-tex">\tau_b</annotation></semantics></math> values are: Belief
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="false">[</mo><mn>0.486</mn><mo>,</mo><mn>0.817</mn><mo form="postfix" stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0.486,0.817]</annotation></semantics></math>
 /
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mo form="prefix" stretchy="false">[</mo><mn>0.438</mn><mo>,</mo><mn>0.814</mn><mo form="postfix" stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[0.438,0.814]</annotation></semantics></math>
@@ -1735,24 +1619,19 @@ full-benchmark retentions are 66.4%, 72.7%, and 73.0% respectively;
 Figure <a data-reference="fig:f2" data-reference-type="ref" href="#fig:f2">2</a>). Notably, the ToMBench categories with
 the heaviest dropout (Knowledge, Emotion, Desire) are precisely those
 whose convergence is most rescued by filtering (Table <a data-reference="tab:tau_b3" data-reference-type="ref" href="#tab:tau_b3">3</a>), consistent with low-discrimination
-items being a primary source of pre-filter divergence; the one exception
-to this pattern is Belief, whose moderate ToMBench retention (76.3%)
-does not prevent it from being the most fragile category in the
-ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>CogToM
-cross-fit.</p>
+items being a primary source of pre-filter divergence. Belief fits the same pattern from the other side: it has the highest ToMBench retention (76.3%) and the smallest gain from filtering.</p>
 <h2 id="app:integrity">E. Response matrix integrity</h2>
-<p>The response matrices used throughout this audit are released as
-parquet files in the project repository:</p>
+<p>The response matrices used throughout this audit are three model-by-item tables, one per benchmark:</p>
 <ul>
-<li><p><code>responses_tombench_m27.parquet</code> (77<span>,</span>220
+<li><p>ToMBench (77<span>,</span>220
 rows: 27 models
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>×</mi><annotation encoding="application/x-tex">\times</annotation></semantics></math>
 2<span>,</span>860 items)</p></li>
-<li><p><code>responses_tomato_m27.parquet</code> (145<span>,</span>827
+<li><p>ToMATO (145<span>,</span>827
 rows: 27 models
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>×</mi><annotation encoding="application/x-tex">\times</annotation></semantics></math>
 5<span>,</span>401 items)</p></li>
-<li><p><code>responses_cogtom_m27.parquet</code> (229<span>,</span>851
+<li><p>CogToM (229<span>,</span>851
 rows: 27 models
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>×</mi><annotation encoding="application/x-tex">\times</annotation></semantics></math>
 8<span>,</span>513 items)</p></li>
@@ -1760,15 +1639,13 @@ rows: 27 models
 <p>Each matrix contains binary correctness scores (1/0) for all
 model-item pairs, with metadata columns for item categories, abilities,
 and benchmark source. Parse failures are coded as 0 (incorrect) in all
-accuracy calculations; post-fix parse-failure rates on the three ToM
+accuracy calculations; parse-failure rates on the three ToM
 benchmarks are all below 3% (maximum 2.55% for Yi-1.5-34B on CogToM).
 Models with parse-failure rates exceeding 2% are marked with
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mi>†</mi><annotation encoding="application/x-tex">\dagger</annotation></semantics></math>
 in Table <a data-reference="tab:panel" data-reference-type="ref" href="#tab:panel">1</a>. All three matrices are reproducible
 deterministically from the sharded per-model JSONL outputs of the
-inference pipeline. The repeated cross-fit code, including stratified
-item-splitting and fold-wise discrimination calculation, is included in
-<code>src/convergent_validity/</code>.</p>
+inference pipeline.</p>
 <h2 id="app:sampleloss">F. Stage-3 cross-fit sample loss</h2>
 <p>Because the Stage-3 cross-fit evaluates convergence only on held-out
 test items, each fold discards the test items that fall below the
@@ -1789,12 +1666,7 @@ pooled across all pairs and categories the overall mean is 27.3%
 removed). All 750 pair-category-folds
 (<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>3</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> pairs</mtext></mrow><mo>×</mo><mn>5</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> categories</mtext></mrow><mo>×</mo><mn>50</mn><mrow><mspace width="0.333em"></mspace><mtext mathvariant="normal"> folds</mtext></mrow></mrow><annotation encoding="application/x-tex">3\text{ pairs}\times5\text{ categories}\times50\text{ folds}</annotation></semantics></math>)
 were valid; none were excluded for insufficient sample size or zero
-variance. As in the original two-benchmark analysis, the categories with
-the highest sample loss (Emotion, Knowledge) and the lowest (Desire)
-mostly show the largest convergence gains after filtering (Table <a data-reference="tab:tau_b3" data-reference-type="ref" href="#tab:tau_b3">3</a>), consistent with the discarded items
-being low-signal rather than substantively informative; Belief is again
-the exception, with moderate sample loss but the smallest and least
-consistent rescue.</p>
+variance. Pooled sample loss does not track the size of the convergence gain as closely as ToMBench retention does (Appendix D; Table <a data-reference="tab:tau_b3" data-reference-type="ref" href="#tab:tau_b3">3</a>): Knowledge and Emotion combine high loss with large gains, but Desire has the lowest loss and the second-largest gain, and Belief has moderate loss and the smallest gain.</p>
 <div id="tab:sampleloss">
 <div aria-label="Table 6" class="table-wrap" role="region" tabindex="0"><table class="data">
 <caption>Table 6. Per-pair, per-category cross-fit sample loss, averaged across
@@ -1966,9 +1838,9 @@ pairs)</strong></td>
 </tr>
 <tr>
 <td colspan="2" style="text-align: left;"><strong>Overall</strong></td>
-<td style="text-align: right;"><strong>—</strong></td>
-<td style="text-align: right;"><strong>—</strong></td>
-<td style="text-align: right;"><strong>—</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
 <td style="text-align: right;"><strong>27.3%</strong></td>
 </tr>
 </tbody>
@@ -1990,9 +1862,7 @@ for every entry.</p>
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><msub><mi>τ</mi><mi>b</mi></msub><annotation encoding="application/x-tex">\tau_b</annotation></semantics></math>
 (overall accuracy,
 <math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mi>M</mi><mo>=</mo><mn>27</mn></mrow><annotation encoding="application/x-tex">M=27</annotation></semantics></math>).
-95% CIs are paired item-bootstrap; cross-construct CIs follow the same
-convention as the original two-benchmark audit (point estimates
-only).</caption>
+95% CIs are paired item-bootstrap; cross-construct entries are point estimates only.</caption>
 <thead>
 <tr>
 <th style="text-align: left;">Type</th>
@@ -2021,7 +1891,7 @@ only).</caption>
 <tr>
 <td style="text-align: left;"><strong>Mean</strong></td>
 <td style="text-align: right;"><strong>0.780</strong></td>
-<td style="text-align: left;">—</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;">Within-general</td>
@@ -2033,37 +1903,37 @@ only).</caption>
 <td rowspan="7" style="text-align: left;">Cross-construct</td>
 <td style="text-align: left;">ToMATO<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>HellaSwag</td>
 <td style="text-align: right;">0.783</td>
-<td style="text-align: left;">—</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;">CogToM<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>HellaSwag</td>
 <td style="text-align: right;">0.749</td>
-<td style="text-align: left;">—</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;">ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>HellaSwag</td>
 <td style="text-align: right;">0.726</td>
-<td style="text-align: left;">—</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;">ToMATO<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>MMLU-Pro</td>
 <td style="text-align: right;">0.681</td>
-<td style="text-align: left;">—</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;">CogToM<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>MMLU-Pro</td>
 <td style="text-align: right;">0.670</td>
-<td style="text-align: left;">—</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;">ToMBench<math display="inline" xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mo>↔</mo><annotation encoding="application/x-tex">\leftrightarrow</annotation></semantics></math>MMLU-Pro</td>
 <td style="text-align: right;">0.624</td>
-<td style="text-align: left;">—</td>
+<td style="text-align: left;"></td>
 </tr>
 <tr>
 <td style="text-align: left;"><strong>Mean</strong></td>
 <td style="text-align: right;"><strong>0.706</strong></td>
-<td style="text-align: left;">—</td>
+<td style="text-align: left;"></td>
 </tr>
 </tbody>
 </table></div>
@@ -2160,8 +2030,8 @@ zero-order value.</caption>
 <td colspan="2" style="text-align: left;"><strong>Mean (controlling for
 both)</strong></td>
 <td style="text-align: right;"><strong>0.525</strong></td>
-<td style="text-align: left;">—</td>
-<td style="text-align: right;">—</td>
+<td style="text-align: left;"></td>
+<td style="text-align: right;"></td>
 <td style="text-align: right;"><strong>33.0%</strong></td>
 </tr>
 </tbody>
