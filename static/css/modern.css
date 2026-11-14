@@ -118,28 +118,28 @@ body {
     color: var(--accent-color);
 }
 
-/* Muted paper palette shared with the project illustrations */
+/* Pink-to-violet palette shared with the Life page header */
 .nav-menu a.nav-life {
     display: inline-block;
     padding: 0.35rem 1rem;
     border-radius: 999px;
-    color: #354b50;
+    color: #453a66;
     font-weight: 600;
-    background: linear-gradient(120deg, #e5cfc4 0%, #d9dfcf 52%, #cbdce0 100%);
+    background: linear-gradient(120deg, #f5c6d6 0%, #d9bff0 52%, #bec6fb 100%);
     background-size: 160% 160%;
     background-position: 0% 50%;
-    box-shadow: inset 0 0 0 1px rgba(70, 88, 83, 0.12), 0 2px 6px rgba(70, 88, 83, 0.08);
+    box-shadow: inset 0 0 0 1px rgba(92, 72, 140, 0.14), 0 2px 6px rgba(92, 72, 140, 0.10);
 }
 
 .nav-menu a.nav-life:hover {
-    color: #293e43;
+    color: #372d55;
     background-position: 100% 50%;
     transform: translateY(-1px);
-    box-shadow: inset 0 0 0 1px rgba(70, 88, 83, 0.18), 0 4px 10px rgba(70, 88, 83, 0.12);
+    box-shadow: inset 0 0 0 1px rgba(92, 72, 140, 0.20), 0 4px 10px rgba(92, 72, 140, 0.16);
 }
 
 .nav-menu a.nav-life:focus-visible {
-    outline: 2px solid #526f7a;
+    outline: 2px solid #6b5aa6;
     outline-offset: 4px;
 }
 
@@ -173,8 +173,8 @@ body {
 
 /* Hero Section */
 .hero {
-    padding: 1.5rem 0;
-    background: linear-gradient(115deg, #dce5e7 0%, #e3e7dc 38%, #efe8da 70%, #ead8cf 100%);
+    padding: 2rem 0 2.5rem;
+    background: #f4eee4 url('../assets/img/hero-bg.svg') center bottom / cover no-repeat;
     position: relative;
 }
 
@@ -280,7 +280,7 @@ body {
 
 @media (min-width: 768px) {
     .hero {
-        padding: 1.75rem 0;
+        padding: 2.5rem 0 3rem;
     }
 
     .profile-img-wrapper {
@@ -312,7 +312,7 @@ body {
     color: var(--primary-color);
     margin-bottom: 2rem;
     padding-bottom: 0.75rem;
-    border-bottom: 3px solid var(--accent-color);
+    border-bottom: 3px solid #4a626b;
     display: inline-block;
 }
 
