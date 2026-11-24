@@ -385,6 +385,13 @@ body {
     }
 }
 
+@media (min-width: 992px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
 .project-card {
     background: white;
     border-radius: 12px;
