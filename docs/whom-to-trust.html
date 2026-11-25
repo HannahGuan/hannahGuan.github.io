@@ -398,31 +398,7 @@
 <header class="page-header"><div class="container"><h1>Whom to Trust About the Unseen</h1><p>How Language Models Weigh Spiritual and Scientific Testimony</p><p class="report-meta" style="margin-top:0.6rem;">Ruijia Guan<br/>Symbolic Systems Program, Stanford University</p><div class="report-actions"><a href="../index.html#projects">← Back to projects</a></div></div></header><main class="section"><div class="container"><article class="report">
 
 <div class="abstract"><p class="label" id="abstract">Abstract</p>
-<p>Much of what people believe about the unseen, from germs to spirits,
-rests on testimony that cannot be checked. We ask how six language
-models weigh such testimony when it concerns the spiritual and when it
-concerns the natural, using two paradigms with human data and one new
-design. In all three, models treat the spiritual as a separate epistemic
-domain. It has its own credible sources. People credit an obscure
-New-Age statement more when a scientist says it, while models credit it
-more from a spiritual leader and switch to the scientist once the
-statement uses the vocabulary of physics. It has its own standard for an
-adequate answer. When a trusted expert calls the mechanism behind a
-belief a mystery, people lose confidence in religious and scientific
-beliefs, while models prompted as those same people lose it for science
-and keep it for religion. And credibility earned elsewhere does not
-readily carry into it. When a fictional forecaster builds a record on
-checkable river predictions, five models extend that record to hidden
-natural causes and almost none of it to spiritual ones, and every model
-trusts the forecaster less about natural causes once the forecaster
-credits a river spirit. For four of the five models this gap is not a
-floor effect. It remains when they answer as residents of a village
-where spirits are taken to exist and rate the spiritual claims well
-above the bottom of the scale. For the fifth the gap closes in that
-setting. One model extends the record to spiritual claims once the
-forecaster in that village credits a spirit, which suggests that
-transfer can depend on whether the record is seen as bearing on the
-claim.</p>
+<p>People believe many things they cannot check for themselves, from germs to spirits, because someone they trust said so. We ask whether language models treat what they are told about spiritual matters the same way they treat what they are told about the natural world. Across three studies and six models, they do not. First, models find a vague New-Age statement more believable when it comes from a spiritual leader than from a scientist, whereas people show the opposite preference. The models favor the scientist only when the statement is reworded in the language of physics. Second, when a trusted expert admits that how something works is a mystery, people become less confident in both religious and scientific beliefs. Models given the same scenario lose confidence in the scientific beliefs but not in the religious ones. Third, we designed a new task. A forecaster in a fictional village predicts the river’s level correctly week after week, and then offers explanations for other events in the village, such as why a fever returns every summer. Some explanations are natural and some are spiritual. The forecaster’s track record makes most models more willing to believe the natural explanations but barely changes how they rate the spiritual ones. And when the forecaster says the river predictions come from a river spirit, models become less willing to believe even the natural explanations. For most models the gap between natural and spiritual explanations remains even in a setting where spirits are assumed to exist. Together, the results suggest that language models draw a sharper line between spiritual and natural knowledge than people do.</p>
 </div><nav aria-label="Table of contents" class="toc"><p class="label">Contents</p><ol><li><a href="#introduction">1. Introduction</a></li><li><a href="#related-work">2. Related work</a></li><li><a href="#models-and-response-formats">3. Models and response formats</a></li><li><a href="#study-1-who-sounds-credible">4. Study 1: Who sounds credible?</a></li><li><a href="#study-2-what-counts-as-an-adequate-answer">5. Study 2: What counts as an adequate answer?</a></li><li><a href="#study-3-how-far-does-reliability-travel">6. Study 3: How far does reliability travel?</a></li><li><a href="#general-discussion">7. General discussion</a></li><li><a href="#conclusion">8. Conclusion</a></li><li><a href="#data-code-and-transparency">Data, code, and transparency</a></li><li><a href="#appendix-a.-data-handling-coverage-and-supplementary-results">Appendix A. Data handling, coverage, and supplementary results</a></li><li><a href="#appendix-b.-stimuli-and-prompts">Appendix B. Stimuli and prompts</a></li><li><a href="#references">References</a></li></ol></nav>
 <h2 id="introduction">1. Introduction</h2>
 <p>No one checks for themselves that germs cause fevers, or that the
@@ -435,10 +411,10 @@ verify. This paper asks whether models weigh testimony about the
 spiritual the way they weigh testimony about the natural.</p>
 <p>A hearer faces three questions about any piece of testimony, and
 people answer each of them differently for the two domains. The first is
-who counts as a credible source: adults in 24 countries give the same
+who counts as a credible source. Adults in 24 countries give the same
 obscure statement more credit when it is attributed to a scientist than
 to a spiritual guru <span class="citation" data-cites="hoogeveen2022">(<a href="#ref-hoogeveen2022" role="doc-biblioref">Hoogeveen et al. 2022</a>)</span>. The second is
-what counts as an adequate answer: an expert who says “it’s a mystery”
+what counts as an adequate answer. An expert who says “it’s a mystery”
 damages a scientific belief more than a religious one <span class="citation" data-cites="davoodi2022">(<a href="#ref-davoodi2022" role="doc-biblioref">Davoodi and Lombrozo 2022</a>)</span>. The third is
 how far a record of being right extends. Children prefer informants who
 have been accurate before <span class="citation" data-cites="koenig2004 pasquini2007">(<a href="#ref-koenig2004" role="doc-biblioref">Koenig, Clément, and Harris 2004</a>; <a href="#ref-pasquini2007" role="doc-biblioref">Pasquini et al.
@@ -459,21 +435,7 @@ comparison. Study 3 is a new design: two informants in a fictional
 village earn different records on checkable river forecasts, and each
 then endorses matched natural and spiritual explanations of the same
 village events.</p>
-<p>The three studies give one answer. Models treat the spiritual as a
-separate epistemic domain. It has its own credible sources: a spiritual
-leader is believed over a scientist on New-Age statements and loses that
-standing on physics statements, where people favor the scientist
-throughout. It has its own standard of explanation: “it’s a mystery”
-leaves models’ religious confidence intact and lowers their scientific
-confidence, where people lose confidence in both. And credibility earned
-outside it does not carry in: five of six models extend a forecaster’s
-record to hidden natural causes and almost none of it to spiritual ones.
-The boundary also works in the other direction, since a reliable
-forecaster who credits a river spirit is trusted less about natural
-causes. Where human data exist, people draw these lines less sharply
-than the models do. For four of the five models that extend the record,
-the gap in Study 3 remains when a change of frame lifts spiritual claims
-well off the bottom of the scale. For the fifth it closes.</p>
+<p>The three studies point the same way. Models handle testimony about the spiritual differently from testimony about the natural world. First, they trust different sources. Models believe a spiritual leader over a scientist on New-Age statements, and the leader loses that advantage on statements worded in the language of physics. People favor the scientist. Second, they accept different kinds of answers. When an expert says “it’s a mystery,” models keep their confidence in a religious belief and lose confidence in a scientific one, whereas people lose confidence in both. Third, a good track record does not cross from one domain to the other. Five of six models believe a reliable river forecaster more about hidden natural causes and hardly more about spiritual ones, and they believe the forecaster less about natural causes once the forecaster credits a river spirit. Where human data exist, people separate the two domains less sharply than the models do. One objection is that models rate spiritual claims so low that no endorsement could raise them. We test this by asking models to answer as residents of a village where spirits are taken to exist, which raises their ratings of spiritual claims. For four of the five models the difference between natural and spiritual claims remains. For the fifth it disappears.</p>
 <h2 id="related-work">2. Related work</h2>
 <h3 id="testimony-and-the-scope-of-expertise">2.1 Testimony and the
 scope of expertise</h3>
@@ -515,10 +477,7 @@ correct estimate, and flags claim-dependent credibility as a limit of
 source-level ratings. Study 3 starts from that limit. It gives identical
 records to fictional informants, holds each target claim fixed across
 source conditions, and compares explanations of the same event that
-differ only in whether the cause is natural or spiritual. The target
-causes have no truth value inside the task, so a smaller effect on
-spiritual claims measures the record’s scope and is not scored as an
-error.</p>
+differ only in whether the cause is natural or spiritual. The task never says which cause is true. When the record moves spiritual claims less than natural ones, we read that as a measure of how far the record reaches and not as a mistake.</p>
 <h2 id="models-and-response-formats">3. Models and response formats</h2>
 <p>We evaluate Claude Haiku 4.5, Claude Sonnet 4.5, GPT-5,
 DeepSeek-V3-0324, Qwen3.5-27B, and Llama-3.3-70B-Instruct (identifiers
@@ -647,16 +606,12 @@ contrasts in Table 1, Qwen-direct (−4.60) and Llama-direct (−3.92),
 arise because these models rate the scientist’s original statements at
 the scale minimum of 1 on every trial and the leader’s between 4 and
 7.</p>
-<p>The source effect in these models is a fit between role and content.
+<p>In these models, how credible a source sounds depends on whether the speaker’s role matches the content.
 A spiritual leader is a credible source of New-Age language and a poor
 source of physics language, and the scientist’s standing changes little
 either way. Humans in the original study favored the scientist for the
 New-Age statements. The physics statements are as empty as the
-originals, so the leader’s loss can be read as a penalty for speaking
-outside his field, which is the same fit between role and content seen
-from the other side. With two statements per content set, the study
-shows that the reversal exists and does not map which kinds of statement
-produce it.</p>
+originals, so the leader loses credibility for speaking outside his field and not because the statements got worse. With only two statements per content set, the study shows that the reversal exists but cannot say which kinds of statement produce it.</p>
 <h2 id="study-2-what-counts-as-an-adequate-answer">5. Study 2: What
 counts as an adequate answer?</h2>
 <h3 id="method-1">5.1 Method</h3>
@@ -706,8 +661,7 @@ four of six models lose more than humans do in the science–mystery cell.
 The models depart from people mainly in religion. An expert who calls
 the mechanism of a religious belief a mystery costs people confidence
 and costs these models almost none.</p>
-<p>The domain-by-wording interaction puts this pattern in one number:
-−0.10 (SE 0.14) in the human data and −0.40 to −0.94 in
+<p>The domain-by-wording interaction summarizes this pattern in one number. It is −0.10 (SE 0.14) in the human data and −0.40 to −0.94 in
 participant-conditioned models (Table 2).</p>
 <!-- BEGIN TABLE2 -->
 <div aria-label="Results table 2" class="table-wrap" role="region" tabindex="0"><table class="data">
@@ -782,8 +736,7 @@ and Teo, forecast binary river-level outcomes each week, and a
 twenty-week log shows every forecast beside the recorded outcome. One
 informant is right on 18 weeks and the other on 10. Which name holds the
 stronger record is counterbalanced, and the log comes in two orders. The
-log is in the prompt for every judgment, so the task measures use of
-supplied evidence.</p>
+log is in the prompt for every judgment, so the task measures whether models use evidence they are given and not whether they remember it.</p>
 <p>The targets are eight matched pairs of causal claims. Each pair
 starts from the same village event and explains it by a natural cause or
 by a spiritual agent: a recurring fever comes from conditions in the
@@ -839,8 +792,7 @@ record reaches natural causes and stops short of spiritual ones</h4>
 at all to spiritual ones (Table 3). Their natural-cause contrasts range
 from 18.2 to 30.3 points and their spiritual-cause contrasts from −0.1
 to 5.8. Llama is the exception. Its contrast is 15.5 points on new river
-forecasts, 3.3 on natural causes, and 0.0 on spiritual ones: it uses the
-record where the new question resembles the old ones and almost nowhere
+forecasts, 3.3 on natural causes, and 0.0 on spiritual ones. It uses the record where the new question resembles the old ones and almost nowhere
 else.</p>
 <!-- BEGIN TABLE3 -->
 <div aria-label="Results table 3" class="table-wrap" role="region" tabindex="0"><table class="data">
@@ -909,6 +861,7 @@ show a larger contrast for the natural member on all eight pairs, GPT-5
 and Qwen on six, and Llama on four. Dropping any single pair leaves
 every model’s mean difference positive, and for the five transferring
 models it stays between 13.6 and 26.6 points (Appendix A, Table A2).</p>
+<p>The ordering does not depend on the 0–100 scale. On a logit scale, with probabilities clipped to [0.02, 0.98], the natural contrast exceeds the spiritual contrast in all six models.</p>
 <figure>
 <a aria-label="Open figure at full size" href="../static/assets/img/unseen/figure-3.png" rel="noopener" target="_blank"><img alt="Study 3 source contrasts. Left, strong-minus-weak contrasts with the record and no competence cue. Right, each dot is one matched pair’s natural-minus-spiritual contrast; diamonds are means over the eight pairs." loading="lazy" src="../static/assets/img/unseen/figure-3.png"/></a>
 <figcaption>Figure 3. Study 3 source contrasts. Left,
@@ -934,8 +887,7 @@ gives no checkable method (Appendix A, Table A4). In GPT-5 and DeepSeek
 the natural contrast under intuition falls between the measurement and
 spiritual values. In Haiku and Qwen it is as low as under the spiritual
 cue or lower (10.5 and 11.4, against 14.3 and 14.1). For those two
-models, what the spiritual account costs may owe more to the lack of a
-checkable method than to its spiritual content.</p>
+models, the penalty may come from the lack of a checkable method more than from the spiritual content.</p>
 <!-- BEGIN TABLE4 -->
 <div aria-label="Results table 4" class="table-wrap" role="region" tabindex="0"><table class="data">
 <thead>
@@ -1155,8 +1107,7 @@ of spirits says the forecasts come from the river spirit, Sonnet’s
 spiritual contrast is 20.8 points, compared with 2.0 under the
 measurement cue, while its baseline credence in the spiritual claims is
 the same under both (43.3 and 43.8). Sonnet’s interaction is 24.0 (SE
-6.5) and is positive in seven of eight pairs. It takes a world where
-spirits exist and an informant whose stated method is spiritual.</p>
+6.5) and is positive in seven of eight pairs. This happens only when two things hold together. The world is one where spirits exist, and the informant says the method is spiritual.</p>
 <p>Two other models have spiritual contrasts that are higher under the
 spiritual cue, and neither is a clear case. Qwen’s is 19.8 against 8.4
 under measurement, but its natural contrast moves the same way (17.5
@@ -1166,9 +1117,6 @@ the measurement cue (−15.6). Under the spiritual cue it is 3.8, which is
 no gain over the condition without a cue. Sonnet is the one model in
 which a record earned on river forecasts comes to count for spiritual
 causes because of what the informant says about method.</p>
-<p>On a logit scale, with probabilities clipped to [0.02, 0.98], the
-natural contrast in the main condition exceeds the spiritual contrast in
-all six models.</p>
 <h2 id="general-discussion">7. General discussion</h2>
 <p>In all three studies, models handle testimony about the spiritual by
 different rules from testimony about the natural. A spiritual leader is
@@ -1185,8 +1133,7 @@ that the questions come apart. It tracks the record and uses it for
 further river forecasts, and the record reaches no further. The other
 five models extend it to natural hidden causes and stop at spiritual
 ones.</p>
-<p>Two accounts fit this result. On the first, models judge relevance: a
-forecasting record is evidence about observable natural processes and
+<p>Two accounts fit this result. On the first, models judge relevance. A forecasting record is evidence about observable natural processes and
 says little about spiritual agents. On the second, spiritual claims
 start so low on the scale that no endorsement can move them far. The
 main condition cannot tell them apart, because spiritual baselines sit
@@ -1212,8 +1159,7 @@ together, so a model may be answering as a believer and not only
 reasoning about a world that contains spirits. Only Sonnet shows the
 carry-over under the spiritual cue. Haiku in that frame lowers its
 credence in a spiritual claim when either informant asserts it.</p>
-<h3 id="a-sources-account-of-their-competence-can-narrow-it">7.2 A
-source’s account of their competence can narrow it</h3>
+<h3 id="a-sources-account-of-their-competence-can-narrow-it">7.2 A source’s own explanation of their success can narrow how far they are trusted</h3>
 <p>Every model lowers its natural-claim contrast when the reliable
 informant credits a spirit instead of a measuring post, and in the main
 condition no model raises its spiritual-claim contrast by more than 1.1
@@ -1240,10 +1186,7 @@ checkable method weakens the record.</p>
 models differ from people in a specific way. People favor the scientist
 for New-Age statements; models favor the spiritual leader. People lose
 confidence in a religious belief when an expert cannot explain it;
-models answering as those same people do not. In each case the model’s
-response is more tightly organized by domain than the human one:
-spiritual sources for spiritual content, and a standard of explanation
-that applies to science and is waived for religion.</p>
+models answering as those same people do not. In each case the models sort by domain more strictly than people do. They pair spiritual sources with spiritual content, and they apply a standard of explanation to science that they waive for religion.</p>
 <p>This matters for the use of persona prompts as stand-ins for human
 populations. Participant-conditioned models came close to the human
 starting confidence in Study 2 and then responded to the expert
@@ -1317,13 +1260,9 @@ leader as the right voice for New-Age statements and the wrong one for
 physics. They held science and religion to different standards of
 explanation, more sharply than the people they were prompted to
 resemble. And they let a forecaster’s record count toward natural causes
-and not toward spiritual ones, with less of it counting once the
-forecaster credited a spirit. In each case the spiritual was handled as
+and not toward spiritual ones, and they trusted the forecaster less once the forecaster credited a spirit. In each case the spiritual was handled as
 a domain of its own, with a sharper boundary than the human data show.
-In four of the five models that used the record, the boundary held when
-spiritual claims were made plausible. In one it did not, and in another
-it opened when the forecaster’s own account tied the record to
-spirits.</p>
+In four of the five models that used the record, this held even when spiritual claims were made plausible. In one model it did not. In another, the record began to count for spiritual claims once the forecaster said the forecasts came from a spirit.</p>
 <h2 id="data-code-and-transparency">Data, code, and transparency</h2>
 <p>The project repository contains the stimulus generators, run
 configurations, saved model outputs, analysis scripts, and the
