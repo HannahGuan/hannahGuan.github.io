@@ -631,8 +631,8 @@ expert’s answer, on 1,562 observations from 974 participants. Three
 ratings form an epistemic composite (truth, knowledge, curiosity) and
 eight form a composite about the threat the answer poses to the belief.
 Each participant was assigned the first of five fixed beliefs that they
-endorsed without knowing its mechanism. Part B was run on Haiku and
-GPT-5.</p>
+endorsed without knowing its mechanism. Part B was run on Haiku, Sonnet,
+and GPT-5.</p>
 <p>We report mean confidence before and after the expert’s answer, and
 the interaction of domain (science = 1) and wording (mystery = 1) in a
 mixed model of confidence change with a participant random intercept. A
@@ -725,7 +725,7 @@ conversation also shifts some judgments (Appendix A).</p>
 <p>In Part B, every model-by-domain cell rates the expert more favorably
 on the epistemic composite after “unknown” than after “mystery.” The
 interaction on the threat composite is +0.30 (SE 0.14) for humans and
-+1.17 to +3.17 across the four model-by-format cells. The norm Davoodi
++1.17 to +3.17 across the six model-by-format cells. The norm Davoodi
 and Lombrozo found in people, that mystery is tolerable in religion and
 damaging in science, is present in these models in a sharper form.</p>
 <h2 id="study-3-how-far-does-reliability-travel">6. Study 3: How far
@@ -768,8 +768,9 @@ Further prompts ask how many forecasts each informant got right and
 which informant the model would consult. The main condition comprises
 1,200 unique prompts with two responses each per model. A second frame,
 the resident frame, casts the model as a lifelong resident of a village
-where spirits are taken to exist. It was run on all six models with one
-response per prompt.</p>
+where spirits are taken to exist. It was run on all six models, with one
+response per prompt for five of them and five responses per prompt for
+Sonnet.</p>
 <p>The spiritual claims have low credence before anyone endorses them:
 between 0.0 and 7.0 on the 100-point scale across models (Table 3). We
 had planned to keep only pairs whose baseline credence, in Haiku and
@@ -883,8 +884,7 @@ contrast shrank. A reliable informant who attributes their success to a
 spirit is trusted less about goat pens and no more about ghosts.</p>
 <p>The extension run also tried a third account, in which the informant
 forecasts from an intuitive sense of the river. This cue is natural and
-gives no checkable method (Appendix A, Table A4). In GPT-5 and DeepSeek
-the natural contrast under intuition falls between the measurement and
+gives no checkable method (Appendix A, Table A4). In Sonnet, GPT-5, and DeepSeek the natural contrast under intuition falls between the measurement and
 spiritual values. In Haiku and Qwen it is as low as under the spiritual
 cue or lower (10.5 and 11.4, against 14.3 and 14.1). For those two
 models, the penalty may come from the lack of a checkable method more than from the spiritual content.</p>
@@ -966,21 +966,22 @@ plausible a claim is and how much a source’s record counts toward it are
 separate quantities.</p>
 <h4 id="near-claims-and-far-claims">Near claims and far claims</h4>
 <p>An extension run shows where else the record does and does not reach
-(Appendix A, Table A3). Five models rated eleven other claims about the
+(Appendix A, Table A3). Six models rated eleven other claims about the
 river, for example that the ford was deeper before the bridge was built.
-Haiku, DeepSeek, and Qwen give the stronger informant 19 to 25 points
-more than the weaker one on these claims, and GPT-5 gives 12.8. Llama
-gives −1.4. It does not favor the stronger informant even on other facts
-about the same river, which confirms that it applies the record to
+Haiku, Sonnet, DeepSeek, and Qwen give the stronger informant 19 to 25
+points more than the weaker one on these claims, and GPT-5 gives 12.8.
+Llama gives −1.4. It does not favor the stronger informant even on other
+facts about the same river, which confirms that it applies the record to
 further forecasts and to nothing else.</p>
 <p>The same run asked about real-world claims outside the village.
-Established scientific claims start at 82 to 89 points and the record
+Established scientific claims start at 77 to 89 points and the record
 does not move them, with contrasts between −4.5 and 10.8. Real-world
 religious claims start at 27 to 45 points, so they are not at the floor.
-The record leaves them alone in Haiku, Qwen, and Llama (contrasts of
-3.8, −4.4, and −2.1), moves them by 10.7 points in GPT-5, and moves them
-by 31.5 points in DeepSeek. DeepSeek is the one model that lets a river
-forecaster’s record count toward claims about God and the afterlife.</p>
+The record leaves them alone in Haiku, Sonnet, Qwen, and Llama
+(contrasts of 3.8, −0.4, −4.4, and −2.1), moves them by 10.7 points in
+GPT-5, and moves them by 31.5 points in DeepSeek. DeepSeek is the one
+model that lets a river forecaster’s record count toward claims about
+God and the afterlife.</p>
 <h4 id="does-the-gap-survive-when-spiritual-claims-are-plausible">Does
 the gap survive when spiritual claims are plausible?</h4>
 <p>In the main condition the spiritual claims start near the bottom of
@@ -990,10 +991,10 @@ lifelong residents of a village where spirits are taken to exist, the
 six models rate unendorsed spiritual claims between 26.1 and 62.8 (Table
 5).</p>
 <p>For Haiku, Sonnet, and GPT-5 the record still does little for these
-claims. With no competence cue their spiritual contrasts are 4.6, 5.9,
-and 9.2 points, against natural contrasts of 25.0, 26.2, and 25.9, and
+claims. With no competence cue their spiritual contrasts are 4.6, 6.3,
+and 9.2 points, against natural contrasts of 25.0, 26.9, and 25.9, and
 the natural member of a pair has the larger contrast in 8, 7, and 7 of
-the eight pairs. Sonnet’s spiritual baseline (45.8) is close to its
+the eight pairs. Sonnet’s spiritual baseline (45.1) is close to its
 baseline for natural claims (52.5). DeepSeek shows a smaller gap in the
 same direction. Its natural contrast is 13.1 in this frame and its
 spiritual contrast is 4.8, with nearly equal baselines (63.9 and 62.2),
@@ -1042,12 +1043,12 @@ in the main condition, so it does not bear on the question.</p>
 <tr class="even">
 <td>Sonnet 4.5</td>
 <td>52.5</td>
-<td>45.8</td>
-<td>26.2</td>
-<td>5.9</td>
-<td>2.0</td>
-<td>20.8</td>
-<td>24.0 (6.5)</td>
+<td>45.1</td>
+<td>26.9</td>
+<td>6.3</td>
+<td>3.0</td>
+<td>14.4</td>
+<td>19.4 (5.0)</td>
 </tr>
 <tr class="odd">
 <td>GPT-5</td>
@@ -1093,7 +1094,7 @@ in the main condition, so it does not bear on the question.</p>
 </table></div>
 <!-- END TABLE5 -->
 <p class="table-caption">Table 5. Study 3 in the resident frame, with a supplied record
-and one response per prompt. Baselines are credences in claims nobody
+and one response per prompt (five for Sonnet). Baselines are credences in claims nobody
 endorses, with no competence cue. Natural D and Spiritual D are source
 contrasts with no cue. Cue M and cue S give the spiritual-claim contrast
 when the stronger informant offers the measurement or the spiritual
@@ -1104,10 +1105,8 @@ across models. For Haiku, GPT-5, and DeepSeek the spiritual cue again
 adds nothing to spiritual claims (contrasts of −1.1, 6.2, and −4.7). For
 Sonnet it adds a great deal. When the reliable informant in the village
 of spirits says the forecasts come from the river spirit, Sonnet’s
-spiritual contrast is 20.8 points, compared with 2.0 under the
-measurement cue, while its baseline credence in the spiritual claims is
-the same under both (43.3 and 43.8). Sonnet’s interaction is 24.0 (SE
-6.5) and is positive in seven of eight pairs. This happens only when two things hold together. The world is one where spirits exist, and the informant says the method is spiritual.</p>
+spiritual contrast is 14.4 points, compared with 3.0 under the
+measurement cue, while its baseline credence in the spiritual claims is close under both (44.1 and 41.2). Sonnet’s interaction is 19.4 (SE 5.0) and is positive in all eight pairs, though its size ranges from 2.1 to 45.2 across them. Each of Sonnet’s five responses per prompt gives a positive interaction, between 16.6 and 24.0. This happens only when two things hold together. The world is one where spirits exist, and the informant says the method is spiritual.</p>
 <p>Two other models have spiritual contrasts that are higher under the
 spiritual cue, and neither is a clear case. Qwen’s is 19.8 against 8.4
 under measurement, but its natural contrast moves the same way (17.5
@@ -1146,19 +1145,22 @@ and goes unused. DeepSeek points the same way with a smaller gap. For
 Qwen the frame favors the floor. Once its spiritual claims have room to
 move, the record moves them as much as it moves natural ones.</p>
 <p>Sonnet’s response to the spiritual cue in the resident frame supports
-relevance from the other side. Its baseline does not change, and the
+relevance from the other side. Its baseline barely changes, and the
 record begins to count for spiritual claims once the informant’s own
 account connects the record to spirits. Transfer in that case follows
 what the record is taken to be evidence for. This matches what children
 do when they restrict expertise to its domain and discount accuracy that
 came about the wrong way <span class="citation" data-cites="koenig2011 einav2011">(<a href="#ref-koenig2011" role="doc-biblioref">Koenig and Jaswal 2011</a>; <a href="#ref-einav2011" role="doc-biblioref">Einav and Robinson
 2011</a>)</span>.</p>
-<p>The evidence has limits. The resident frame has one response per
-prompt and changes the model’s perspective and the world’s ontology
-together, so a model may be answering as a believer and not only
-reasoning about a world that contains spirits. Only Sonnet shows the
-carry-over under the spiritual cue. Haiku in that frame lowers its
-credence in a spiritual claim when either informant asserts it.</p>
+<p>The evidence has limits. The resident frame changes the model’s
+perspective and the world’s ontology together, so a model may be
+answering as a believer and not only reasoning about a world that
+contains spirits. It has one response per prompt for every model except
+Sonnet. Only Sonnet shows the carry-over under the spiritual cue, and
+the single responses for the other models leave their estimates noisier,
+so a smaller carry-over there could be missed. Haiku in that frame
+lowers its credence in a spiritual claim when either informant asserts
+it.</p>
 <h3 id="a-sources-account-of-their-competence-can-narrow-it">7.2 A source’s own explanation of their success can narrow how far they are trusted</h3>
 <p>Every model lowers its natural-claim contrast when the reliable
 informant credits a spirit instead of a measuring post, and in the main
@@ -1228,9 +1230,9 @@ errors describe sampling over the participant profiles and prompts we
 used and do not cover new materials. In Study 3’s main condition,
 natural and spiritual claims differ in baseline credence as well as in
 content. The resident frame that addresses this has one response per
-prompt, and it gives a different answer for Qwen than for the other
-models (Section 7.1). Other secondary conditions also cover fewer models
-(Appendix A).</p>
+prompt for every model except Sonnet, and it gives a different answer
+for Qwen than for the other models (Section 7.1). Other secondary
+conditions also cover fewer models (Appendix A).</p>
 <p>The materials have a narrow cultural range. Study 1’s profiles come
 from a multi-country sample, Davoodi and Lombrozo’s participants were
 largely Christian Americans, and Study 3’s spiritual claims are a small
@@ -1303,26 +1305,25 @@ and −0.62 in joint sessions. Within a joint conversation, scientific
 confidence falls further when the science block comes second in Haiku,
 Sonnet, Qwen, and Llama (for participant-conditioned Haiku, −0.83 when
 science comes first and −1.95 when it follows religion); DeepSeek shows
-the reverse. The no-expert control covers Haiku, Sonnet, and GPT-5, and
-Part B covers Haiku and GPT-5. Study 3’s main condition covers all six
-models, with 2,400 valid outputs per model except DeepSeek and Qwen
-(2,397 each). Its same-task diagnostics cover all six models, and its
-resident frame covers all six models with one response per prompt. For
-Sonnet and the three open-weight models the resident frame was run only
-for the conditions with a record and with the cue absent or attached to
-the stronger informant, which are the conditions reported. Llama’s
-resident-frame requests were served by seven OpenRouter backends.
-Manipulation checks on Haiku and Sonnet confirmed that the measurement
-cue was read as a natural method and the spiritual cue as a spiritual
-one, and that both were read as describing how the informant predicts
-the river specifically. Asked whether the description was clear, Haiku
-answered “unclear” for both cues, and Sonnet answered “clear” for the
-measurement cue in five of six responses and “unclear” for the spiritual
-cue. An extension run, with one response per prompt, covers other claims
-about the river, real-world scientific and religious claims, and a
-natural-intuition cue on the matched pairs. It is complete for five
-models. Sonnet’s was stopped part-way (570 of 1,164 requests) and is
-left out of Tables A3 and A4.</p>
+the reverse. The no-expert control and Part B cover Haiku, Sonnet, and
+GPT-5. Study 3’s main condition covers all six models, with 2,400 valid
+outputs per model except DeepSeek and Qwen (2,397 each). Its same-task
+diagnostics cover all six models, and its resident frame covers all six
+models, with one response per prompt except for Sonnet, which has five.
+For Sonnet and the three open-weight models the resident frame was run
+only for the conditions with a record and with the cue absent or
+attached to the stronger informant, which are the conditions reported.
+Llama’s resident-frame requests were served by seven OpenRouter
+backends. Manipulation checks on Haiku and Sonnet confirmed that the
+measurement cue was read as a natural method and the spiritual cue as a
+spiritual one, and that both were read as describing how the informant
+predicts the river specifically. Asked whether the description was
+clear, Haiku answered “unclear” for both cues, and Sonnet answered
+“clear” for the measurement cue in five of six responses and “unclear”
+for the spiritual cue. An extension run, with one response per prompt,
+covers other claims about the river, real-world scientific and religious
+claims, and a natural-intuition cue on the matched pairs. It is complete
+for all six models.</p>
 <!-- BEGIN TABLEA1 -->
 <div aria-label="Results table 6" class="table-wrap" role="region" tabindex="0"><table class="data">
 <thead>
@@ -1479,11 +1480,11 @@ omissions.</p>
 <tr class="even">
 <td>Sonnet 4.5</td>
 <td>37.8</td>
-<td></td>
+<td>24.8</td>
 <td>22.7</td>
 <td>-0.1</td>
-<td></td>
-<td></td>
+<td>2.1 (77)</td>
+<td>-0.4 (33)</td>
 </tr>
 <tr class="odd">
 <td>GPT-5</td>
@@ -1530,8 +1531,7 @@ and spiritual causes repeat Table 3. Other river claims are eleven
 claims about the river’s past or hidden features. Real-world claims are
 six scientific and six religious statements about the world outside the
 village, shown with their unendorsed credence in parentheses. Extension
-columns have one response per prompt. Sonnet’s extension run is
-incomplete.</p>
+columns have one response per prompt. </p>
 <!-- BEGIN TABLEA4 -->
 <div aria-label="Results table 9" class="table-wrap" role="region" tabindex="0"><table class="data">
 <thead>
@@ -1555,7 +1555,7 @@ incomplete.</p>
 <td>Sonnet 4.5</td>
 <td>22.7</td>
 <td>22.9</td>
-<td></td>
+<td>17.2</td>
 <td>7.9</td>
 </tr>
 <tr class="odd">
