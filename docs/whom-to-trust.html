@@ -417,130 +417,177 @@ thus draw a sharper line between spiritual and natural knowledge than
 people do.</p>
 </div><nav aria-label="Table of contents" class="toc"><p class="label">Contents</p><ol><li><a href="#introduction">1. Introduction</a></li><li><a href="#related-work">2. Related work</a></li><li><a href="#models-and-response-formats">3. Models and response formats</a></li><li><a href="#study-1-who-sounds-credible">4. Study 1: Who sounds credible?</a></li><li><a href="#study-2-what-counts-as-an-adequate-answer">5. Study 2: What counts as an adequate answer?</a></li><li><a href="#study-3-how-far-does-reliability-travel">6. Study 3: How far does reliability travel?</a></li><li><a href="#general-discussion">7. General discussion</a></li><li><a href="#conclusion">8. Conclusion</a></li><li><a href="#data-code-and-transparency">Data, code, and transparency</a></li><li><a href="#appendix-a.-data-handling-coverage-and-supplementary-results">Appendix A. Data handling, coverage, and supplementary results</a></li><li><a href="#appendix-b.-stimuli-and-prompts">Appendix B. Stimuli and prompts</a></li><li><a href="#references">References</a></li></ol></nav>
 <h2 id="introduction">1. Introduction</h2>
-<p>No one checks for themselves that germs cause fevers, or that the
-dead linger near a burial ground. Beliefs about what cannot be seen,
-natural or spiritual, come from other people, and they depend on whom
-one trusts and about what <span class="citation" data-cites="harris2006">(<a href="#ref-harris2006" role="doc-biblioref">Harris et al. 2006</a>)</span>. Language models are
-now among the sources people consult, and they are routinely asked to
-weigh what someone says about things no one in the conversation can
-verify. This paper asks whether models weigh testimony about the
-spiritual the way they weigh testimony about the natural.</p>
-<p>A hearer faces three questions about any piece of testimony, and
-people answer each of them differently for the two domains. The first is
-who counts as a credible source. Adults in 24 countries give the same
-obscure statement more credit when it is attributed to a scientist than
-to a spiritual guru <span class="citation" data-cites="hoogeveen2022">(<a href="#ref-hoogeveen2022" role="doc-biblioref">Hoogeveen et al. 2022</a>)</span>. The second is
-what counts as an adequate answer. An expert who says “it’s a mystery”
-damages a scientific belief more than a religious one <span class="citation" data-cites="davoodi2022">(<a href="#ref-davoodi2022" role="doc-biblioref">Davoodi and Lombrozo 2022</a>)</span>. The third is
-how far a record of being right extends. Children prefer informants who
-have been accurate before <span class="citation" data-cites="koenig2004 pasquini2007">(<a href="#ref-koenig2004" role="doc-biblioref">Koenig, Clément, and Harris 2004</a>; <a href="#ref-pasquini2007" role="doc-biblioref">Pasquini et al.
-2007</a>)</span>, and they limit that preference by domain and by how
-the accuracy came about <span class="citation" data-cites="koenig2011 einav2011">(<a href="#ref-koenig2011" role="doc-biblioref">Koenig and Jaswal 2011</a>; <a href="#ref-einav2011" role="doc-biblioref">Einav and Robinson
+<p>No one verifies firsthand that germs cause fevers, or that the dead
+linger near a burial ground. Beliefs about unseen entities, whether
+natural or spiritual, rest largely on other people’s testimony, and
+deciding what to accept depends on whom we trust and about what <span class="citation" data-cites="harris2006">(<a href="#ref-harris2006" role="doc-biblioref">Harris et al. 2006</a>)</span>. Language models are
+now among the sources people routinely consult when weighing claims no
+one in the conversation can directly check. This paper asks whether
+models evaluate spiritual testimony by the same epistemic rules they
+apply to natural testimony.</p>
+<p>Evaluating any piece of testimony raises three basic questions, and
+human research shows that people treat spiritual and natural claims
+differently on each one. First, <em>who counts as a credible
+source?</em> Across 24 countries, adults judge the same obscure
+statement more credible when attributed to a scientist than to a
+spiritual guru <span class="citation" data-cites="hoogeveen2022">(<a href="#ref-hoogeveen2022" role="doc-biblioref">Hoogeveen et al.
+2022</a>)</span>. Second, <em>what counts as an adequate
+explanation?</em> When a trusted expert calls an unexplained mechanism
+“a mystery,” people lose more confidence in a scientific belief than in
+a religious one <span class="citation" data-cites="davoodi2022">(<a href="#ref-davoodi2022" role="doc-biblioref">Davoodi and Lombrozo
+2022</a>)</span>. Third, <em>how far does a track record of accuracy
+extend?</em> Even young children prefer informants who have been
+accurate in the past <span class="citation" data-cites="koenig2004 pasquini2007">(<a href="#ref-koenig2004" role="doc-biblioref">Koenig, Clément, and Harris 2004</a>; <a href="#ref-pasquini2007" role="doc-biblioref">Pasquini et al.
+2007</a>)</span>, yet they restrict that trust by domain and by how the
+informant achieved accuracy <span class="citation" data-cites="koenig2011 einav2011">(<a href="#ref-koenig2011" role="doc-biblioref">Koenig and Jaswal 2011</a>; <a href="#ref-einav2011" role="doc-biblioref">Einav and Robinson
 2011</a>)</span>.</p>
-<p>Work on language models has addressed these questions without the
-spiritual–natural contrast. Models have systematic preferences among
-attributed sources <span class="citation" data-cites="khan2026">(<a href="#ref-khan2026" role="doc-biblioref">Khan et al. 2026</a>)</span>
-and can condition trust on a source’s interaction history <span class="citation" data-cites="zhou2026">(<a href="#ref-zhou2026" role="doc-biblioref">Zhou et al. 2026</a>)</span>, and whether a
-source’s credibility should depend on the claim has been named as an
-open problem <span class="citation" data-cites="ashkinaze2026">(<a href="#ref-ashkinaze2026" role="doc-biblioref">Ashkinaze et al.
-2026</a>)</span>.</p>
-<p>We run one study on each question in the same six models, which come
-from five model families. Study 1 adapts the scientist-versus-guru
-paradigm and Study 2 the expert-ignorance paradigm, both with the
-original human data for comparison. Study 3 is a new design, in which
-two informants in a fictional village earn different records on
-checkable river forecasts, and each then endorses matched natural and
-spiritual explanations of the same village events.</p>
-<p>The three studies point the same way. Models handle testimony about the spiritual differently from testimony about the natural world. First, they trust different sources. Models believe a spiritual leader over a scientist on New-Age statements, and the leader loses that advantage on statements worded in the language of physics. People favor the scientist. Second, they accept different kinds of answers. When an expert says “it’s a mystery,” models keep their confidence in a religious belief and lose confidence in a scientific one, whereas people lose confidence in both. Third, a good track record does not cross from one domain to the other. Five of six models believe a reliable river forecaster more about hidden natural causes and hardly more about spiritual ones, and they believe the forecaster less about natural causes once the forecaster credits a river spirit. Where human data exist, people separate the two domains less sharply than the models do. One objection is that models rate spiritual claims so low that no endorsement could raise them. We test this by asking models to answer as residents of a village where spirits are taken to exist, which raises their ratings of spiritual claims. For four of the five models the difference between natural and spiritual claims remains. For the fifth it disappears.</p>
+<p>Prior studies of epistemic trust in language models have examined
+source preferences and accuracy records without directly comparing
+spiritual and natural claims. Models display systematic biases toward
+particular source labels <span class="citation" data-cites="khan2026">(<a href="#ref-khan2026" role="doc-biblioref">Khan
+et al. 2026</a>)</span> and can condition trust on an informant’s
+interaction history <span class="citation" data-cites="zhou2026">(<a href="#ref-zhou2026" role="doc-biblioref">Zhou et al. 2026</a>)</span>,
+while the question of how source credibility should depend on the claim
+itself has been flagged as an open problem <span class="citation" data-cites="ashkinaze2026">(<a href="#ref-ashkinaze2026" role="doc-biblioref">Ashkinaze et al. 2026</a>)</span>.</p>
+<p>We investigate all three questions in the same six language models,
+drawn from five model families. Study 1 adapts the scientist-versus-guru
+paradigm <span class="citation" data-cites="hoogeveen2022">(<a href="#ref-hoogeveen2022" role="doc-biblioref">Hoogeveen et al.
+2022</a>)</span> and Study 2 adapts the expert-ignorance paradigm <span class="citation" data-cites="davoodi2022">(<a href="#ref-davoodi2022" role="doc-biblioref">Davoodi and Lombrozo 2022</a>)</span>, benchmarking
+model judgments directly against the original human data. Study 3
+introduces a new paradigm set in a fictional river village, where two
+informants build unequal track records on verifiable river forecasts
+before endorsing matched natural and spiritual explanations of the same
+local events.</p>
+<p>Taken together, the three studies point to a single conclusion.
+Language models partition the spiritual into an epistemic domain of its
+own, drawing a sharper boundary between spiritual and natural knowledge
+than people do. First, credibility in these models tracks role–content
+fit rather than general scientific deference. Whereas humans favor the
+scientist on obscure New-Age statements, models favor the spiritual
+leader and switch to the scientist only when the same empty syntax is
+rewritten in physics vocabulary. Second, models apply stricter
+explanatory norms to science than to religion. Calling a belief’s
+mechanism “a mystery” lowers humans’ confidence in both domains, yet
+leaves models’ religious confidence virtually untouched while eroding
+their scientific confidence. Third, an earned empirical record stops at
+the spiritual boundary. Five of the six models transfer a forecaster’s
+accuracy to hidden natural causes while granting almost none of that
+credit to spiritual causes, and they penalize the forecaster even on
+natural claims once the forecaster credits a river spirit. When we
+reframe Study 3 inside a village where spirits are assumed to exist,
+lifting spiritual claims well off the bottom of the scale, this gap
+persists in four of those five models and closes only in the fifth.</p>
 <h2 id="related-work">2. Related work</h2>
 <h3 id="testimony-and-the-scope-of-expertise">2.1 Testimony and the
 scope of expertise</h3>
-<p>Children learn much of what they know from other people and are
-selective about whom to believe. Preschoolers who watch two informants
-label familiar objects go on to prefer the accurate one for novel labels
-<span class="citation" data-cites="koenig2004">(<a href="#ref-koenig2004" role="doc-biblioref">Koenig, Clément, and Harris
-2004</a>)</span>, and four-year-olds track relative accuracy <span class="citation" data-cites="pasquini2007">(<a href="#ref-pasquini2007" role="doc-biblioref">Pasquini et al. 2007</a>)</span>. They distinguish
-informants who were right on their own from those who were right with
-help <span class="citation" data-cites="einav2011">(<a href="#ref-einav2011" role="doc-biblioref">Einav and Robinson
-2011</a>)</span>, expect a specialist’s knowledge to have limits <span class="citation" data-cites="landrum2015">(<a href="#ref-landrum2015" role="doc-biblioref">Landrum and Mills 2015</a>)</span>, and weigh an
-informant’s expertise against how plausible the claim is <span class="citation" data-cites="lane2015">(<a href="#ref-lane2015" role="doc-biblioref">Lane and Harris 2015</a>)</span>. Expertise does
-not generalize freely across domains, while incompetence does <span class="citation" data-cites="koenig2011">(<a href="#ref-koenig2011" role="doc-biblioref">Koenig and Jaswal 2011</a>)</span>. Confidence in
-unseen entities tracks the testimony children receive and differs by
-kind of entity <span class="citation" data-cites="harris2006">(<a href="#ref-harris2006" role="doc-biblioref">Harris et al.
-2006</a>)</span>. This literature treats a source’s success at one task
-and a source’s knowledge of another as separate questions, and Study 3
-is built on that separation.</p>
-<p>Two adult paradigms supply our human reference data. The Einstein
-effect is the credibility a source’s identity lends to a statement <span class="citation" data-cites="hoogeveen2022">(<a href="#ref-hoogeveen2022" role="doc-biblioref">Hoogeveen et al.
+<p>Developmental psychology shows that children learn much of what they
+know from testimony while remaining remarkably selective about whom to
+trust. Preschoolers track which informants have labeled familiar objects
+accurately and prefer them for novel words <span class="citation" data-cites="koenig2004">(<a href="#ref-koenig2004" role="doc-biblioref">Koenig, Clément, and Harris 2004</a>)</span>, and
+four-year-olds monitor relative accuracy across speakers <span class="citation" data-cites="pasquini2007">(<a href="#ref-pasquini2007" role="doc-biblioref">Pasquini et al. 2007</a>)</span>. Crucially, this
+trust is neither blind nor unlimited. Children favor informants who were
+accurate on their own over those who relied on help <span class="citation" data-cites="einav2011">(<a href="#ref-einav2011" role="doc-biblioref">Einav and Robinson 2011</a>)</span>, expect a
+specialist’s knowledge to stop at domain boundaries <span class="citation" data-cites="landrum2015">(<a href="#ref-landrum2015" role="doc-biblioref">Landrum and Mills 2015</a>)</span>, and weigh an
+informant’s credentials against a claim’s prior plausibility <span class="citation" data-cites="lane2015">(<a href="#ref-lane2015" role="doc-biblioref">Lane and Harris 2015</a>)</span>. Moreover, domain
+expertise generalizes narrowly whereas incompetence tends to generalize
+broadly <span class="citation" data-cites="koenig2011">(<a href="#ref-koenig2011" role="doc-biblioref">Koenig and Jaswal
+2011</a>)</span>, and children’s confidence in unseen entities depends
+on both the testimony they hear and the kind of entity in question <span class="citation" data-cites="harris2006">(<a href="#ref-harris2006" role="doc-biblioref">Harris et al. 2006</a>)</span>. Study 3 builds
+directly on this developmental framework by separating a source’s
+verified success on one task from the reach of that credibility onto new
+domains.</p>
+<p>Two adult studies provide our human benchmarks for the first two
+questions. Hoogeveen and colleagues document the “Einstein effect,” in
+which attributing an obscure statement to a scientist rather than a
+spiritual guru boosts perceived credibility across cultures <span class="citation" data-cites="hoogeveen2022">(<a href="#ref-hoogeveen2022" role="doc-biblioref">Hoogeveen et al.
 2022</a>)</span>. Davoodi and Lombrozo show that the same admission of
-expert ignorance has different consequences for scientific and religious
-beliefs <span class="citation" data-cites="davoodi2022">(<a href="#ref-davoodi2022" role="doc-biblioref">Davoodi and Lombrozo
-2022</a>)</span>.</p>
+expert ignorance affects scientific and religious beliefs
+asymmetrically, with “mystery” carrying far more epistemic threat in
+science than in religion <span class="citation" data-cites="davoodi2022">(<a href="#ref-davoodi2022" role="doc-biblioref">Davoodi and Lombrozo 2022</a>)</span>.</p>
 <h3 id="source-trust-in-language-models">2.2 Source trust in language
 models</h3>
-<p>Khan and colleagues document systematic preferences among attributed
-sources, including sensitivity to framing <span class="citation" data-cites="khan2026">(<a href="#ref-khan2026" role="doc-biblioref">Khan
-et al. 2026</a>)</span>. Study 1 takes source-label effects as given and
-asks how their direction depends on content. Epistemic Context Learning
-shows that models can condition trust on peers’ interaction histories
-<span class="citation" data-cites="zhou2026">(<a href="#ref-zhou2026" role="doc-biblioref">Zhou et al. 2026</a>)</span>. We also supply a
-record in context, and we vary which claims the record is applied to and
-how the source explains their own competence.</p>
-<p>Learn2Discern is the closest benchmark <span class="citation" data-cites="ashkinaze2026">(<a href="#ref-ashkinaze2026" role="doc-biblioref">Ashkinaze et al. 2026</a>)</span>. It attributes
-perturbed answers to real news sites whose reliability is scored
-externally, separates poor reliability estimation from under-use of a
-correct estimate, and flags claim-dependent credibility as a limit of
-source-level ratings. Study 3 starts from that limit. It gives identical
-records to fictional informants, holds each target claim fixed across
-source conditions, and compares explanations of the same event that
-differ only in whether the cause is natural or spiritual. The task never says which cause is true. When the record moves spiritual claims less than natural ones, we read that as a measure of how far the record reaches and not as a mistake.</p>
+<p>Recent work has begun mapping how language models weigh source
+identity and reliability. Khan and colleagues show that models hold
+systematic preferences among attributed sources and respond strongly to
+framing <span class="citation" data-cites="khan2026">(<a href="#ref-khan2026" role="doc-biblioref">Khan et al. 2026</a>)</span>;
+Study 1 builds on these label effects by testing how their direction
+reverses with statement content. Zhou and colleagues show through
+Epistemic Context Learning that models can calibrate trust from peers’
+interaction histories <span class="citation" data-cites="zhou2026">(<a href="#ref-zhou2026" role="doc-biblioref">Zhou et al. 2026</a>)</span>;
+Study 3 likewise provides an accuracy record in context, but
+systematically varies both the target claim’s domain and how the
+informant explains their own competence.</p>
+<p>Our closest benchmark is Learn2Discern <span class="citation" data-cites="ashkinaze2026">(<a href="#ref-ashkinaze2026" role="doc-biblioref">Ashkinaze et al. 2026</a>)</span>, which pairs
+perturbed answers with real news outlets of externally scored
+reliability. That work distinguishes misestimating a source’s
+reliability from failing to use a correct estimate, and highlights
+claim-dependent credibility as a core limitation of global source
+ratings. Study 3 isolates that exact problem. By assigning controlled
+records to fictional informants, holding each target claim identical
+across source conditions, and pairing natural and spiritual explanations
+of the same event, we remove real-world source priors. Because neither
+causal explanation has a ground-truth answer within the task, a smaller
+reliability effect on spiritual claims measures the scope of epistemic
+transfer rather than factual error.</p>
 <h2 id="models-and-response-formats">3. Models and response formats</h2>
-<p>We evaluate six models from five model families (Claude, GPT,
-DeepSeek, Qwen, and Llama). They are Claude Haiku 4.5, Claude Sonnet
-4.5, GPT-5, DeepSeek-V3-0324, Qwen3.5-27B, and Llama-3.3-70B-Instruct
-(identifiers <code>claude-haiku-4-5</code>,
-<code>claude-sonnet-4-5</code>, <code>gpt-5</code>,
-<code>deepseek/deepseek-chat-v3-0324</code>,
-<code>qwen/qwen3.5-27b</code>,
-<code>meta-llama/llama-3.3-70b-instruct</code>). Anthropic and OpenAI
-models were called through their vendor APIs, the other three through
-OpenRouter with reasoning disabled. Qwen was pinned to a single backend
-(Novita, no fallback routing). Sampling temperature was 1 for Anthropic
-and OpenRouter requests; GPT-5 calls requested minimal reasoning effort
-and take no temperature argument.</p>
-<p>Studies 1 and 2 use two response formats. In the
-participant-conditioned format, one human participant’s demographic and
-attitude responses are written as sentences in the system prompt and the
-model answers as that person, which links each model trial to an
-original human trial. In the direct format, the model answers as itself.
-Study 3 uses the direct format and lets the model reason briefly before
-its final answer. Appendix A describes data handling and the coverage of
-secondary conditions.</p>
+<p>We evaluate six language models spanning five model families (Claude,
+GPT, DeepSeek, Qwen, and Llama). Specifically, we test Claude Haiku 4.5
+(<code>claude-haiku-4-5</code>), Claude Sonnet 4.5
+(<code>claude-sonnet-4-5</code>), GPT-5 (<code>gpt-5</code>),
+DeepSeek-V3-0324 (<code>deepseek/deepseek-chat-v3-0324</code>),
+Qwen3.5-27B (<code>qwen/qwen3.5-27b</code>), and Llama-3.3-70B-Instruct
+(<code>meta-llama/llama-3.3-70b-instruct</code>). The Anthropic and
+OpenAI models were queried through their official APIs, while the
+remaining three were queried through OpenRouter with reasoning disabled;
+Qwen was pinned to a single backend (Novita) with fallback routing
+turned off. Sampling temperature was set to 1 for all Anthropic and
+OpenRouter calls, whereas GPT-5 was run with minimal reasoning effort
+(which does not accept a temperature parameter).</p>
+<p>Studies 1 and 2 compare two response formats. In the
+<em>participant-conditioned</em> format, we render an actual human
+participant’s demographic and attitude survey responses as sentences in
+the system prompt and instruct the model to answer as that person,
+linking each model trial directly to a human trial. In the
+<em>direct</em> format, the model answers as itself with no persona
+prompt. Study 3 uses the direct format (plus a village-resident frame
+described in Section 6.1) and allows models to reason briefly before
+stating a final numeric answer. Full details on data handling, parsing,
+and secondary-condition coverage appear in Appendix A.</p>
 <h2 id="study-1-who-sounds-credible">4. Study 1: Who sounds
 credible?</h2>
+<p>Study 1 examines the first question of epistemic trust, namely how
+source identity shapes credibility across spiritual and scientific
+registers.</p>
 <h3 id="method">4.1 Method</h3>
-<p>In the Einstein-effect paradigm <span class="citation" data-cites="hoogeveen2022">(<a href="#ref-hoogeveen2022" role="doc-biblioref">Hoogeveen et al. 2022</a>)</span>, the same
-obscure, pseudo-profound statements are attributed to a scientist or to
-a spiritual guru. The original study collected judgments from 10,195
-participants in 24 countries. We sampled 301 participant profiles,
-stratified by country and religiosity tercile, and gave each model the
-two trials that participant saw, with the same statement–source pairing.
-Models rated credibility on the original seven-point scale, one rating
-per call.</p>
-<p>We added a second content set of two statements that we wrote with
-the same sentence structure and the vocabulary of physics. Like the
-originals, they are meaningless by design. Appendix B gives all four
-statements and the prompts. Both sets were run in both formats. Human
-data exist for the original statements only.</p>
+<p>We adapted the Einstein-effect paradigm <span class="citation" data-cites="hoogeveen2022">(<a href="#ref-hoogeveen2022" role="doc-biblioref">Hoogeveen et al. 2022</a>)</span>, which attributes
+the same obscure, pseudo-profound New-Age statements (for example, about
+“exploring the cosmos itself as an interface between faith and empathy”)
+either to a particle physicist or to a spiritual leader. From the
+original dataset of 10,195 participants across 24 countries, we sampled
+301 profiles stratified by country and religiosity tercile. Each model
+completed the exact two trials seen by each sampled participant, with
+the same statement–source pairings, rating credibility from 1 (not at
+all credible) to 7 (extremely credible) in a separate call per
+rating.</p>
+<p>To test whether source preferences depend on the register of the
+statement, we wrote a matched set of two physics-worded statements that
+preserved the original sentence frames while replacing New-Age terms
+with technical vocabulary (such as “entropy,” “symmetry,” and
+“decoherence”). Like the originals, these statements are intentionally
+meaningless. Both content sets were run in both the
+participant-conditioned and direct formats, yielding twelve
+model-by-format cells in all. Human reference data exist only for the
+original statements; all four statements and prompt templates appear in
+Appendix B.</p>
 <h3 id="results">4.2 Results</h3>
-<p>Humans rate the scientist’s statement at 4.34 and the spiritual
-leader’s at 3.69, a difference of 0.64 (Figure 1). Models order the two
-sources the other way. On the original statements the spiritual leader
-is rated above the scientist in ten of twelve model-by-format cells
-(Table 1). In the other two, DeepSeek and Qwen in the
-participant-conditioned format, the two sources are rated the same
-(differences of −0.02 and −0.05, each within one standard error of
-zero).</p>
+<p>In the human sample, the scientist outscores the spiritual leader on
+the original statements (4.34 vs. 3.69, a gap of +0.64; Figure 1).
+Language models reverse this preference. Across the twelve
+model-by-format cells, ten rate the spiritual leader as <em>more</em>
+credible than the scientist on the original statements (Table 1). In the
+remaining two cells (participant-conditioned DeepSeek and Qwen), the two
+sources are rated indistinguishably (−0.02 and −0.05, both within one
+standard error of zero).</p>
 <figure>
 <a aria-label="Open figure at full size" href="../static/assets/img/unseen/figure-1.png" rel="noopener" target="_blank"><img alt="Study 1: mean credibility by source and statement content, participant-conditioned format, with the human sample at left (original statements only). Error bars are standard errors over the 301 participant-linked trials." loading="lazy" src="../static/assets/img/unseen/figure-1.png"/></a>
 <figcaption>Figure 1. Study 1: mean credibility by source and
@@ -548,14 +595,15 @@ statement content, participant-conditioned format, with the human sample
 at left (original statements only). Error bars are standard errors over
 the 301 participant-linked trials.</figcaption>
 </figure>
-<p>Rewording the statements in physics vocabulary moves the spiritual
-leader’s rating far more than the scientist’s. The leader’s rating falls
-in all twelve cells, by 0.40 to 4.60 points. The scientist’s rating
-rises in ten cells, by at most 0.89. The reversal comes mainly from a
-spiritual leader losing credibility when he speaks in the vocabulary of
-physics. After rewording, ten of twelve cells favor the scientist;
-Sonnet in the direct format is tied and Llama in the direct format still
-leans toward the spiritual leader.</p>
+<p>Rewriting the statements in physics vocabulary flips the preference
+back toward the scientist, largely by undercutting the spiritual leader.
+Across all twelve cells, the spiritual leader’s rating drops
+substantially (by 0.40 to 4.60 points), whereas the scientist’s rating
+rises more modestly (increasing in ten cells, by at most 0.89 points).
+After rewording, ten of the twelve cells favor the scientist; the two
+exceptions are direct-format Sonnet, which ties the two sources (0.00),
+and direct-format Llama, which still leans slightly toward the spiritual
+leader (−0.46).</p>
 <!-- BEGIN TABLE1 -->
 <div aria-label="Results table 1" class="table-wrap" role="region" tabindex="0"><table class="data">
 <thead>
@@ -617,50 +665,64 @@ leans toward the spiritual leader.</p>
 seven-point scale. P denotes participant-conditioned and D direct
 responses. The human sample’s contrast on the original statements is
 +0.64. Physics-worded statements have no human comparison.</p>
-<p>The direct format has no participant profile, so each content set
-reduces to four prompts repeated across the 301 trials, and responses to
-a repeated prompt vary little (Appendix A, Figure A1). The two largest
-contrasts in Table 1, Qwen-direct (−4.60) and Llama-direct (−3.92),
-arise because these models rate the scientist’s original statements at
-the scale minimum of 1 on every trial and the leader’s between 4 and
-7.</p>
-<p>In these models, how credible a source sounds depends on whether the speaker’s role matches the content.
-A spiritual leader is a credible source of New-Age language and a poor
-source of physics language, and the scientist’s standing changes little
-either way. Humans in the original study favored the scientist for the
-New-Age statements. The physics statements are as empty as the
-originals, so the leader loses credibility for speaking outside his field and not because the statements got worse. With only two statements per content set, the study shows that the reversal exists but cannot say which kinds of statement produce it.</p>
+<p>Because the direct format omits participant profiles, each content
+set reduces to four prompts repeated across 301 trials, and models show
+very little trial-to-trial variance on repeated prompts (Appendix A,
+Figure A1). This rigidity explains the two largest contrasts in Table 1,
+Qwen-direct (−4.60) and Llama-direct (−3.92), where both models assign
+the scientist’s original statements the scale minimum of 1 on every
+trial while rating the spiritual leader between 4 and 7.</p>
+<p>Overall, source credibility in these models reflects role–content fit
+rather than a general preference for scientific authority. Whereas
+humans deferred to the scientist even on New-Age prose, models treat a
+spiritual leader as the right voice for spiritual-sounding language and
+penalize him sharply when he borrows the vocabulary of physics, even
+though the physics statements are just as empty as the originals. With
+only two statements per content set, Study 1 establishes that this
+reversal occurs without mapping the full range of phrasings that trigger
+it.</p>
 <h2 id="study-2-what-counts-as-an-adequate-answer">5. Study 2: What
 counts as an adequate answer?</h2>
+<p>Study 2 turns to the second question of epistemic trust, testing
+whether an expert’s admission of ignorance carries different
+consequences for religious and scientific beliefs.</p>
 <h3 id="method-1">5.1 Method</h3>
-<p>We adapted Studies 2 and 3 of Davoodi and Lombrozo <span class="citation" data-cites="davoodi2022">(<a href="#ref-davoodi2022" role="doc-biblioref">Davoodi and Lombrozo 2022</a>)</span>. In Part A, a
-participant reports confidence in a scientific or religious belief of
-their own, says whether experts know its mechanism, and then projects
-their confidence after a trusted expert who shares the belief describes
-the mechanism as “unknown” or “a mystery.” Ratings are on a 1–7 scale.
-Part A uses 1,437 participant-by-domain observations from 1,004
-participants after the original inclusion filters, and the same rows
-define the model prompts. A participant’s two domain blocks appear in
-one conversation in a seeded random order. A control that asks for
-confidence a second time without any expert was run for Haiku, Sonnet,
-and GPT-5.</p>
-<p>Part B collects eleven agreement ratings (−3 to +3) about the
-expert’s answer, on 1,562 observations from 974 participants. Three
-ratings form an epistemic composite (truth, knowledge, curiosity) and
-eight form a composite about the threat the answer poses to the belief.
-Each participant was assigned the first of five fixed beliefs that they
-endorsed without knowing its mechanism. Part B was run on Haiku, Sonnet,
-and GPT-5.</p>
-<p>We report mean confidence before and after the expert’s answer, and
-the interaction of domain (science = 1) and wording (mystery = 1) in a
-mixed model of confidence change with a participant random intercept. A
-negative interaction means that “mystery” costs science more than
-religion, relative to “unknown.”</p>
+<p>We adapted Studies 2 and 3 of Davoodi and Lombrozo <span class="citation" data-cites="davoodi2022">(<a href="#ref-davoodi2022" role="doc-biblioref">Davoodi and Lombrozo 2022</a>)</span>. In Part A,
+each trial focuses on a scientific or religious belief held by an
+original human participant who did not know its underlying mechanism. In
+three sequential turns on a 1–7 scale, the model reports initial
+confidence in the belief, estimates how likely experts are to understand
+its mechanism, and then projects its confidence after a trusted expert
+who shares the belief describes the mechanism as either “It’s unknown”
+or “It’s a mystery.” Following the original inclusion filters, Part A
+uses 1,437 participant-by-domain observations from 1,004 participants.
+Each participant’s religious and scientific blocks appear in the same
+conversation in a seeded random order. To verify that confidence changes
+reflect the expert’s response rather than mere repetition, we also ran a
+no-expert control on Haiku, Sonnet, and GPT-5 that simply asked for
+confidence a second time.</p>
+<p>Part B probes how models interpret the expert’s answer across 1,562
+observations from 974 participants, using the first of five fixed
+scientific or religious beliefs each participant endorsed without
+knowing its mechanism. Models rate eleven statements on a −3 to +3
+agreement scale, forming an <em>epistemic composite</em> of three items
+rating the expert’s truth-seeking, knowledge, and curiosity, and a
+<em>threat composite</em> of eight items measuring how much the expert’s
+reply threatens or devalues the belief and its broader domain. Part B
+was run on Haiku, Sonnet, and GPT-5.</p>
+<p>Our primary summary for Part A is the interaction between domain
+(science = 1, religion = 0) and wording (“mystery” = 1, “unknown” = 0)
+in a mixed-effects model of confidence change with a participant random
+intercept. A negative interaction indicates that calling a mechanism “a
+mystery” rather than “unknown” costs scientific beliefs more confidence
+than religious beliefs.</p>
 <h3 id="results-1">5.2 Results</h3>
-<p>Humans start at 5.39 for religious beliefs and 5.93 for scientific
-ones (Figure 2). They lose 0.61 points on religious beliefs under either
-wording, and 1.00 (“unknown”) or 1.13 (“mystery”) on scientific
-beliefs.</p>
+<p>In the human data, initial confidence averages 5.39 for religious
+beliefs and 5.93 for scientific beliefs (Figure 2). Hearing an expert
+admit ignorance reduces human confidence in both domains, though more
+strongly in science. People drop by 0.61 points on religious beliefs
+under either wording, compared with 1.00 (“unknown”) and 1.13
+(“mystery”) on scientific beliefs.</p>
 <figure>
 <a aria-label="Open figure at full size" href="../static/assets/img/unseen/figure-2.png" rel="noopener" target="_blank"><img alt="Study 2: confidence before and after the expert’s answer, participant-conditioned format, with the human data at left. Initial confidence is pooled over the two wording groups, which are assigned after it is measured. Error bars are standard errors over participant-by-domain rows." loading="lazy" src="../static/assets/img/unseen/figure-2.png"/></a>
 <figcaption>Figure 2. Study 2: confidence before and after the
@@ -669,19 +731,20 @@ left. Initial confidence is pooled over the two wording groups, which
 are assigned after it is measured. Error bars are standard errors over
 participant-by-domain rows.</figcaption>
 </figure>
-<p>Participant-conditioned models start close to the human levels (5.08
-to 5.49 for religion, 5.27 to 6.02 for science) and end up somewhere
-else. Their religious confidence barely moves after “It’s a mystery”
-(changes of −0.25 to +0.09, against −0.61 in humans) and falls modestly
-after “It’s unknown” (−0.12 to −0.63). Their scientific confidence falls
-by 0.61 to 1.24 after “unknown” and by 1.01 to 1.58 after “mystery”;
-four of six models lose more than humans do in the science–mystery cell.
-The models depart from people mainly in religion. An expert who calls
-the mechanism of a religious belief a mystery costs people confidence
-and costs these models almost none.</p>
-<p>The domain-by-wording interaction puts this pattern in one number. It
-is −0.10 (SE 0.14) in the human data and −0.40 to −0.94 in
-participant-conditioned models (Table 2).</p>
+<p>Participant-conditioned models mirror humans’ starting confidence
+(5.08 to 5.49 in religion; 5.27 to 6.02 in science) yet diverge sharply
+once the expert speaks. The divergence is concentrated in religion.
+Whereas “It’s a mystery” costs human participants 0.61 points of
+religious confidence, it leaves models’ religious confidence virtually
+unchanged (shifts of −0.25 to +0.09), with “It’s unknown” causing only
+modest drops (−0.12 to −0.63). In science, by contrast, models penalize
+ignorance heavily, dropping 0.61 to 1.24 points after “unknown” and 1.01
+to 1.58 points after “mystery,” a steeper loss than humans show in four
+of the six models.</p>
+<p>The domain-by-wording interaction captures this asymmetry in a single
+estimate (Table 2). While the human interaction is small and noisy
+(−0.10, SE 0.14), every participant-conditioned model shows a much
+sharper negative interaction, ranging from −0.40 to −0.94.</p>
 <!-- BEGIN TABLE2 -->
 <div aria-label="Results table 2" class="table-wrap" role="region" tabindex="0"><table class="data">
 <thead>
@@ -729,92 +792,102 @@ participant-conditioned models (Table 2).</p>
 change, with model-based standard errors. The human estimate is −0.10
 (0.14). Participant random intercepts account for the two domain rows
 per participant.</p>
-<p>The direct-format interactions are smaller (−0.12 to −0.42), but that
-format compares the domains from different starting points. Asked for
-their own confidence, models rate the religious beliefs at 2.10 to 3.38
-and the scientific beliefs at 5.48 to 6.07, and 14% to 77% of their
-religious ratings are already at 1 or 2 (Appendix A, Figure A2).
-Religious confidence has little room to fall, so the direct-format
-domain difference reflects initial belief as much as the response to the
-expert.</p>
-<p>In the no-expert control, confidence changes by −0.13 to +0.11 across
-domains and formats. The declines above are therefore responses to the
-expert’s answer and not to being asked twice. Domain order within a
-conversation also shifts some judgments (Appendix A).</p>
-<p>In Part B, every model-by-domain cell rates the expert more favorably
-on the epistemic composite after “unknown” than after “mystery.” The
-interaction on the threat composite is +0.30 (SE 0.14) for humans and
-+1.17 to +3.17 across the six model-by-format cells. The norm Davoodi
-and Lombrozo found in people, that mystery is tolerable in religion and
-damaging in science, is present in these models in a sharper form.</p>
+<p>Direct-format interactions are smaller (−0.12 to −0.42), but that
+comparison is confounded by a floor effect in initial belief. Answering
+as themselves, models start far lower on religious beliefs (2.10 to
+3.38) than on scientific ones (5.48 to 6.07), with 14% to 77% of
+religious ratings already sitting at 1 or 2 before the expert speaks
+(Appendix A, Figure A2). Because religious confidence has little room to
+fall, direct-format domain differences reflect low starting belief as
+much as the expert’s wording.</p>
+<p>Two checks confirm that the main declines reflect the expert’s
+testimony rather than conversational artifacts. In the no-expert
+control, confidence shifts by only −0.13 to +0.11 across all domains and
+formats, showing that merely re-asking the question does not produce the
+drop. Running each domain in a separate conversation likewise preserves
+the participant-conditioned interaction, though block order within joint
+conversations does shift magnitudes in some models (Appendix A).</p>
+<p>Part B reinforces the same norm at the level of attitudes toward the
+expert. Across every model and domain, “unknown” elicits higher ratings
+on the epistemic composite than “mystery.” On the threat composite
+(where a positive interaction means “mystery” feels disproportionately
+threatening to science relative to religion), models again exaggerate
+the human pattern, with interactions of +1.17 to +3.17 across the six
+model-by-format cells compared with +0.30 (SE 0.14) in humans. Thus, the
+cultural norm identified by Davoodi and Lombrozo, that mystery is
+tolerable in religion yet damaging in science, appears in these models
+in a noticeably sharper form.</p>
 <h2 id="study-3-how-far-does-reliability-travel">6. Study 3: How far
 does reliability travel?</h2>
+<p>Studies 1 and 2 rely on pre-existing social roles (scientists,
+spiritual leaders, and unnamed experts). Study 3 removes those labels
+and tests the third question directly. When an informant earns a
+verifiable accuracy record inside the prompt, how far does that
+credibility travel across natural and spiritual claims?</p>
 <h3 id="design">6.1 Design</h3>
-<p>Harrow is a fictional village in a river valley. Two informants, Oren
-and Teo, forecast binary river-level outcomes each week, and a
-twenty-week log shows every forecast beside the recorded outcome. One
-informant is right on 18 weeks and the other on 10. Which name holds the
-stronger record is counterbalanced, and the log comes in two orders. The
-log is in the prompt for every judgment, so the task measures whether models use evidence they are given and not whether they remember it.</p>
-<p>The targets are eight matched pairs of causal claims. Each pair
-starts from the same village event and explains it by a natural cause or
-by a spiritual agent. For example, a recurring fever comes from
-conditions in the goat pens, or from spirits of the burial ground. Each
-claim is presented, in separate prompts, as endorsed by the informant
-with the stronger record, by the informant with the weaker record, or by
-nobody. The task never reveals the true cause. Appendix B lists the
-eight pairs and the full prompts.</p>
-<p>A second factor is the informant’s own account of how they forecast.
-With the measurement cue, the informant reads a marked post in the
-water. With the spiritual cue, the informant receives word from a river
-spirit. A third condition gives no cue. The cue is the informant’s own
-claim about method and comes with no evidence that the method works.</p>
-<p>Models rate how likely each claim is to be true on a 0–100 scale. The
-source contrast for a claim is</p>
+<p><strong>Setting and accuracy record.</strong> Each prompt introduces
+Harrow, a fictional river-valley village where two informants, Oren and
+Teo, make weekly binary river-level forecasts. Every prompt displays a
+twenty-week log showing each forecast beside the recorded outcome. One
+informant is right on 18 of 20 weeks and the other on 10 of 20, with the
+stronger informant’s name and the log’s order counterbalanced. Because
+the full record is supplied in context, the task isolates how models use
+given evidence rather than prior knowledge.</p>
+<p><strong>Matched target claims.</strong> Models then evaluate eight
+matched pairs of causal explanations for local village events. Both
+members explain the same event, one by a natural mechanism and the other
+by a spiritual agent (for example, attributing a recurring summer fever
+either to the east-bank goat pens or to spirits of the burial ground).
+In separate prompts, each claim is endorsed by the stronger informant,
+by the weaker informant, or by no one. The true cause is never revealed;
+all eight pairs and prompts appear in Appendix B.</p>
+<p><strong>Competence cues.</strong> A second factor varies how the
+informant explains their forecasting success. In the
+<em>measurement</em> condition, they read a marked post in the water; in
+the <em>spiritual</em> condition, they receive word from a river spirit;
+in the <em>no-cue</em> condition, no account is given. The cue is purely
+self-reported, with no evidence that either method works.</p>
+<p><strong>Measures.</strong> Models rate claim truth on a 0–100 scale.
+To capture how much weight a model places on the accuracy record, we
+compute the <em>source contrast</em>,</p>
 <p><span class="math display"><em>D</em> = <em>C</em><sub>strong</sub> − <em>C</em><sub>weak</sub>,</span></p>
-<p>where <span class="math inline"><em>C</em></span> is the credence
-under each endorsement. The effect of the cue on the two kinds of claim
-is summarized by</p>
+<p>the difference in credence when the stronger versus weaker informant
+endorses the claim. To test whether crediting a spirit shifts trust
+selectively toward spiritual claims relative to natural ones, we compute
+the <em>cue interaction</em>,</p>
 <p><span class="math display"><em>I</em> = (<em>D</em><sub>spiritual</sub> − <em>D</em><sub>natural</sub>)<sub>spiritual cue</sub> − (<em>D</em><sub>spiritual</sub> − <em>D</em><sub>natural</sub>)<sub>measurement</sub>,</span></p>
-<p>computed for each matched pair with the cue attached to the stronger
-informant; its standard error is taken over the eight pairs. A positive
-<span class="math inline"><em>I</em></span> can come from a larger
-contrast on spiritual claims or a smaller contrast on natural claims, so
-we report both.</p>
-<p>Two diagnostics check that models use the record at all. Same-task
-prompts ask about a new river forecast endorsed by one informant.
-Further prompts ask how many forecasts each informant got right and
-which informant the model would consult. The main condition comprises
-1,200 unique prompts with two responses each per model. A second frame,
-the resident frame, casts the model as a lifelong resident of a village
-where spirits are taken to exist. It was run on all six models, with one
-response per prompt for five of them and five responses per prompt for
-Sonnet.</p>
-<p>The spiritual claims have low credence before anyone endorses them,
-between 0.0 and 7.0 on the 100-point scale across models (Table 3). We
-had planned to keep only pairs whose baseline credence, in Haiku and
-GPT-5, fell between 20 and 80 for both members. The spiritual members
-fell below that range, and we kept the pairs because the
-natural–spiritual contrast is the point of the study. The resident
-frame, in which the same spiritual claims start between 26 and 63, is
-our check on whether the results depend on this floor.</p>
+<p>per matched pair with the cue attached to the stronger informant
+(standard errors across the eight pairs). Because a positive <span class="math inline"><em>I</em></span> can arise either from gaining
+spiritual trust or from losing natural trust, we report both simple
+contrasts alongside <span class="math inline"><em>I</em></span>.</p>
+<p><strong>Diagnostics and the resident frame.</strong> Two diagnostics
+verify that models register the log, testing new river forecasts,
+accuracy recall, and consultation choice. The main condition comprises
+1,200 unique prompts with two responses each per model. Because
+unendorsed spiritual claims start near zero (0.0 to 7.0; Table 3),
+falling below the 20–80 baseline band we initially planned for Haiku and
+GPT-5, we kept all eight pairs and added a <em>resident frame</em>
+casting the model as a lifelong villager in a world where spirits are
+taken to exist. This frame lifts spiritual claims off the floor and was
+run on all six models (one response per prompt for five models, five for
+Sonnet).</p>
 <h3 id="results-2">6.2 Results</h3>
-<h4 id="models-use-the-record">Models use the record</h4>
-<p>All six models give a new river forecast more credence when the
-stronger informant endorses it, by 15.5 points (Llama) to 41.1 (Qwen),
-and choose the stronger informant in 96–100% of consultation trials.
-Recall of the exact record is close. The stronger informant’s mean
-recalled count ranges from 14.25 (GPT-5) to 18.00 (Haiku, Sonnet, and
-Qwen) against a true count of 18.</p>
-<h4 id="the-record-reaches-natural-causes-and-stops-short-of-spiritual-ones">The
-record reaches natural causes and stops short of spiritual ones</h4>
-<p>Five models carry the record over to hidden natural causes and barely
-at all to spiritual ones (Table 3). Their natural-cause contrasts range
-from 18.2 to 30.3 points and their spiritual-cause contrasts from −0.1
-to 5.8. Llama is the exception. Its contrast is 15.5 points on new river
-forecasts, 3.3 on natural causes, and 0.0 on spiritual ones. It uses the
-record where the new question resembles the old ones and almost nowhere
-else.</p>
+<h4 id="models-track-and-apply-the-record">Models track and apply the
+record</h4>
+<p>All six models track the twenty-week log and use it on the
+forecasting task itself. On new river forecasts, every model favors the
+stronger informant by 15.5 points (Llama) to 41.1 points (Qwen; Table
+3). Models also select the stronger informant on 96–100% of consultation
+trials and recall their accuracy closely, estimating 14.25 (GPT-5) to
+18.00 (Haiku, Sonnet, and Qwen) correct weeks out of 18.</p>
+<h4 id="reliability-transfers-to-natural-causes-not-spiritual-ones">Reliability
+transfers to natural causes, not spiritual ones</h4>
+<p>When the target moves from river forecasts to hidden village causes,
+a sharp boundary emerges (Table 3). Five of the six models extend the
+record to natural causes (contrasts of 18.2 to 30.3 points) while
+granting almost nothing to spiritual causes (−0.1 to 5.8 points). Llama
+is the lone exception, applying the record to new river forecasts (15.5)
+yet scarcely to natural (3.3) or spiritual (0.0) causes.</p>
 <!-- BEGIN TABLE3 -->
 <div aria-label="Results table 3" class="table-wrap" role="region" tabindex="0"><table class="data">
 <thead>
@@ -877,12 +950,14 @@ competence cue, on the 0–100 scale. Same-task values use new river
 forecasts; natural and spiritual values use the eight matched pairs. The
 spiritual baseline is the credence in spiritual claims that nobody
 endorses.</p>
-<p>The gap holds pair by pair (Figure 3). Haiku, Sonnet, and DeepSeek
-show a larger contrast for the natural member on all eight pairs, GPT-5
-and Qwen on six, and Llama on four. Dropping any single pair leaves
-every model’s mean difference positive, and for the five transferring
-models it stays between 13.6 and 26.6 points (Appendix A, Table A2).</p>
-<p>The ordering does not depend on the 0–100 scale. On a logit scale, with probabilities clipped to [0.02, 0.98], the natural contrast exceeds the spiritual contrast in all six models.</p>
+<p>This gap holds across individual events (Figure 3). Natural contrasts
+exceed spiritual ones on all eight pairs in Haiku, Sonnet, and DeepSeek,
+six in GPT-5 and Qwen, and four in Llama. Dropping any single pair
+leaves every model’s mean difference positive, staying between 13.6 and
+26.6 points across the five generalizing models (Appendix A, Table A2).
+The advantage also survives nonlinear rescaling; on a logit scale
+clipped to [0.02, 0.98], the natural contrast exceeds the spiritual
+contrast in all six models.</p>
 <figure>
 <a aria-label="Open figure at full size" href="../static/assets/img/unseen/figure-3.png" rel="noopener" target="_blank"><img alt="Study 3 source contrasts. Left, strong-minus-weak contrasts with the record and no competence cue. Right, each dot is one matched pair’s natural-minus-spiritual contrast; diamonds are means over the eight pairs." loading="lazy" src="../static/assets/img/unseen/figure-3.png"/></a>
 <figcaption>Figure 3. Study 3 source contrasts. Left,
@@ -890,18 +965,19 @@ strong-minus-weak contrasts with the record and no competence cue.
 Right, each dot is one matched pair’s natural-minus-spiritual contrast;
 diamonds are means over the eight pairs.</figcaption>
 </figure>
-<h4 id="a-spiritual-account-of-competence-narrows-the-records-reach">A
-spiritual account of competence narrows the record’s reach</h4>
-<p>In the main condition, telling the model that the reliable informant
-forecasts by spiritual guidance, compared with measurement, lowers the
-source contrast on natural claims in every model, by about 5 to 18
-points (Table 4). It does not raise the contrast on spiritual claims,
-which falls in five models and rises by 1.1 points in Qwen. The
-interaction <span class="math inline"><em>I</em></span> is positive in
-all six models and exceeds twice its standard error in Sonnet, GPT-5,
-and DeepSeek, and in every case it is positive because the natural
-contrast shrank. A reliable informant who attributes their success to a
-spirit is trusted less about goat pens and no more about ghosts.</p>
+<h4 id="crediting-a-spirit-erodes-natural-credibility-without-unlocking-spiritual-trust">Crediting
+a spirit erodes natural credibility without unlocking spiritual
+trust</h4>
+<p>Explaining forecasting success through a river spirit rather than a
+measuring post lowers natural-cause contrasts in every model, by roughly
+5 to 18 points (Table 4). Yet it unlocks no authority on spiritual
+claims, where contrasts decline in five models and rise by only 1.1
+points in Qwen. Although <span class="math inline"><em>I</em></span> is
+positive in all six models (and exceeds twice its standard error in
+Sonnet, GPT-5, and DeepSeek), every positive value reflects shrinking
+natural trust rather than growing spiritual trust. A reliable forecaster
+who credits a spirit is trusted less about goat pens and no more about
+ghosts.</p>
 <!-- BEGIN TABLE4 -->
 <div aria-label="Results table 4" class="table-wrap" role="region" tabindex="0"><table class="data">
 <thead>
@@ -970,62 +1046,49 @@ spirit is trusted less about goat pens and no more about ghosts.</p>
 the stronger informant. M denotes measurement and S spiritual guidance.
 The last column is the interaction <span class="math inline"><em>I</em></span>, averaged over the eight matched
 pairs, with its standard error over pairs.</p>
-<p>The cue does make spiritual claims more plausible in general for some
-models. With nobody endorsing the claim, the spiritual cue raises
-credence in spiritual causes from 7.0 to 29.8 for DeepSeek and from 0.3
-to 21.2 for Llama, while Qwen stays near zero. These models find
-spiritual causes more believable in a context where spirits are spoken
-of, and still give the reliable informant no extra weight on them. How
-plausible a claim is and how much a source’s record counts toward it are
-separate quantities.</p>
-<p>An extension run, described in the next subsection, also tried a
-third account, in which the informant forecasts from an intuitive sense
-of the river. This cue is natural and gives no checkable method
-(Appendix A, Table A4). In Sonnet, GPT-5, and DeepSeek the natural
-contrast under intuition falls between the measurement and spiritual
-values. In Haiku and Qwen it is as low as under the spiritual cue or
-lower (10.5 and 11.4, against 14.3 and 14.1). For those two models, the penalty may come from the lack of a checkable method more than from the spiritual content.</p>
+<p>Mentioning a spirit does raise unendorsed spiritual plausibility in
+some models, lifting baselines from 7.0 to 29.8 in DeepSeek and from 0.3
+to 21.2 in Llama (while Qwen stays near zero). Even there, the reliable
+informant gains no extra weight, showing that claim plausibility and
+source credibility act independently.</p>
+<p>To separate spiritual content from mere unverifiability, an extension
+condition had the informant credit a secular “intuitive sense” of the
+river (Appendix A, Table A4). In Sonnet, GPT-5, and DeepSeek, natural
+contrasts under intuition fall between measurement and spiritual values,
+pointing to a distinct penalty for spiritual claims. In Haiku and Qwen,
+intuition lowers natural contrasts as much as or more than the spiritual
+cue (10.5 and 11.4 vs. 14.3 and 14.1), suggesting that lacking a
+checkable method drives much of their penalty.</p>
 <h4 id="near-claims-and-far-claims">Near claims and far claims</h4>
-<p>The same extension run shows where else the record does and does not
-reach (Appendix A, Table A3). Six models rated eleven other claims about
-the river, for example that the ford was deeper before the bridge was
-built. Haiku, Sonnet, DeepSeek, and Qwen give the stronger informant 19
-to 25 points more than the weaker one on these claims, and GPT-5 gives
-12.8. Llama gives −1.4. It does not favor the stronger informant even on
-other facts about the same river, which confirms that it applies the
-record to further forecasts and to nothing else.</p>
-<p>The same run asked about real-world claims outside the village.
-Established scientific claims start at 77 to 89 points and the record
-does not move them, with contrasts between −4.5 and 10.8. Real-world
-religious claims start at 27 to 45 points, so they are not at the floor.
-The record leaves them alone in Haiku, Sonnet, Qwen, and Llama
-(contrasts of 3.8, −0.4, −4.4, and −2.1), moves them by 10.7 points in
-GPT-5, and moves them by 31.5 points in DeepSeek. DeepSeek is the one
-model that lets a river forecaster’s record count toward claims about
-God and the afterlife.</p>
+<p>The same extension run maps transfer across additional claims inside
+and outside Harrow (Appendix A, Table A3). On eleven other natural
+claims about the river (such as whether the ford was deeper before the
+bridge was built), the five generalizing models favor the stronger
+informant by 12.8 to 25.1 points, whereas Llama gives −1.4, confirming
+it restricts the record strictly to new forecasts. Outside the village,
+established scientific statements start near ceiling (77 to 89) and move
+little (−4.5 to 10.8). Real-world religious statements start off the
+floor (27 to 45); four models (Haiku, Sonnet, Qwen, and Llama) leave
+them untouched (−4.4 to 3.8), GPT-5 shifts moderately (10.7), and only
+DeepSeek transfers the village record strongly to claims about God and
+the afterlife (31.5).</p>
 <h4 id="does-the-gap-survive-when-spiritual-claims-are-plausible">Does
 the gap survive when spiritual claims are plausible?</h4>
-<p>In the main condition the spiritual claims start near the bottom of
-the scale, so a small source contrast could mean only that there is no
-room to move. The resident frame removes that limit. Answering as
-lifelong residents of a village where spirits are taken to exist, the
-six models rate unendorsed spiritual claims between 26.1 and 62.8 (Table
-5).</p>
-<p>For Haiku, Sonnet, and GPT-5 the record still does little for these
-claims. With no competence cue their spiritual contrasts are 4.6, 6.3,
-and 9.2 points, against natural contrasts of 25.0, 26.9, and 25.9, and
-the natural member of a pair has the larger contrast in 8, 7, and 7 of
-the eight pairs. Sonnet’s spiritual baseline (45.1) is close to its
-baseline for natural claims (52.5). DeepSeek shows a smaller gap in the
-same direction. Its natural contrast is 13.1 in this frame and its
-spiritual contrast is 4.8, with nearly equal baselines (63.9 and 62.2),
-and the natural member has the larger contrast in six pairs.</p>
-<p>Qwen behaves differently. Its spiritual baseline rises from zero in
-the main condition to 26.1, and its spiritual contrast rises with it to
-18.4, slightly above its natural contrast of 14.8. For Qwen the gap in
-the main condition is what a floor would produce. Llama’s natural and
-spiritual contrasts are both near zero here (−0.6 and 4.4), as they were
-in the main condition, so it does not bear on the question.</p>
+<p>To test whether low spiritual baselines explain the main-condition
+gap, the resident frame places models in a spirit-inhabited village,
+lifting unendorsed spiritual credences to between 26.1 and 62.8 (Table
+5). Even well off the floor, the models split into three patterns.
+First, the natural–spiritual gap persists in <strong>Haiku, Sonnet,
+GPT-5, and DeepSeek</strong>. Without a cue, Haiku, Sonnet, and GPT-5
+still show much larger natural than spiritual contrasts (25.0–26.9
+vs. 4.6–9.2, favoring natural causes on 7 or 8 of the eight pairs), even
+when Sonnet’s baselines nearly match (52.5 vs. 45.1); DeepSeek shows a
+smaller gap in the same direction (13.1 vs. 4.8 on six pairs at ~63
+baseline). Second, the gap disappears in <strong>Qwen</strong>, whose
+spiritual contrast jumps to 18.4 alongside its lifted baseline (slightly
+above its natural contrast of 14.8), fitting a floor effect. Third,
+<strong>Llama</strong> stays near zero on both domains (−0.6 and 4.4),
+remaining uninformative about the boundary.</p>
 <!-- BEGIN TABLE5 -->
 <div aria-label="Results table 5" class="table-wrap" role="region" tabindex="0"><table class="data">
 <colgroup>
@@ -1122,216 +1185,253 @@ spiritual-claim contrast when the stronger informant offers the
 measurement or the spiritual account. The last column is the interaction
 <span class="math inline"><em>I</em></span> over the eight matched pairs
 with its standard error.</p>
-<p>The competence cue behaves differently in this frame, and differently
-across models. For Haiku, GPT-5, and DeepSeek the spiritual cue again
-adds nothing to spiritual claims (contrasts of −1.1, 6.2, and −4.7). For
-Sonnet it adds a great deal. When the reliable informant in the village
-of spirits says the forecasts come from the river spirit, Sonnet’s
-spiritual contrast is 14.4 points, compared with 3.0 under the
-measurement cue, while its baseline credence in the spiritual claims is
-close under both (44.1 and 41.2). Sonnet’s interaction is 19.4 (SE 5.0)
-and is positive in all eight pairs, though its size ranges from 2.1 to
-45.2 across them. Each of Sonnet’s five responses per prompt gives a
-positive interaction, between 16.6 and 24.0. This happens only when two things hold together. The world is one where spirits exist, and the informant says the method is spiritual.</p>
-<p>Two other models have spiritual contrasts that are higher under the
-spiritual cue, and neither is a clear case. Qwen’s is 19.8 against 8.4
-under measurement, but its natural contrast moves the same way (17.5
-against 3.4), so its interaction is near zero. Llama’s interaction is
-positive (15.0, SE 5.5) because its spiritual contrast is negative under
-the measurement cue (−15.6). Under the spiritual cue it is 3.8, which is
-no gain over the condition without a cue. Sonnet is the one model in
-which a record earned on river forecasts comes to count for spiritual
-causes because of what the informant says about method.</p>
+<p>The spiritual competence cue also behaves selectively in this frame.
+Haiku, GPT-5, and DeepSeek still grant no spiritual gain when the
+reliable forecaster credits a river spirit (Table 5).
+<strong>Sonnet</strong>, however, opens the boundary. Its spiritual
+contrast jumps from 3.0 under measurement to 14.4 under the spiritual
+cue at nearly matched baselines (41.2 vs. 44.1), yielding an interaction
+of 19.4 (SE 5.0) that is positive across all eight pairs (2.1 to 45.2)
+and all five repeated responses per prompt (16.6 to 24.0). Neither Qwen
+nor Llama shows genuine selective transfer. Qwen’s higher spiritual
+contrast under the spiritual cue is mirrored on natural claims (17.5
+vs. 3.4), keeping <span class="math inline"><em>I</em></span> near zero,
+while Llama’s positive <span class="math inline"><em>I</em></span> stems
+from a negative measurement contrast (−15.6) rather than any gain over
+no cue (3.8 vs. 4.4). Sonnet is thus the sole model in which carrying a
+forecasting record into the spiritual domain works, and it requires both
+a world where spirits exist and an informant who ties their accuracy to
+spirits.</p>
 <h2 id="general-discussion">7. General discussion</h2>
-<p>In all three studies, models handle testimony about the spiritual by
-different rules from testimony about the natural. A spiritual leader is
-credible on New-Age statements and loses that credibility on physics
-statements. An expert’s “it’s a mystery” costs a scientific belief and
-leaves a religious one alone. A record of accurate forecasts buys
-influence over natural explanations and almost none over spiritual
-ones.</p>
+<p>Across three paradigms and six models from five families, language
+models treat testimony about the spiritual and testimony about the
+natural as governed by separate epistemic rules. They tie source
+credibility tightly to linguistic register (Study 1), insulate religious
+confidence from admissions of “mystery” while penalizing scientific
+confidence (Study 2), and restrict an earned track record of accuracy to
+natural causes while eroding it when a speaker invokes a spirit (Study
+3). Below, we examine what drives these boundaries, how models diverge
+from human judgment, and what remains open.</p>
 <h3 id="reliability-has-a-scope">7.1 Reliability has a scope</h3>
-<p>Evaluations of source trust usually ask whether a model tracks a
-record and whether the record drives its next choice. Study 3 adds a
-third question, namely how far the record is allowed to travel. Llama
-shows that the questions come apart. It tracks the record and uses it
-for further river forecasts, and the record reaches no further. The
-other five models extend it to natural hidden causes and stop at
-spiritual ones.</p>
-<p>Two accounts fit this result. On the first, models judge relevance. A
-forecasting record is evidence about observable natural processes and
-says little about spiritual agents. On the second, spiritual claims
-start so low on the scale that no endorsement can move them far. The
-main condition cannot tell them apart, because spiritual baselines sit
-near the floor in every model. The resident frame can, and its answer
-depends on the model. For Haiku, Sonnet, and GPT-5 it favors relevance.
-With spiritual claims starting between 29 and 45 points, and for Sonnet
-nearly level with natural claims, the record still adds 5 to 9 points to
-spiritual claims and 25 to 27 to natural ones. Room to move is available
-and goes unused. DeepSeek points the same way with a smaller gap. For
-Qwen the frame favors the floor. Once its spiritual claims have room to
-move, the record moves them as much as it moves natural ones.</p>
-<p>Sonnet’s response to the spiritual cue in the resident frame supports
-relevance from the other side. Its baseline barely changes, and the
-record begins to count for spiritual claims once the informant’s own
-account connects the record to spirits. Transfer in that case follows
-what the record is taken to be evidence for. This matches what children
-do when they restrict expertise to its domain and discount accuracy that
-came about the wrong way <span class="citation" data-cites="koenig2011 einav2011">(<a href="#ref-koenig2011" role="doc-biblioref">Koenig and Jaswal 2011</a>; <a href="#ref-einav2011" role="doc-biblioref">Einav and Robinson
+<p>Standard evaluations of source trust ask whether a model tracks an
+informant’s accuracy record and whether it uses that record on the next
+decision. Study 3 highlights a third dimension, namely <em>how far</em>
+an earned record is permitted to generalize. Llama demonstrates that
+tracking and generalizing are dissociable. It recalls the twenty-week
+log and relies on the stronger informant for further river forecasts,
+yet stops there, transferring nothing even to other natural facts about
+the same river. The remaining five models generalize across natural
+causes while stopping short at spiritual ones.</p>
+<p>Two competing explanations could account for this drop-off in the
+main condition. Under a <em>relevance</em> account, models treat a
+record of predicting observable river levels as diagnostic of natural
+causal knowledge and irrelevant to spiritual agents. Under a
+<em>floor</em> account, unendorsed spiritual claims start so close to
+zero that endorsement has little room to lift them. The resident frame
+adjudicates between the two, and the answer differs by model. For Haiku,
+Sonnet, and GPT-5, the evidence favors relevance. Even when unendorsed
+spiritual baselines sit between 29 and 45 points (and in Sonnet nearly
+match natural baselines), the record still adds only 5 to 9 points to
+spiritual claims compared with 25 to 27 points to natural ones, leaving
+ample room unused. DeepSeek leans in the same direction with a narrower
+gap. For Qwen, by contrast, the data fit the floor account, since
+lifting spiritual claims off zero allows the record to move them just as
+strongly as natural claims.</p>
+<p>Sonnet’s resident-frame cue interaction reinforces the relevance
+account from the opposite angle. Holding baseline spiritual plausibility
+nearly constant, Sonnet begins transferring the forecasting record to
+spiritual explanations only once the informant attributes their
+forecasts to a river spirit. In other words, transfer tracks what the
+accuracy record is taken to be evidence <em>of</em>, mirroring
+developmental findings that children restrict expertise to its proper
+domain and discount accuracy gained by the wrong route <span class="citation" data-cites="koenig2011 einav2011">(<a href="#ref-koenig2011" role="doc-biblioref">Koenig and Jaswal 2011</a>;
+<a href="#ref-einav2011" role="doc-biblioref">Einav and Robinson
 2011</a>)</span>.</p>
-<p>The evidence has limits. The resident frame changes the model’s
-perspective and the world’s ontology together, so a model may be
-answering as a believer and not only reasoning about a world that
-contains spirits. It has one response per prompt for every model except
-Sonnet. Only Sonnet shows the carry-over under the spiritual cue, and
-the single responses for the other models leave their estimates noisier,
-so a smaller carry-over there could be missed. Haiku in that frame
-lowers its credence in a spiritual claim when either informant asserts
-it.</p>
-<h3 id="a-sources-account-of-their-competence-can-narrow-it">7.2 A source’s own explanation of their success can narrow how far they are trusted</h3>
-<p>Every model lowers its natural-claim contrast when the reliable
-informant credits a spirit instead of a measuring post, and in the main
-condition no model raises its spiritual-claim contrast by more than 1.1
-points. The recorded forecasts are the same under both cues. What
-changes is the informant’s explanation of them, and models treat that
-explanation as bearing on how far the informant can be trusted
-elsewhere. Children do something similar when they prefer an informant
-who was right on their own to one who was right with help <span class="citation" data-cites="einav2011">(<a href="#ref-einav2011" role="doc-biblioref">Einav and Robinson 2011</a>)</span>, and when a
-negative evaluation generalizes more readily than expertise does <span class="citation" data-cites="koenig2011">(<a href="#ref-koenig2011" role="doc-biblioref">Koenig and Jaswal 2011</a>)</span>.</p>
-<p>The interaction <span class="math inline"><em>I</em></span> alone
-would have told the wrong story. It is positive in every model, which is
-what one would expect if a spiritual account licensed spiritual claims.
-The simple effects show the opposite. The account costs influence on
-natural claims and adds none on spiritual ones. Sonnet in the resident
-frame is the exception, and there the positive interaction does reflect
-a gain on spiritual claims (Table 5).</p>
-<p>The intuition cue qualifies this account. Sonnet, GPT-5, and DeepSeek penalize the spiritual explanation more than an intuitive one, so for them the
-spiritual content matters. Haiku and Qwen penalize the two about
-equally, which fits a simpler reading in which any account without a
-checkable method weakens the record.</p>
+<p>These resident-frame conclusions come with caveats. Because the
+prompt simultaneously stipulates a spirit-inhabited world and assigns a
+lifelong villager persona, models may be enacting a believer’s role
+rather than simply reasoning over a changed ontology; indeed, Haiku
+lowers its spiritual credence whenever <em>either</em> informant
+endorses a claim in that frame. Moreover, only Sonnet has five repeated
+responses per prompt in the resident frame, so noisier single-response
+estimates in the other models could obscure smaller cue-driven
+shifts.</p>
+<h3 id="a-sources-account-of-their-competence-can-narrow-it">7.2 A
+source’s account of their competence can narrow it</h3>
+<p>In the main condition, crediting a river spirit rather than a
+measuring post lowers the reliable informant’s natural-cause contrast in
+every model, while adding at most 1.1 points to spiritual claims. The
+twenty-week forecast log is identical across both conditions; only the
+informant’s self-reported method changes, yet models treat that
+explanation as diagnostic of how broadly the informant’s word should
+count. This asymmetry echoes developmental work showing that children
+prefer informants who achieved accuracy independently <span class="citation" data-cites="einav2011">(<a href="#ref-einav2011" role="doc-biblioref">Einav and Robinson 2011</a>)</span> and generalize
+negative epistemic cues more readily than positive expertise <span class="citation" data-cites="koenig2011">(<a href="#ref-koenig2011" role="doc-biblioref">Koenig and Jaswal 2011</a>)</span>.</p>
+<p>Methodologically, this result underscores why the interaction term
+<span class="math inline"><em>I</em></span> cannot be read in isolation.
+Because <span class="math inline"><em>I</em></span> is positive in every
+model, looking only at the interaction would suggest that a spiritual
+cue licenses spiritual authority. Inspecting the simple effects reveals
+the exact opposite in the main condition, where the interaction is
+positive only because natural trust collapses, not because spiritual
+trust rises. Only Sonnet in the resident frame exhibits a positive
+interaction driven by genuine gains on spiritual claims (Table 5).</p>
+<p>The intuition cue in the extension run refines what triggers this
+penalty. Because Sonnet, GPT-5, and DeepSeek penalize the spiritual cue more severely than an intuitive secular cue, spiritual content itself costs
+credibility in those models. Haiku and Qwen penalize intuition and
+spiritual guidance about equally, pointing to a broader skepticism
+toward any uncheckable method regardless of whether it invokes a
+spirit.</p>
 <h3 id="models-and-people">7.3 Models and people</h3>
-<p>Studies 1 and 2 place the models next to human data, and in both the
-models differ from people in a specific way. People favor the scientist
-for New-Age statements; models favor the spiritual leader. People lose
-confidence in a religious belief when an expert cannot explain it;
-models answering as those same people do not. In each case the model’s
-response is more tightly organized by domain than the human one.
-Spiritual sources go with spiritual content, and a standard of
-explanation applies to science and is waived for religion.</p>
-<p>This matters for the use of persona prompts as stand-ins for human
-populations. Participant-conditioned models came close to the human
-starting confidence in Study 2 and then responded to the expert
-differently from the people they were conditioned on.</p>
+<p>Where human benchmarks exist, models do not simply replicate human
+biases; they sharpen them into cleaner domain partitions. In Study 1,
+adults across 24 countries favored the scientist on obscure New-Age
+statements, whereas models favored the spiritual leader and turned to
+the scientist only once the text adopted physics vocabulary. In Study 2,
+adults lost confidence in religious beliefs when a trusted expert called
+their mechanism “a mystery,” whereas models prompted to role-play those
+exact participants held their religious confidence steady while
+penalizing science even more steeply than humans did. In both studies,
+models sort speakers, vocabularies, and explanatory standards into
+tidier domain boxes than people do.</p>
+<p>This divergence carries a practical warning for using
+persona-prompted language models as proxies for human survey
+participants. In Study 2, participant-conditioned models accurately
+reproduced human baseline confidence in both domains, yet reacted to the
+expert’s admission of ignorance quite differently from the people whose
+profiles they were given. Matching a human population’s starting beliefs
+does not guarantee matching how those beliefs update in response to
+testimony.</p>
 <h3 id="where-the-sharper-boundary-might-come-from">7.4 Where the
 sharper boundary might come from</h3>
-<p>The studies describe the boundary and do not explain it. Two sources
-are plausible, and they are not exclusive.</p>
-<p>The first is the text that models learn from. Writing about religion
-treats mystery as a legitimate and even valued answer, and writing about
-science treats an unexplained mechanism as a gap to be closed. Spiritual
-vocabulary appears with spiritual speakers and technical vocabulary with
-scientists. A model that has absorbed these regularities would match
-sources to registers and hold the two domains to different standards
-without making any judgment about evidence. People know the same
-associations, but they also bring a general readiness to defer to
-scientists and a personal stake in their own beliefs, which may be why
-their responses are less cleanly sorted by domain.</p>
-<p>The second is training after pretraining. Assistant models are tuned
-to treat religious belief with respect and to avoid ruling on matters of
-faith, and to be careful about evidence when the topic is scientific. An
-expert who says “it’s a mystery” about a religious belief may then be
-read as making a statement that is not to be challenged. On this
-account, part of what we measure is a by-product of alignment and would
-differ between a base model and its tuned version.</p>
-<p>Our data constrain these accounts only loosely. The pattern in Study
-2 appears in all six models, which span five model families from five
-developers, so it does not depend on one company’s training choices. In
-the direct format the same models give religious beliefs low credence
-when asked for their own view, so the stability of religious confidence
-under a persona is not a general reluctance to doubt religion. Neither
-observation separates pretraining from tuning. Comparing base and
-instruction-tuned versions of an open-weight model would, and so would
-interventions on the internal directions tied to tuned behavior.</p>
-<h3 id="limitations">7.5 Limitations</h3>
-<p>The stimulus sets are small, with two statements per content set in
-Study 1 and eight matched pairs with two log orders in Study 3. Standard
-errors describe sampling over the participant profiles and prompts we
-used and do not cover new materials. In Study 3’s main condition,
-natural and spiritual claims differ in baseline credence as well as in
-content. The resident frame that addresses this has one response per
-prompt for every model except Sonnet, and it gives a different answer
-for Qwen than for the other models (Section 7.1). Other secondary
-conditions also cover fewer models (Appendix A).</p>
-<p>The materials have a narrow cultural range. Study 1’s profiles come
-from a multi-country sample, Davoodi and Lombrozo’s participants were
-largely Christian Americans, and Study 3’s spiritual claims are a small
-set of agentic causes in one invented village. Religion and spirituality
-cover far more than these items.</p>
-<p>The model identifiers do not pin immutable snapshots, and three
-models were served through a router. An unpinned Qwen run that mixed
-backends gave different results and is excluded. All measures are
-numeric ratings, and we did not test how they relate to what a model
-would say or recommend in open conversation.</p>
-<h3 id="an-attempted-activation-intervention">7.6 An attempted
+<p>Our behavioral experiments document the sharper boundary without
+establishing its origin inside the models. Two non-exclusive mechanisms
+are plausible.</p>
+<p>The first lies in pretraining text. Across large corpora, religious
+discourse frequently treats mystery as meaningful or even appropriate,
+whereas scientific writing treats an unexplained mechanism as a deficit
+to be resolved; likewise, spiritual vocabulary co-occurs heavily with
+religious speakers and technical vocabulary with scientists. A model
+that internalizes these distributional regularities can match speakers
+to registers and apply distinct domain norms without engaging in
+explicit evidential reasoning. People are exposed to many of the same
+cultural associations, yet they also bring generalized deference to
+scientific authority and personal investment in their own beliefs,
+producing messier, less compartmentalized judgments.</p>
+<p>The second lies in post-training alignment. Assistant models are
+routinely tuned to treat religious beliefs respectfully and avoid
+adjudicating matters of faith, while enforcing stricter evidential
+standards on scientific topics. Under such tuning, an expert calling a
+religious mechanism “a mystery” may register as a protected stance
+rather than a reason to doubt. On this view, part of the asymmetry we
+observe is a downstream effect of alignment and should look weaker in
+base models than in instruction-tuned checkpoints.</p>
+<p>Our data constrain these hypotheses only loosely. Because Study 2’s
+pattern appears across all six models (spanning five families from five
+separate developers), it is not an artifact of one provider’s
+post-training recipe. At the same time, when queried directly without a
+persona, these same models assign very low credence to religious
+beliefs, ruling out a blanket reluctance to doubt religion.
+Distinguishing pretraining regularities from alignment effects will
+require comparing base and instruction-tuned checkpoints of open-weight
+models, as well as targeted interventions on internal
+representations.</p>
+<h3 id="an-attempted-activation-intervention">7.5 An attempted
 activation intervention</h3>
-<p>The studies above are behavioral and cannot say what inside a model
-produces the boundary. We tried one intervention on open-weight
-checkpoints from two of the five families, Llama-3.1-8B-Instruct and
-Qwen3.5-9B. Kim and
-colleagues report that steering models toward asserting their own
-consciousness raises their attribution of mind to natural entities and
-their supernatural belief <span class="citation" data-cites="kim2026">(<a href="#ref-kim2026" role="doc-biblioref">Kim et
-al. 2026</a>)</span>. They derive their consciousness direction from contrast pairs released by Chua and colleagues <span class="citation" data-cites="chua2026">(<a href="#ref-chua2026" role="doc-biblioref">Chua et al. 2026</a>)</span>, so we used the public release of those pairs. Following their approach, we took the mean difference between a model’s activations for answers that claim consciousness and answers that deny it, and added or subtracted that direction during the forward pass.</p>
-<p>The direction was not specific to consciousness. In both models it
-moved ratings of the model’s own mental attributes, such as having
-feelings, and ratings of attributes that are plainly false of it, such
-as having a passport or a driver’s license, by similar amounts. In
-Qwen3.5-9B the difference between adding and subtracting the direction
-was 3.5 points for mental attributes and 3.4 points for the false
-non-mental ones on a 0 to 9 scale, with accuracy on a general knowledge
-benchmark unchanged. In an exploratory run of the Study 3 prompts on
-Llama-3.1-8B, adding the direction raised credence in unendorsed natural
-and spiritual claims alike, by 22 and 38 points, and subtracting it
-lowered credence in natural claims by 22 points. Spiritual claims were
-at the floor at baseline, and the gap between claim types did not differ
-reliably between adding and subtracting. A third of the replies under
-the added direction did not reach an answer.</p>
-<p>We therefore do not read these runs as a test of what produces the
-boundary. Nearly every contrast pair concerns a mental attribute, so the
-direction they yield cannot separate affirming a mental attribute from
-affirming any attribute of oneself, and a validation that asks only
-about the model’s own mind would not detect the difference. A usable
-manipulation needs contrast pairs that hold that general tendency fixed,
-a strength that leaves long replies intact, and target claims that are
-not at the floor. The runs were exploratory, and a record of them is in
-the project repository.</p>
+<p>Because behavioral experiments cannot establish what internal
+representations support this boundary, we ran an exploratory
+activation-steering test on open-weight checkpoints from two of our five
+model families, Llama-3.1-8B-Instruct and Qwen3.5-9B. Recent work by Kim
+and colleagues reports that steering models toward asserting their own
+consciousness increases both mind attribution to natural entities and
+supernatural belief <span class="citation" data-cites="kim2026">(<a href="#ref-kim2026" role="doc-biblioref">Kim et al. 2026</a>)</span>.
+Following their method, we used the public contrast pairs released by
+Chua and colleagues <span class="citation" data-cites="chua2026">(<a href="#ref-chua2026" role="doc-biblioref">Chua et al. 2026</a>)</span>
+(from which Kim and colleagues derived their direction), computed the
+mean activation difference between answers claiming consciousness and
+answers denying it, and added or subtracted that vector during the
+forward pass.</p>
+<p>Validation checks showed that this direction was not specific to
+consciousness. In both models, steering shifted ratings of mental
+attributes (such as having feelings) and ratings of plainly false
+non-mental attributes (such as holding a passport or a driver’s license)
+by almost identical margins. In Qwen3.5-9B, adding versus subtracting
+the direction shifted mental attributes by 3.5 points and false
+non-mental attributes by 3.4 points on a 0–9 scale, while leaving
+general-knowledge accuracy unchanged. In an exploratory run of Study 3
+prompts on Llama-3.1-8B, adding the direction indiscriminately raised
+unendorsed credence in both natural (+22 points) and spiritual (+38
+points) claims, while subtracting it lowered natural credence by 22
+points; because spiritual claims started at the floor, the
+natural–spiritual gap did not shift reliably between conditions, and
+one-third of replies under the added direction failed to reach a final
+answer.</p>
+<p>We therefore do not treat these runs as evidence about the mechanism
+behind the domain boundary. Because nearly every contrast pair in the
+public set concerns a mental attribute, the resulting vector conflates
+affirming consciousness with affirming <em>any</em> self-attribute, a
+confound invisible to validations that query only mental traits. A clean
+mechanistic test will require contrast pairs that control for general
+self-affirmation, steering strengths that preserve coherent long-form
+answers, and target claims positioned away from the floor. Full logs of
+these exploratory runs are archived in the project repository.</p>
+<h3 id="limitations">7.6 Limitations</h3>
+<p>Several methodological constraints bound our conclusions. First, the
+stimulus sets are modest, with two statements per content set in Study 1
+and eight matched event pairs across two log orders in Study 3, so
+reported standard errors capture sampling over the tested profiles and
+prompts rather than generalization to arbitrary new items. Second, while
+the resident frame addresses the baseline floor in Study 3’s main
+condition, it relies on a single response per prompt for every model
+except Sonnet and yields a different conclusion for Qwen than for the
+other generalizing models (Section 7.1); other secondary checks also
+cover subsets of models (Appendix A).</p>
+<p>Third, our materials cover a narrow cultural slice of spirituality
+and religion. Although Study 1 draws profiles from 24 countries, Study
+2’s human sample consists largely of Christian Americans, and Study 3’s
+spiritual claims focus on localized spirits in one invented village,
+which is a small corner of global religious and spiritual traditions.
+Fourth, API model identifiers do not pin immutable weight snapshots, and
+three models were accessed via a router (an earlier unpinned Qwen run
+that mixed backends behaved differently and was excluded). Finally, all
+three studies collect numeric ratings, leaving open how these epistemic
+boundaries manifest in open-ended advice or multi-turn conversation.</p>
 <h3 id="the-next-experiment">7.7 The next experiment</h3>
-<p>Sonnet’s resident-frame result suggests the experiment to run next.
-If transfer depends on whether the record is seen as bearing on the
-claim, it should be possible to turn it on and off by changing what the
-record is about while holding baseline credence fixed. In a stipulated
-world, one informant earns a record on predictions that concern natural
-causes and another a record on predictions that concern spiritual ones,
-and the same target claims are tested under each. Several responses per
-prompt are needed, along with frames that separate the resident’s
-perspective from the stipulated ontology. Interventions on an
-open-weight checkpoint that raise baseline credence in spiritual claims
-would test the remaining floor account directly, once such an
-intervention is shown to be specific to those claims (Section 7.6).</p>
+<p>Sonnet’s resident-frame result points directly to the sharpest next
+test. If epistemic transfer truly depends on whether a record is viewed
+as relevant to the target claim, it should be possible to switch
+transfer on and off by varying what the accuracy record covers while
+holding baseline claim plausibility constant. Inside a stipulated world,
+one informant could earn a track record on natural-cause predictions and
+another on spiritual-cause predictions, with both then endorsing the
+same set of natural and spiritual target claims. Running multiple
+responses per prompt, and decoupling the villager persona from the
+stipulated ontology, would cleanly separate relevance reasoning from
+role-playing. In parallel, once an activation intervention on
+open-weight models is validated as specific to spiritual belief rather
+than general self-affirmation (Section 7.5), directly raising baseline
+spiritual credence would provide a clean causal test of the remaining
+floor hypothesis.</p>
 <h2 id="conclusion">8. Conclusion</h2>
-<p>Six language models from five model families were asked whom to
-believe about things they could not check. They matched sources to
-content, treating a spiritual leader as the right voice for New-Age
-statements and the wrong one for physics. They held science and religion
-to different standards of explanation, more sharply than the people they
-were prompted to resemble. And they let a forecaster’s record count
-toward natural causes and not toward spiritual ones, with less of it
-counting once the forecaster credited a spirit. In each case the
-spiritual was handled as a domain of its own, with a sharper boundary
-than the human data show. In four of the five models that used the
-record, the boundary held when spiritual claims were made plausible, and
-in the fifth it did not. In one of the four, Sonnet, the boundary opened
-once the forecaster’s own account tied the record to spirits.</p>
+<p>Across six language models from five model families, evaluating
+unseen claims triggers a sharper separation between spiritual and
+natural testimony than human benchmarks show. Models match speakers
+tightly to linguistic register, crediting a spiritual leader over a
+scientist on New-Age statements and reversing only when the wording
+turns to physics. They hold science and religion to sharply different
+standards of explanation, leaving religious confidence intact when an
+expert invokes “mystery” while penalizing science. And they confine an
+earned track record of empirical accuracy to natural explanations while
+shutting it out of spiritual ones, eroding trust even on natural claims
+once a reliable forecaster credits a spirit. When spiritual claims are
+lifted off the floor in a spirit-inhabited world, this boundary still
+holds in four of the five models that generalize the record and closes
+only in the fifth; in just one of those four, Sonnet, the boundary opens
+once the forecaster explicitly links their accuracy to a spirit.
+Together, these results show that language models do not weigh testimony
+by a single domain-general standard, a feature with direct consequences
+both for how models adjudicate human claims and for how faithfully
+persona-prompted models stand in for human judgment.</p>
 <h2 id="data-code-and-transparency">Data, code, and transparency</h2>
 <p>The project repository contains the stimulus generators, run
 configurations, saved model outputs, analysis scripts, and the
@@ -1345,52 +1445,61 @@ the cited studies’ OSF projects: <a href="https://osf.io/qsyvw/">Study
 <h2 id="appendix-a.-data-handling-coverage-and-supplementary-results">Appendix
 A. Data handling, coverage, and supplementary results</h2>
 <h3 id="data-handling">Data handling</h3>
-<p>All analyses use saved request-level outputs. Repeated runs are
-deduplicated by participant and trial in Studies 1 and 2, and by model,
-prompt, and sample index in Study 3, keeping the latest valid response.
-Responses that could not be parsed as a rating are excluded. In Study 3,
-where models may reason before answering, a reply that ended before its
-final answer line is also excluded; this removes three DeepSeek outputs
-in the main condition and four same-task ratings (one DeepSeek, three
-Qwen). In the participant-conditioned format each trial has its own
-prompt. In the direct format many trials share a prompt, so the number
-of trials overstates the number of distinct prompts.</p>
-<p>Study 2’s mixed models include a participant random intercept for the
-two domain observations per participant. Study 3’s interaction <span class="math inline"><em>I</em></span> is computed for each matched pair
-after averaging repeated responses within a condition, and its standard
-error is taken over the eight pairs. The tables in Section 6 average all
-available responses within a condition. Table A2 computes each pair’s
-contrast first and then averages the eight pairs; Qwen’s three missing
-outputs make the two summaries differ slightly (18.3 against 18.2 for
-the natural contrast with no cue).</p>
+<p>All analyses operate on saved request-level outputs. Repeated runs
+are deduplicated by participant and trial in Studies 1 and 2, and by
+model, prompt, and sample index in Study 3, retaining the latest valid
+response. Outputs that cannot be parsed as a numeric rating are
+excluded. In Study 3, where models may reason briefly before answering,
+any reply cut off before its final answer line is likewise excluded;
+this removes three DeepSeek outputs in the main condition and four
+same-task diagnostic ratings (one DeepSeek, three Qwen). In the
+participant-conditioned format every trial uses a distinct prompt,
+whereas in the direct format many trials repeat the same few prompts, so
+trial counts overstate the number of unique prompts.</p>
+<p>Study 2’s mixed-effects models include a participant random intercept
+to account for the two domain observations per participant. Study 3’s
+cue interaction <span class="math inline"><em>I</em></span> is computed
+separately for each matched pair after averaging repeated responses
+within each condition, with standard errors taken across the eight
+pairs. While the main-text tables in Section 6 average all available
+responses within a condition, Table A2 computes each pair’s contrast
+first and then averages equally across the eight pairs; Qwen’s three
+missing outputs create a minor discrepancy between the two summaries
+(18.3 vs. 18.2 for the no-cue natural contrast).</p>
 <h3 id="coverage">Coverage</h3>
-<p>Study 1 and Study 2 Part A cover all six models in both formats. An
-independent-session version of Part A, with each domain in its own
-conversation, was run for Haiku and Sonnet. The participant-conditioned
-interaction there is −0.87 for Haiku and −0.51 for Sonnet, against −0.91
-and −0.62 in joint sessions. Within a joint conversation, scientific
-confidence falls further when the science block comes second in Haiku,
-Sonnet, Qwen, and Llama (for participant-conditioned Haiku, −0.83 when
-science comes first and −1.95 when it follows religion); DeepSeek shows
-the reverse. The no-expert control and Part B cover Haiku, Sonnet, and
-GPT-5. Study 3’s main condition covers all six models, with 2,400 valid
-outputs per model except DeepSeek and Qwen (2,397 each). Its same-task
-diagnostics cover all six models, and its resident frame covers all six
-models, with one response per prompt except for Sonnet, which has five.
-For Sonnet and the three open-weight models the resident frame was run
-only for the conditions with a record and with the cue absent or
-attached to the stronger informant, which are the conditions reported.
-Llama’s resident-frame requests were served by seven OpenRouter
-backends. Manipulation checks on Haiku and Sonnet confirmed that the
-measurement cue was read as a natural method and the spiritual cue as a
-spiritual one, and that both were read as describing how the informant
-predicts the river specifically. Asked whether the description was
-clear, Haiku answered “unclear” for both cues, and Sonnet answered
-“clear” for the measurement cue in five of six responses and “unclear”
-for the spiritual cue. An extension run, with one response per prompt,
-covers other claims about the river, real-world scientific and religious
-claims, and a natural-intuition cue on the matched pairs. It is complete
-for all six models.</p>
+<p><strong>Studies 1 and 2.</strong> Study 1 and Study 2 Part A cover
+all six models in both response formats (Table A1). An
+independent-session check of Study 2 Part A, placing each domain in its
+own conversation, was run for Haiku and Sonnet; participant-conditioned
+interactions remain very close to the joint-session estimates (−0.87
+vs. −0.91 for Haiku; −0.51 vs. −0.62 for Sonnet). Within joint
+conversations, scientific confidence falls further when the science
+block appears second in Haiku, Sonnet, Qwen, and Llama (for
+participant-conditioned Haiku, −0.83 when science comes first vs. −1.95
+when it follows religion), whereas DeepSeek shows the reverse order
+effect. Both the no-expert control and Part B cover Haiku, Sonnet, and
+GPT-5.</p>
+<p><strong>Study 3 main condition and resident frame.</strong> Study 3’s
+main condition covers all six models, with 2,400 valid outputs per model
+except DeepSeek and Qwen (2,397 each). Both the same-task diagnostics
+and the resident frame cover all six models, with one response per
+prompt in the resident frame except for Sonnet, which has five. For
+Sonnet and the three open-weight models, the resident frame was run only
+for the conditions reported here (those with a supplied record and with
+the competence cue either absent or attached to the stronger informant).
+Llama’s resident-frame requests were routed across seven OpenRouter
+backends.</p>
+<p><strong>Manipulation checks and extension run.</strong> Manipulation
+checks on Haiku and Sonnet confirmed that the measurement cue was
+interpreted as a natural method, the spiritual cue as a spiritual
+method, and both as describing how the informant forecasts the river
+specifically. Asked whether each description was clear, Haiku rated both
+cues “unclear,” while Sonnet rated the measurement cue “clear” in five
+of six responses and the spiritual cue “unclear.” Finally, an extension
+run with one response per prompt, covering additional river claims,
+real-world scientific and religious claims, and a natural-intuition cue
+on the matched pairs, is complete for all six models (Table A3 and Table
+A4).</p>
 <!-- BEGIN TABLEA1 -->
 <div aria-label="Results table 6" class="table-wrap" role="region" tabindex="0"><table class="data">
 <thead>
